@@ -1,0 +1,2544 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <TITLE>What is New & Changed in AutoPIPE</TITLE>
+
+<link rel="stylesheet" type="text/css" href="../general/theme.css">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF">
+
+<H1>What is New & Changed in AutoPIPE&reg;</H1>
+<HR>
+<H2>AutoPIPE CONNECT Edition version 12.8(v<<BUILDVERSION>>:<<DATE>>)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version <<BUILDVERSION>>.
+<br/>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added ASME B31.3 2020 - Process Piping. This edition of B31.3 piping code mandates the use of ASME B31J for SIF and Flexibility calculations. A new option is now available in the Result Model Options that allows the use of ASME B31J Table 1.1 General Note (d) for sustained moment indices calculations. For branch connections, the use of effective section modulus (Ze) is now removed. </li>
+</ul>
+</ul>
+<ul>			
+<li><strong>Reports</strong></li>
+<ul>
+<li>When importing an Aveva E3D pipe stress file, Tags (from Supports, Valves, and Flanges) and Attachment IDs (from Supports) are now supported.</li>
+<li>Microsoft Word Report templates have been updated to improve overall quality.</li>
+</ul>			
+</ul>	
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>A Model Explorer utility has been implemented to enable easier location of specific models. Search criteria and filter controls are also available.</li>
+<li>The Tee Point dialog has been modified to automatically populate dynamic fields upon data entry.</li>
+</ul>	
+</ul>			
+</ul>
+<ul>
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Upgrade to Power Platform 17 to fix security vulnerability related to libxml2</li>
+A remote code execution vulnerability in libxml2 could enable an attacker using a specially crafted file to execute arbitrary code within the context of an unprivileged process. This issue is rated as High due to the possibility of remote code execution in an application that uses this library.<p>
+
+<li>Update Newtonsoft to v13.0.1 to remove security vulnerability</li>
+Improper Handling of Exceptional Conditions in Newtonsoft.Json. Newtonsoft.Json prior to version 13.0.1 is vulnerable to Insecure Defaults due to improper handling of StackOverFlow exception (SOE) whenever nested expressions are being processed. Exploiting this vulnerability results in Denial Of Service (DoS), and is exploitable when an attacker sends 5 requests that cause SOE in within 5 minutes. This vulnerability affects Internet Information Services (IIS) Applications.
+</ul>	
+</ul>			
+</ul>
+<ul>
+<li><strong>Notes</strong></li>
+<ul>
+<li>Features related to the DGN file format removed in v12.07.00.346 have been reinstated.</li>
+</ul>	
+</ul>			
+</ul>
+<ul>
+</ul>
+</ul>
+<br/>
+</ul>
+<br/>
+<HR>
+<H2>AutoPIPE CONNECT Edition version 12.7 (v12.07.00.346:2021-12)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 12.07.00.346.
+<br/>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added ASME B31.1 2020 - Power Piping. Improvements include the use of ASME B31J for component stress intensification factors (SIFs) and flexibility calculations by default, inclusion of axial force due to weight and resultant moment broken into in/out/torsional components with new SIFs for sustained and occasional stress calculations, axial force added with SIF set to 1.0 for bends/elbows/miters and resultant moment broken into in/out/torsional components with new SIFs for displacement stress range calculation, and report and option settings updated inline with these changes.</li>
+</ul>
+</ul>
+<ul>			
+<li><strong>Reports</strong></li>
+<ul>
+<li>Added the ability to generate an Extended Components Report (.rpt) as a Quick Report only and display it in the Text Report Viewer.</li>
+<li>Microsoft Word Input and Output reports are certified for commercial use.</li>
+</ul>			
+</ul>	
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Slip/ultimate force/gap Supports can now be specified to simulate bi-linear stiffness.</li>
+<li>Rotation Support gaps can now be specified in the clockwise/anti-clockwise direction.</li>
+<li>The pendulum effect can now be applied to supports, including the ability to specify the Rod length and angulation. The pendulum effect is the behavior of an analytical element which is fixed for translations at one end but free for rotations (pivot point), and the other end is free to translate.</li>
+<li>The number of supported Rotating Equipment (Turbine, Compressor, Pump, User-Defined) Nozzle points has been increased from 4 to 10.</li>
+</ul>	
+</ul>			
+</ul>
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>AutoPIPE v12.7 models can now be saved back as v12.6 models.</li>
+</ul>	
+</ul>			
+</ul>
+<ul>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>AutoPIPE v12.7 is compatible with ProjectWise 365.</li>
+<li>The PCF Translator now supports custom mapping of PCF attributes to AutoPIPE properties.</li>
+</ul>	
+</ul>			
+</ul>
+<ul>
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Not applicable to this release.</li>
+</ul>	
+</ul>			
+</ul>
+<ul>
+<li><strong>Notes</strong></li>
+<ul>
+<li>In the v12.7 release, some features related to the DGN file format including DGN export, iModel export, and iTwin Design Review are temporarily unavailable. This functionality will be made available in a future release. Please contact Bentley Technical Support if you have any questions.</li>
+</ul>	
+</ul>			
+</ul>
+<ul>
+</ul>
+</ul>
+<br/>
+</ul>
+<br/>
+<HR>
+<H2>AutoPIPE CONNECT Edition version 12.6 (v12.06.00.48:2021-05)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 12.06.00.48.
+<br/>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added ASCE 7 2016 - Minimum Design Loads and Associated Criteria for Buildings and Other Structures - Wind and Earthquake.</li>
+<li>Added ISO 14692 2017 - Petroleum and Natural Gas Industries - Glass-Reinforced Plastic (GRP) piping system design.</li>
+<li>Soil Overburden Loads and Seismic Wave data has been extended to B31.8 and B31.12 Pipelines codes.</li>
+</ul>
+</ul>
+<ul>			
+<li><strong>Reports</strong></li>
+<ul>
+<li>A Pipe Connectivity Report has been added to the SQLite Report Manager standard Text Input reports to provide detailed information about node point locations and connectivity.</li>
+<li>The SQLite Report Manager now lists available reports alphabetically for easier selection.</li>
+</ul>			
+</ul>	
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Added the P Delta displacement (pendulum) effect on Rod Hangers.<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font></li>
+<li>The setting of default analysis sets can now be defined to better control the resulting Code Combinations. Load case mapping has been added to cater to B31.3 and B31.1 occasional load calculations meeting 2018 requirements.</li>
+<li>When using ASME B31.3 2010 or later, sustained stress is calculated as described in Code Case 178 to include torsion. This option (Result Model Options dialog) will now be disabled and checked when the 2010 or later edition of ASME B31.3 is selected.</li>
+</ul>	
+</ul>			
+</ul>
+<ul>
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Not applicable to this release.</li>
+</ul>
+</ul>
+<br/>
+</ul>
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions. To learn more about Technology Previews, please create a <a href="http://apps.bentley.com/srmanager/ProductSupport">Service Request</a> (be sure to include "Technology Preview" in the Description field).
+</ul>
+</ul>
+<br/>
+<HR>
+<H2>AutoPIPE CONNECT Edition version 12.5 (v12.05.00.16:2020-12)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version <<BUILDVERSION>>.
+<br/>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added ASME BPVC Section III 2019 Rules for Construction of Nuclear Facility Components -Division 1 - Subsection NB - Class 1 Components.</li>
+<li>Added ASME BPVC Section III 2019 Rules for Construction of Nuclear Facility Components -Division 1 - Subsection NC - Class 2 Components.</li>
+<li>Added ASME BPVC Section III 2019 Rules for Construction of Nuclear Facility Components -Division 1 - Subsection ND - Class 3 Components.</li>
+<li>Added ASME B31.12-2019 Edition Standard on Hydrogen Industrial Piping.</li>
+<li>Added ASME B31.12-2019 Edition Standard on Hydrogen Pipelines.</li>
+</ul>
+</ul>
+<ul>			
+<li><strong>Import/Export</strong></li>
+<ul>
+<li>Autodesk® Revit models can now be imported (using Fabrication-based components from a .PCF file).</li>
+<li>Time History data can now be imported from an FRC file to generate AutoPIPE time history profiles and locations.</li>
+</ul>			
+</ul>	
+<ul>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Implemented the iTwin Design Review Cloud Service to facilitate peer review of design work-in-progress deliverables.</li>
+</ul>			
+</ul>	
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>Microsoft® Word® templates for Input Listing reports used by the SQLite Report Manager have been enhanced.</li>
+</ul>			
+</ul>	
+<ul>
+<li><strong>Library</strong></li>
+<ul>
+<li>The Material Library Editor has been enhanced to display charts facilitating the review and checking of material properties.</li>
+<li>A check to verify the integrity of shipped material libraries and block the use of modified libraries has been implemented.</li>
+<li>The Material Library now supports material library source files (.SRC) hosted on a network.</li>
+<li>The Material Library Editor now enables you to quickly open a recently opened material library source file (.SRC).</li>
+</ul>			
+</ul>
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Support Optimizer Locator Groups now accommodate up to ten assemblies (increased from a maximum of five).</li>
+<li>The Support Optimization Process Priority can now be defined. The Windows Operating System shares processor resources between all running processes based on priority. The higher the priority, the more processor resources are allocated to the process and potentially faster execution.</li>
+</ul>			
+</ul>
+<ul>	
+<li><strong>General</strong></li>
+<ul>
+<li>The Auto Flange/Bolt check-box (Flange tab of the Flange Check dialog) has been modified to include Gasket dimensions.</li>
+<li>Soil Points visualization can now be toggled on and off. The soil point symbol displays on primary points and on all intermediate points.</li>
+<li>The title bar and text color have been enhanced to improve visibility. Title bar text is now visible in minimized and maximized modes.</li>
+<li>The model name now appears first in the title bar.</li>
+</ul>	
+</ul>			
+</ul>
+<ul>
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Not applicable to this release.</li>
+</ul>
+</ul>
+<br/>
+</ul>
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions. To learn more about Technology Previews, please create a <a href="http://apps.bentley.com/srmanager/ProductSupport">Service Request</a> (be sure to include "Technology Preview" in the Description field).
+</ul>
+</ul>
+<br/>
+<HR>
+<H2>AutoPIPE CONNECT Edition version 12.4 (v12.04.00.13:2020-07)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 12.04.00.13.
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added the 2017 edition of DNVGL-ST-F101 Submarine pipeline systems piping code (previously named DNV-OS-F101). Improvements include results options to assist with user control, Mill Pressure Factor k and a (mpt), updated bursting check, material properties, and added Ovality limit checks and compliancy notes.</li>
+</ul>
+</ul>
+<ul>			
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>AutoPIPE can now import CAESAR II 2019 neutral files.</li>
+<li>The PCF Translator mapping file now includes item descriptions and support tags.</li>
+</ul>			
+</ul>	
+<ul>
+<li><strong>Library</strong></li>
+<ul>
+<li>The Library Editor interface has been redesigned to facilitate proper management of Material Library data.</li>
+</ul>			
+</ul>	
+<ul>	
+<li><strong>General</strong></li>
+<ul>
+<li>Load combinations included in another stress-level combination are now highlighted in the code and non-code grids.</li>
+<li>Reference points can now be added when inserting Anchors.</li>
+<li>Global and local axes coordinate systems can now be toggled on and off.</li>
+<li>The new Image Gallery tool enables the management of custom images associated with each model. These images can be easily incorporated into any AutoPIPE Microsoft® Excel® and Microsoft® Word® report. <img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font></li>
+<li>Watermarks and Notes have been added to more clearly indicate Academic Licenses.</li>
+<li>The Recent Models dialog now provides options to customize the models displayed - Pin, Un-pin, Remove from List, Remove all Un-pinned Items.</li>
+<li>To improve the overall AutoPIPE experience, a feedback mechanism has been implemented providing the ability to comment on anything AutoPIPE-related.</li>
+<li>AutoPIPE's interface now features a Black theme - the highest-contrast visual for your background.</li>
+</ul>	
+</ul>			
+</ul>
+<ul>
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Not applicable to this release.</li>
+</ul>
+</ul>
+<br/>
+</ul>
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions. To learn more about Technology Previews, please create a <a href="http://apps.bentley.com/srmanager/ProductSupport">Service Request</a> (be sure to include "Technology Preview" in the Description field).
+</ul>
+</ul>
+<br/>
+
+<HR>
+<H2>AutoPIPE CONNECT Edition version 12.3 (v12.03.00.17:2020-03)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 12.03.00.17.
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added the 2018 edition of ASME B31.3 Process Piping. Major changes include Alternative Occasional Allowable calculations using Appendix V, Sustained and Occasional loads calculations using coincident operating conditions, updated weld strength reduction factors, and updated material library.</li>			
+</ul>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Reports</strong></li>
+<ul>
+<li>The SQLite Report Manager (located on the <em>Tools</em> Ribbon) now supports legacy text reports, custom Microsoft® Excel® reports, and custom Microsoft Word® reports. Legacy text and custom Microsoft® Excel® reports are now certified for commercial use.</li></li><br>
+<strong>Note:</strong> Microsoft Word® reports are a <img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+<li>Filter controls (i.e., Code Stresses, Displacement, Anchor, Support, Force and Moment) can now be applied directly to Output Quick Reports from within the <em>Batch Report</em> dialog.</li>	
+</ul>
+</ul>			
+</ul>			
+</ul>
+<ul>			
+<li><strong>Analysis</strong></li>
+<ul>
+<li>The Support Optimizer performance has been improved by employing multicore hardware and parallel evaluation of scenarios. This Select Entitlement Feature is now fully certified and is available for commercial use.</li></li><br>
+<strong>Note:</strong> Use of this feature is available to those with an active Select Subscription.<p/>		
+</ul>			
+</ul>			
+</ul>
+<ul>			
+<li><strong>General</strong></li>
+<ul>
+<li>Added an <em>Open Folder</em> button to the <em>Log Settings</em> dialog to open the folder where log files are generated. Log files capture the success/failure of program operations and are a valuable tool for the Bentley Technical Support team to troubleshoot issues.</li>
+<li>Added the Installation Test Set feature to launch the AutoPIPE Installation Test Set (ITS) to verify proper operation of the AutoPIPE program once it has been installed on a computer.</li>
+<li>Rotating Equipment can now be inserted as a graphical symbol on a plot.</li>
+<li>The <em>License Configuration</em> dialog has been improved to clarify all license options, including the Product Evaluation license.</li>
+<li>An <em>Ideas</em> command has been added to the <em>Help</em> Ribbon, which launches the <a href="https://communities.bentley.com/products/pipe_stress_analysis/f/autopipe-announcements-forum/193373/have-an-idea-for-improving-autopipe" target="_Online">AutoPIPE Ideas</a> area of Bentley Communities where you can submit and vote on ideas to improve AutoPIPE.  </li>
+</ul>			
+</ul>			
+</ul>
+<ul>			
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>AutoPIPE models can now be exported to a Caesar 2016 (and later) model. This is a high-fidelity export of piping geometry, supports and load definitions directly to a Caesar C2 file without the need for a Cii neutral file.  </li>
+<li>Aveva E3D pipe stress files (.xml) containing pipeline geometry and properties can now be imported.<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/></li>
+</ul>
+</ul>			
+</ul>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Not applicable to this release.</li>
+</ul>
+</ul>
+<br/>
+</ul>
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions. To learn more about Technology Previews, please create a <a href="http://apps.bentley.com/srmanager/ProductSupport">Service Request</a> (be sure to include "Technology Preview" in the Description field).
+</ul>
+</ul>
+<br/>
+<HR>
+<H2>AutoPIPE CONNECT Edition version 12.2 (v12.02.00.14:2019-10)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 12.02.00.14.
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added BS EN 13480-3:2017 for design criteria and stress calculation of industrial metallic piping systems, including supports.</li>			
+</ul>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Reports</strong></li>
+<ul>
+<li>SQLite Input and Output reports are now certified for commercial use and employ improved dialogs, a progress bar, and maintain a standard and consistent text format.</li>	
+<li>SQLite Input Listing reports have been improved to include more model coverage, printed in tabular format:  Cut Short, Out-of-Roundness, Additional Weight, Hydrodynamic Data, User Weld Factor, Nozzle, Flexible Joint, and Anchor.</li>	
+<li>The SQLite Report Manager is now certified for commercial use with the added ability to generate reports in Microsoft® Excel® and standard text format.</li>	
+<li>The Time History Output report can now be filtered to remove very small numeric values (which are of no practical importance).</li>	
+</ul>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Analysis</strong></li>
+<ul>
+<li>An option has been added to define and analyze gross discontinuity stress using a standard, more conservative method. With this method, a single value of gross discontinuity stress can be entered at a node point for each thermal case.</li>	
+<li>The Support Optimization feature, used to identify optimal support solutions, is now available for testing to all users.&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" />   </li>
+<li>Corrosion allowance is now available for Flange Analysis. </li>
+</ul>			
+</ul>			
+</ul>
+<ul>			
+<li><strong>General</strong></li>
+<ul>
+<li>A logging mechanism has been added to capture the success/failure of program operations. This log file is a valuable tool for the Bentley Technical Support team to troubleshoot issues. </li>
+<li>The Open Recent Models dialog has been improved to expand the number of recently used models, show a preview of a selected model,  and display relevant file details.</li>
+</ul>			
+</ul>
+</ul>
+<ul>	
+<li><strong>Documentation</strong></li>
+<ul>
+<li>A Supplemental Documentation button has been added to the Help ribbon to access a set of Supplemental White Papers, How To Procedures, Tutorials, and Reference Information documents in PDF format within the main program help.</li>
+<li>Non-linear Analysis diagrams and associated program documentation have been improved.</li>
+</ul>			
+</ul>
+</ul>
+<ul>	
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Models can now be exported to a CAESAR II C2 file (compatible with CAESAR 2016 and higher). This eliminates the extra step of importing a CAESAR II neutral file and provides for more fidelity. B31.1 and B31.3 Piping Codes are also supported. &nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" />   </li>
+<li>The PCF Translator has been enhanced with a new user interface and context-sensitive help to improve the user experience and workflow.</li>
+</ul>			
+</ul>
+</ul>
+<ul>	
+<li><strong>Isometrics</strong></li>
+<ul>
+<li>Isometric drawings have been improved to include updated support symbols for better visibility. </li>
+</ul>			
+</ul>
+</ul>	
+<ul>	
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Not applicable to this release.</li>
+</ul>
+</ul>
+<br/>
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions. To learn more about Technology Previews, please create a <a href="http://apps.bentley.com/srmanager/ProductSupport">Service Request</a> (be sure to include "Technology Preview" in the Description field).
+</ul>
+
+<HR>
+<H2>AutoPIPE CONNECT Edition version 12.1 (v12.01.00.09:2019-5)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 12.01.00.09.
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added ASME B31.1 2018 code including updated material library (reference standard, table number, group number), composition information for code materials, and E factor.</li>			
+</ul>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Updated Upheaval Buckling analysis and reporting.</li>	
+<li>Enhanced Support Optimization functionality to include minimum frequency design criteria, seed solution, and improved consistency checks  .&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" />   </li>
+<li>Improvements in Flange Analysis including enhanced display and filter operations; automatic update of flange, bolt hole diameter, hub length, and gasket dimensional properties; and automatic selection of the flange/bolt dimensions library based on the nominal pipe size and length.</li>	
+</ul>			
+</ul>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Reports</strong></li>
+<ul>
+<li>AutoPIPE Report Manager now includes a feature to generate traditional text reports with custom ordering and selection.&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" />   </li>
+<li>All input and batch output reports applicable to the current model will be exported to SQLite database regardless of the selection on the input listing or batch output report dialogs. </li>
+</ul>
+</ul>			
+</ul>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Improved PCF Translator to include more descriptive and accessible conversion logs, easier selection of multiple files for batch conversion, and importing closed loops.</li>
+</ul>
+</ul>			
+</ul>			
+</ul>
+</ul>
+<ul>	
+<li><strong>Isometrics</strong></li>
+<ul>
+<li>Improved integration with OpenPlant Isometrics Manager CONNECT Edition.</li>
+<li>Improved Isometrics generation including better control over settings, customization, and auto-split functions.</li>
+<li>Improved font sizes, line weights, support symbols, and scaling.</li>
+</ul>
+</ul>			
+</ul>			
+</ul>
+</ul>
+<ul>	
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Not applicable to this release.</li>
+</ul>
+</ul>
+<br/>
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions. To learn more about Technology Previews, please create a <a href="http://apps.bentley.com/srmanager/ProductSupport">Service Request</a> (be sure to include "Technology Preview" in the Description field).
+<HR>
+<H2>AutoPIPE CONNECT Edition version 12 (v12.00.00.14:2018-12)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 12.00.00.14
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>CONNECT Licensing<br>This product version utilizes CONNECT Licensing, which is not supported by SELECT activation key(s). <a href="https://communities.bentley.com/products/licensing/w/licensing__wiki/37813/connect-licensing" target="_Online">CONNECT Licensing</a> features new behavior to enhance your organization's user administration and security with mandatory user sign-in via CONNECTION Client to access the application. If you are already signed in to the CONNECTION Client, you have met this prerequisite. If you have not, please refer to the <a href="https://www.bentley.com/en/perspectives-and-viewpoints/topics/campaign/bentley-user-registration" target="_Online">Administrator's Resource Center</a> and/or contact your administrator for assistance in the registration and sign-in process.</li>
+<li>Increased the number of entries listed in the recent model list for a better user experience.</li>
+<li>Support/Reference IDs are now auto-generated and read-only for better tracking of supports.</li>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added ASME BPVC Section III 2017 code for the construction of Nuclear Facility Components.</li>			
+</ul>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Added Upheaval Buckling Analysis to perform a simplified buckling analysis based on idealized pipeline imperfections in long buried pipelines.&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" />   </li>
+<li>Added the NodeLink feature to allow a node to be connected to another piping node. This allows for the release of connectivity in a specific direction to be utilized in hanger selection where an Anchor is not present.</li>	
+<li>Anchors can now be defined as connected to a structure node to allow the anchor load to be resolved into the structure.</li>	
+<li>Added Support Optimization to determine optimal support locations and options based on criteria such as supporting structure loads, allowable displacements, and support costs. &nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" />   </li>				
+</ul>			
+</ul>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Reports</strong></li>
+<ul>
+<li>Added a Select All option on the result grid to conveniently select/un-select all combinations at one time.</li>
+<li>Input and output reports<sup><a href="#fn1" id="ref1">1</a></sup> are now available in the SQLite DB format. Post-processing, review, and print functions are now possible in third-party applications and report generators. &nbsp;   </li>
+<li>Stress reports have been improved when utilizing DNV-OS-F101 by changing the title "Comb. stress category" to "Load Control Limit Check".</li>				
+</ul>
+</ul>			
+</ul>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Import</strong></li>
+<ul>
+<li>Added an option to import E3d (*.pcf) files via the PCF Translator.</li>
+</ul>
+</ul>			
+</ul>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Two-way interoperability between SACS and AutoPIPE has been improved, including change management by using Structural Synchronizer (aka ISM).&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" />   </li>
+<li>Integration with OpenPlant Isometrics Manager CONNECT Edition has been implemented for stress isometrics.</li>
+<li>Hidden segments in a model are no longer exported to isometric drawings in OpenPlant Isometric Manager.</li>
+</ul>
+</ul>			
+</ul>			
+</ul>
+</ul>
+<ul>			
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Not applicable to this release.</li>
+</ul>
+</ul>
+<br/>
+<sup>1</sup> The Version 6.1 Point Data Listing,  Extended Component Data Listing, Flange Analysis Report, and Thermal Transient Analysis Report are not available in the SQLite DB format. This feature will be made available in a future release.
+<br/><br/>
+
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions. To learn more about Technology Previews, please create a <a href="http://apps.bentley.com/srmanager/ProductSupport">Service Request</a> (be sure to include "Technology Preview" in the Description field).
+
+<HR>
+<H2>AutoPIPE CONNECT Edition version 11.4 (v11.04.00.10:2018-07)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 11.4.
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Flange Analysis</li>
+<ul>
+<li>The allowable value for flange allowable stresses is now determined by the attached piping materials / piping code.</li>
+<li>A warning is now issued when the calculated Bsc exceeds 1 and is not included in calculations.</li>
+<li>An option has been added to substitute "B1" for the inside diameter of flange "B".</li>
+<li>The flange analysis workflow has been updated to perform automatic ANSI checks for all flanges in the model.</li>
+<li>External flange loads are now included in determining bolt stresses.</li>
+</ul>
+</ul>
+</ul>
+<ul>
+<li><strong>Library</strong></li>
+<ul>
+<li>The Vendor Valve catalogs are now certified for commercial consumption.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>CONNECT Advisor is now fully integrated, including Contextual assistance, Expert Advisor, and the Ribbon command search utility.</li>
+</ul>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>A new check has been implemented to verify the selection of points before running a report that limits results to selected node points.</li>
+<li>Export SQLite DB Input and Output Reports &nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" />   </li>
+<ul><li>Users now have more power to create data reports with the information that is important to their teams with the new SQLite DB export capability and a custom report manager.</ul></li>
+<li>AutoPIPE Report Manager &nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" /></li>
+<ul><li>The query designer can be used to export custom reports to Excel with charts and pivot tables.</ul></li>
+<ul><li>Detailed hanger listing reports can be generated to assist in the purchase and installation of piping supports.</ul></li>
+</ul>
+</ul>
+<ul>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Stress Isometrics with Open Plant Isometrics Manager (OPIM)</li>
+<ul>
+<li>Separate support and anchor tags are now available to control the information to print on isometrics.</li>
+<li>The default acronym for non-standard Pipe has been changed to avoid confusion with Nominal Pipe Size.</li>
+</ul>
+<li>Read/write controls have been added to Integrated Structural Model (ISM) for better integration with Structural Analysis and Plant Design products. &nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" /></li>
+<li>All Piping Codes and Material Libraries have been added to the PCF Translator.</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Not applicable to this release.</li>
+</ul>
+</ul>
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions. To learn more about Technology Previews, please create a <a href="http://apps.bentley.com/srmanager/ProductSupport">Service Request</a> (be sure to include "Technology Preview" in the Description field).
+
+
+
+<HR>
+<H2>AutoPIPE CONNECT Edition version 11.3 (v11.03.00.08:2018-04)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 11.3.
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>The Pressure Temperature grid now provides an option to display Delta T1 and Delta T2 only, facilitating easier review and updates for Nuclear users.</li>
+<li>Links have been added to the Ribbon for quick access to the End User License Agreement (EULA) and the Bentley Legal Notice.</li>
+<li>Rotating Equipment commands have been relocated to the Results tab on the Ribbon for better access.</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added ASME B31J for more accurate calculations of stress intensification factors and flexibility factors of ASME B31 codes. This code is currently available for ASME B31.1 and B31.3 for code years 2012 and later.</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Library</strong></li>
+<ul>
+<li>Source files are now released for users to customize material libraries.</li>
+</ul>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>The support data listing now includes support data for all supports, regardless if they are connected to pipe or a structure.</li>
+<li>Export SQLite DB input & output reports &nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" />   </li>
+<ul><li>Users now have more power to create data reports with the information that is important to their teams with the new SQLite DB export capability and a custom report manager</ul></li>
+<li>AutoPIPE Report Manager<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" /></li>
+<ul><li>Use the query designer to create custom reports to excel with charts and pivot tables. </ul></li>
+<ul><li>Generates detailed hanger listing reports to help purchase and installation of pipe support. </ul></li>
+<ul><li>MS Word Report Writer now covers more reports and includes templates with screenshots.  </ul></li>
+</ul>
+</ul>
+<ul>
+<li><strong>Isometrics</strong></li>
+<ul>
+<li>Users can now customize the printing of elevations on drawings by using a script.</li>
+<li>Users can now customize the direction and location of the north arrow on drawings by using a script.</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Not applicable to this release.</li>
+</ul>
+</ul>
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions. To learn more about Technology Previews, please create a <a href="http://apps.bentley.com/srmanager/ProductSupport">Service Request</a> (be sure to include "Technology Preview" in the Description field).
+
+
+
+<HR>
+<H2>AutoPIPE CONNECT Edition version 11.2 (v11.02.00.10:2018-01)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 11.2.
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Wind loads on structural members can be defined for more accurate results.</li>
+<li>Limits on Time History Profile input data have been extended.</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added ASME NB: Coincident Pressure Option for Levels B, C and D.</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>The Hydrotest Pressure report is now available in the Model Input Listing.</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Isometrics</strong></li>
+<ul>
+<li>The breakpoint logic for splitting drawings has been improved.</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Import/Export</strong></li>
+<ul>
+<li>CAESAR 2018 (v10) models can now be imported.</li>
+<li>An option to review and reset component and material mappings has been added.</li>
+<li>Updated the Pipelink interface with STAAD CONNECT Edition (based on the SQLite database format).</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Not applicable to this release.</li>
+</ul>
+</ul>
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions. To learn more about Technology Previews, please create a <a href="http://apps.bentley.com/srmanager/ProductSupport">Service Request</a> (be sure to include "Technology Preview" in the Description field).
+
+
+<HR>
+<H2>AutoPIPE CONNECT Edition version 11.1 (v11.01.00.23:2017-09)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 11.1.
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>CONNECT Advisor is now included to help provide easier access to Bentley LEARN materials and other training content.</li>
+<li>Fluid Transient data can now be deleted from the model database.</li>
+<li>Gravitational Constant and Water Density values can be edited (within the AutoPIPE.INI configuration file) for more accurate results.</li>
+<li>The "Suppress Analysis Warning Prompts" option has been moved to the Analyze All dialog.</li>
+<li>All segments in a model can be reordered based on a pre-defined ordering algorithm. This algorithm detects disconnected groups of segments in order, orders the header first and then each branch in order as it encompasses it.</li>
+<li>Up to 30 user toolbars can now be created.</li>
+<li>CONNECTed users now receive program update notifications and can download and install in a single step.</li>
+</ul>
+</ul>
+
+
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Wind loads on structural members can be defined for more accurate results.  <font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" /></li>
+<li>More memory has been allocated to support Time History analysis for more complicated models.</li>
+<li>Reinforcement requirements for ASME B31.8 are now checked for improved Tee results.</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added ASME B31.1 2016 edition.</li>
+<li>Added ASME B31.3 2016 edition.</li>
+<li>Added ASME B31.8 2016 edition.</li>
+<li>Updated ASME B31J to 2017 edition.<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" /></li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Library</strong></li>
+<ul>
+<li>Added SA-508 materials to ASME2013.</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>The Preliminary Stress Report has been changed to Pre-Verification Stress Report in the Batch Report dialog.</li>
+<li>The Damping Ratio has been added to the Analysis Summary Report/Harmonic Load Cases to provide easier access to data needed for quality assurance of models.</li>
+<li>ASME NB stress summary reports now list the loadset pair generating the maximum stress ratio for each stress equation at each piping point.</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Documentation</strong></li>
+<ul>
+<li>To ensure clarity of calculations, a note has been added highlighting that actual component dimensions are used for stress indices calculations in ASME NB.</li>
+<li>Information has been added regarding the use of reinforced branch thickness for Branch connection B2r calculations for ASME NC/ND calculations.</li>
+<li>The Use Nominal Thickness help topic has been improved by adding definitions for corroded and reduced wall thickness and usage.</li>
+<li>A note has been added to the Load Summary Data Listing for the automated ASCE 7 Wind Cf calculation.</li>
+</ul>
+</ul>
+
+
+<ul>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>When renumbering or renaming a point, the point is now renamed inside the Reference Point Reference ID.</li>
+<li>To facilitate accuracy in model construction, a model consistency/design check has been added when the stiffness value for a support is set to zero.</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Isometrics</strong></li>
+<ul>
+<li>To facilitate productivity, batch processing is introduced for isometrics generation.</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Import/Export</strong></li>
+<ul>
+<li>Exported .imodel files are now compatible with Navigator CONNECT Edition.</li>
+<li>Pipelink files are now compatible with STAAD CONNECT Edition (sqlite database).</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>PCF Translator</strong></li>
+<ul>
+<li>Program now automatically detects and displays a dialog to help map all un-mapped components in the PCF file. </li>
+<li>Flanges are now mapped to a RIGID pipe with a point flange.</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Security Release Notes</strong></li>
+<ul>
+<li>Not applicable to this release.</li>
+</ul>
+</ul>
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions. To learn more about Technology Previews, please create a <a href="http://apps.bentley.com/srmanager/ProductSupport">Service Request</a> (be sure to include "Technology Preview" in the Description field).
+
+
+<HR>
+<H2>AutoPIPE CONNECT Edition version 11.0.0 (v11.00.00.22:2017-02)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 11.0.0.
+
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>New Ribbon  interface with customizable and docking toolbars.</li>
+<li>CONNECT Project Configuration Settings to help ensure all users on a CONNECT project are using the correct design settings.</li>
+<li>North Arrow directional settings are now saved with the model. </li>
+<li>Software validation certificate is included with the installation. </li>
+<li>Option to save a version 10.0 DAT file from version 11.0. </li>
+<li>Option to ignore the build number upon opening a newer model.</li>
+</ul>
+</ul>
+
+
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Added B31J SIF and K factor calculations for ASME B31.1 and B31.3 (2012 and later). <font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" /></li>
+<li>Added option to enter Maximum and Minimum Gross Discontinuity Stress values per thermal case for nuclear piping design.</li>
+<li>Updated Gross Discontinuity Stress calculation to range from ambient temperature when calculating Max/Min stress values for ASME NB.</li>
+<li>Improved Ratchet Stress Range calculation for nuclear piping design to reduce conservatism.</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Added ASME BPVC Section III (NB, NC, ND) 2015 code edition.</li>
+<li>Added ASME B31.4-2016 code edition.</li>
+<li>Added DSs Primary stress category for JSME 2008 (class 2).</li>
+<li>Added Torsional SIF to tee type 'Other' for ASME B31.3 2012 and later editions.</li>
+</ul>
+</ul>
+
+
+<ul>
+<li><strong>Libraries</strong></li>
+<ul>
+<li>Bentley Content Services valve catalog integration for AutoPIPE is now available as a local cache of databases.</li>
+<li>Added additional B31.1-2014 materials.</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Documentation</strong></li>
+<ul>
+<li>Help content expanded explanation of Moment/Stress level code combinations with specific examples.</li>
+<li>Help content expanded explanation of C2r and C2b calculation equations for ASME NC/ND.</li>
+</ul>
+</ul>
+
+
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>AutoPIPE Report Manager now includes pivot tables and charts.. <font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" /></li>
+<li>MS Word Report Writer now includes templates with screenshots. <font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" /></li>
+<li>MS Word Report Writer now includes both input and output reports. <font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" /></li>
+<li>AutoPIPE Report Manager now generates detailed hanger listing reports to help purchase and installation of pipe support. <font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" /></li>
+<li>General Stress Table from the output report is now available in the Results Grid.</li>
+<li>General Stress Table from the output report is now available in the Results Database.</li>
+<li>SQLite Database export has been expanded to include more reports. <font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" /></li>
+<li>ISO 14692 Report improvements for better results viewing.</li>
+</ul>
+</ul>
+
+
+<ul>
+<li><strong>Isometrics</strong></li>
+<ul>
+<li>Added an Automatic Split option based on the line number for stress isometric creation.</li>
+<li>Added better white space management for stress isometric creation. </li>
+</ul>
+</ul>
+
+
+<ul>
+<li><strong>PCF Translator</strong></li>
+<ul>
+<li>Option to convert a left hand coordinate system to a right hand coordinate system.</li>
+<li>Apply a guide when a support item description contains the word u-bolt.</li>
+<li>Option to add/ignore anchors at free ends.</li>
+<li>Support for two endpoint supports when importing a PCF file.</li>
+<li>User interface to help map unmapped PCF components.</li>
+<li>User interface to help map PCF materials to available materials in AutoPIPE.</li>
+<li>User interface to help define default values for different support types.</li>
+<li>Option to ignore importing schedule for fittings and use the pipe schedule.</li>
+<li>Support for importing descriptive tags for valves, flanges and supports.</li>
+<li>Conversion of PCF flange length to a RIGID pipe.</li>
+<li>Mapping of strainers to valves.</li>
+<li>Mapping of angle valves to two valves connected at an angle.</li>
+<li>Pipe identifier naming convention updated to clearly represent size.</li>
+</ul>
+</ul>
+
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions. To learn more about Technology Previews, please create a <a href="http://apps.bentley.com/srmanager/ProductSupport">Service Request</a> (be sure to include "Technology Preview" in the Description field).
+<HR>
+<H2>AutoPIPE CONNECT Edition version 10.1.0 (v10.01.00.08:2016-04)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 10.1.0.
+
+<ul>
+<li><strong>Reporting</strong></li>
+<ul><li>Report Integration Method used for Time History under Load Summary Data Listing</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Import/Export</strong></li>
+<ul><li>PXF Import: Increase length of PXF material name to 50 characters to improve interoperability with plant design programs i.e. OpenPlant Modeler and AutoPLANT</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Modeling</strong></li>
+<ul><li>Model consistency check added to warn user when Beam Modulus = 0.00</li>
+<li>Model consistency check added to warn user when zero values are set for fields in Pipe Properties dialog </li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>General</strong></li>
+<ul><li>Users are now prevented from opening DAT model files last updated using newer program versions in order to prevent file corruption</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Documentation</strong></li>
+<ul><li>CONNECT overview documentation is now more visible in the program and Help content</li>
+<li>Help content has been update to better explain the current velocity extrapolation</li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Installer</strong></li>
+<ul><li>Installer now clearly identifies that the software will upgrade from a previous version</li>
+</ul>
+</ul>
+
+<HR>
+<H2>AutoPIPE CONNECT Edition version 10.0.0 (v10.00.00.10:2015-10)</H2>
+The following outline identifies new features and enhancements in the AutoPIPE CONNECT Edition version 10.0.0.
+
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>ASME B31.3 2014 now available </li>
+<li>ASME B31.8 2014 Edition (Onshore and Offshore) now available </li>
+<li>ASME B31.4 Offshore 2012 Edition now available </li>
+<li>CSA-Z662 2011 Edition (including Offshore) now available </li>
+<li>CSA-Z662 2015 Edition (including Offshore) now available </li>
+<li>Apply ASME CC N755-1 rules to B31.4 Onshore and B31.8 Onshore </li>
+<ul><li>HDPE is becoming more popular in many industries and these code allowables will help you take advantage of HDPE in more scenarios</li></ul>
+<li>Seven new materials added to the ASME 2013 material library </li>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Local Incidental Pressure Calculation (used for offshore riser piping) available for all piping codes</li>
+	<ul><li>These calculations originate from DNV-OS-F101 to take into account the rise in pressure due to fluid in a riser pipe</li></ul>
+<li>Option to apply pressure correction factor to user-defined SIF and Flexibility factor values</li>
+	<ul><li>ASME B31 codes take into account pressure stiffening which reduces flexibility factor and SIF's value</li></ul>
+<li>Apply ASME CC N755-1 rules to B31.4 Onshore and B31.8 Onshore</li>
+	<ul><li>HDPE is becoming more popular in many industries and these code allowables will help you take advantage of HDPE in more scenarios</li></ul>
+<li>ASME NB: Use local tee axis for tee moment summation for ASME III Class 1 piping</li>
+	<ul><li>Option for a less conservative method for summing moments at a tee gives users more options for their designs</li></ul>
+<li>Report inconsistent non-linear code and non-code combinations to ensure proper pipe stress analysis</li>
+	<ul><li>Automatic checking of non-linear combinations will help users to ensure proper pipe stress analysis</li></ul>
+<li>User SIF note added to Flange, Tee,  and Valve Data Listing sub-report for added visibility</li>
+
+
+</ul>
+</ul>
+
+
+
+
+
+
+<ul>
+<li><strong>Import/Export</strong></li>
+<ul>
+<li>AutoPIPE Isometrics Manager can now export angle valves, base elbow supports, and reference items</li>
+<li>XML export to be imported to plant design software like PDMS</li>
+<li>Export SQLite DB input & output reports <font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" /></li>
+<ul><li>Users now have more power to create data reports with the information that is important to their teams with the new SQLite DB export capability and a custom report manager</li></ul>
+</ul>
+</ul>
+
+<ul>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Automatic syncing of node and support IDs for increased model organization</li>
+<ul><li>For improved model organization and visibility of critical points in your stress model</li></ul>
+</ul>
+</ul>
+
+
+
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>Bentley CONNECT Project Selection dialog added for increased workflow visibility for your entire project team</li>
+	<ul><li>For increased workflow visibility for your entire project team</ul></li>
+<li>Unchecking the "Show rotation report" check-box will be retained for the entire AutoPIPE session</li>
+	<ul><li>To avoid unwanted extra clicking</ul></li>
+<li>Improved workspace and user profile management per Windows guidelines</li>
+
+<li>Automatic syncing of node and support IDs for increased model organization</li>
+	<ul><li>For improved model organization and visibility of critical points in your stress model</ul></li>
+<li>Results Database are now compatible with Office 2013</li>
+	<ul><li>Compatibility with latest Microsoft Office software will ensure your integration is seamless</ul></li>
+<li>Warning message for pipes using the ADLPipe default fatigue curve that have a 1E6 cycle limit</li> 
+	<ul><li>Curves only have data to 1E6, so a warning noting that AutoPIPE is interpolating beyond the published data will keep users aware of their design assumptions </ul></li>
+<li>Warning message added to ASME B31.4 (2012) to display when selected material does not have yield strength values </li>
+<li>Microsoft Word Input Data Listing for expanded options for model reporting <font color="#FFD700"><b>[</b></font><i>Technology Preview</i><font color="#FFD700"><b>]</b></font>&nbsp;<img src="..\..\images\TechnicalPreview_Color_16.png" />  </li>
+
+
+</ul>
+</ul>
+
+
+<ul>
+<li><strong>Documentation</strong></li>
+<ul>
+<li>Improved help content for DNV 2012 legacy combinations and usage</li>
+<li>Updated ASME BPV-III-1-NB (1972-2013) flow chart in help</li>
+<li>Added help content for CSA-Z662 Thermal Expansion with effects of "Include axial force"</li>
+<li>Migrated tutorial PDFs from Documents directory to embedded within main AutoPIPE Help File (refer to Documents\Tutorial Files Notification.pdf for full details)</li>
+</ul>
+</ul>
+
+<br/>
+
+<img src="..\..\images\TechnicalPreview_Color_16.png" />&nbsp;<font color="#FFD700"><b>[</b></font><i>Technology Preview</i> <font color="#FFD700"><b>]</b></font><p/>
+Technology Previews provide users preliminary access to features currently in development but not yet ready for production.
+These features are provided at no additional charge to promote awareness of a feature or technology to be deployed in a future release.
+Users are encouraged to provide feedback and suggestions.
+To learn more about Technology Previews or to gain access, please create a Service Request (be sure to include "Technology Preview" in the Description field).
+<p><hr><p>
+
+<H2>AutoPIPE V8i SELECTseries 5 Maintenance Release version 9.6.2.6 (4/3/2015)</H2>
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>EN13480 Hoop allowable is now the minimum of f and fcr, if fcr is not available, then the hoop allowable shall be set as time independent allowable stress f</li>
+<li>A new consistency check is available when fluid density factor for an analysis set is zero</li>
+<li>New Electric Welded Materials available for EURO2002, EURO2009 and EURO2012</li>
+</ul>
+</ul>
+<ul>
+
+<li><strong>GUI</strong></li>
+<ul>
+<li>Open and Save Archive commands now available in File > Open and File > Save as menu</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Import/Export</strong></li>
+<ul>
+<li>Improved Isometrics drawing creation using OpenPlant Isometrics Manager</li>
+<li>CII file import has been improved to connect geometry through cnodes</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>ASME B31.1 2014 edition now available</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Translators</strong></li>
+<ul>
+<li>PCF Translator has been improved to ignore components with OD smaller than a given threshold ignored</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Documentation</strong></li>
+<ul>
+<li>'Use nominal thickness' result model option explained in more detail in Help</li>
+<li>Behavior of category maximums like (SUS) for multiple analysis sets explained in more detail in Help</li>
+<li>B31.4 code material documentation updated to reflect program behavior</li>
+<li>Help now describes how AutoPIPE displays the system to have qualified when equation 10 fails, but equation 12 and equation 13 passes for all points in the system </li>
+</ul>
+</ul>
+<p><hr><p>
+
+<H2>AutoPIPE V8i SELECTseries 5 Maintenance Release version 9.6.1.11 (12/16/2014)</H2>
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Non linear analysis for hydrotest condition</li>
+<li>Add a calculation method for soil stiffness calculations based on PRCI 2009</li>
+<li>Add API 610 9th Edition (2003), 10th Edition (2004), 11th Edition (2011)</li>
+<li>Set default calculation method for ASCE 2001 for vertical up and vertical down direction as per code equation</li>
+<li>Add an option in PRCI soil stiffness calculation method to consider pipe shape for calculating soil weight on top of pipe</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Graphics</strong></li>
+<ul>
+<li>Maintain original model zoom after rotation</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Import/Export</strong></li>
+<ul>
+<li>Export Nozzle loads to AutoPIPE Vessel</li>
+<li>PXF Export: Program to write additional codes for bends: (3060, 3080)</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Licensing</strong></li>
+<ul>
+<li>Make license settings consistent across Structural applications</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Installation</strong></li>
+<ul>
+<li>Move to a modern installation technology (WIX)</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Implement CSA clause 289.3 for ASME NB and ASME B31.1</li>
+<li>Add ASME BPV Code Section III from 2008 to 2013</li>
+<li>Add EN13480 2012 Edition</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Libraries</strong></li>
+<ul>
+<li>Add 40 New ASME BPVC II Material Specifications</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Loads and Load Sets</strong></li>
+<ul>
+<li>Increase number of seismic cases to 30</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>Option to print pipe identifier on both sides of a node on forces and moments report</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Documentation</strong></li>
+<ul>
+<li>Additional reference and guidelines for migrating Caesar II users</li>
+<li>New Ring Main Wizard Tutorial </li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 5 Maintenance Release version 9.6.1.10 (9/25/2014)</H2>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Non linear analysis for hydrotest condition</li>
+<li>Add a calculation method for soil stiffness calculations based on PRCI 2009</li>
+<li>Add API 610 9th Edition (2003), 10th Edition (2004), 11th Edition (2011)</li>
+<li>Set default calculation method for ASCE 2001 for vertical up and vertical down direction as per code equation</li>
+<li>Add an option in PRCI soil stiffness calculation method to consider pipe shape for calculating soil weight on top of pipe</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Graphics</strong></li>
+<ul>
+<li>Maintain original model zoom after rotation</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Import / Export</strong></li>
+<ul>
+<li>Export Nozzle loads to AutoPIPE Vessel</li>
+<li>PXF Export: Program to write additional codes for bends: (3060, 3080)</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Licensing</strong></li>
+<ul>
+<li>Make license settings consistent across Structural applications</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Installation</strong></li>
+<ul>
+<li>Move to a modern installation technology (WIX)</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Implement CSA clause 289.3 for ASME NB and ASME B31.1</li>
+<li>Add ASME BPV Code Section III from 2008 to 2013</li>
+<li>Add EN13480 2012 Edition</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Libraries</strong></li>
+<ul>
+<li>Add 40 New ASME BPVC II Material Specifications</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Loads and Load Sets</strong></li>
+<ul>
+<li>Increase number of seismic cases to 30</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>Option to print pipe identifier on both sides of a node on forces and moments report</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Documentation</strong></li>
+<ul>
+<li>Additional reference and guidelines for migrating Caesar II users</li>
+<li>New Ring Main Wizard Tutorial</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 5 Maintenance Release version 9.6.0.19 (4/3/2014)</H2>
+<li><strong>Enhancements</strong></li>
+<ul>
+<li>"8061",  "Add DNV 2012 piping code"</li>
+<li>"9296",  "Add STAAD wind and seismic load generators"</li>
+<li>"11140",  "Add tutorial for ISO FRP code"</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 5 version 9.6.0.15 (10/4/2013)</H2>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Pipelink: Manage multiple structures in pipelink</li>
+<li>Import displacement data from Excel</li>
+<li>Import coordinate data from Excel, AutoCAD, and MicroStation</li>
+<li>ISM / Hot Clash Z-Up to Y-Up Coordinate System transformation option</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Import/Export</strong></li>
+<ul>
+<li>Interface with LISEGA LICAD pipe support software</li>
+<li>PCF import, tolerance to join disconnected elements</li>
+<li>Batch process multiple PCF files into one AutoPIPE model</li>
+<li>New PCF setting to map North Axis to AutoPIPE global axis</li>
+<li>Other New PCF import options</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Rotate geometry, supports, static loads</li>
+<li>Wave dialog graphics</li>
+<li>Component weight e.g. clamp for spring hanger design</li>
+<li>Ring Main Wizard (circular or polygon geometry)</li>
+<li>New Wind Loading Dialog</li>
+<li>Increase height-pressure data pairs for the wind profile to 10 or more</li>
+<li>Program should support negative global directions (-X,-Y,-Z) in Wind Dialogs</li>
+<li>Point coordinates in anchor results grid</li>
+<li>Option to apply support stiffness per selected loadcase</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>DNV OS F101 : 2012 piping code</li>
+<li>Update to B31.1 : 2012 piping code</li>
+<li>B31.4 : 2009 and 2012 piping code</li>
+<li>B31.8 : 2012 piping code</li>
+<li>B31.3 : 2012 piping code</li>
+<li>B31.3-2010 / 2012 : functionality for user to enter axial and torsional SIF</li>
+<li>HDPE Plastic piping code - Code Case N755</li>
+<li>Update to KHK : 2006 allowables</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Cold Hanger design including spring variability by each spring</li>
+<li>New Time history Load processor - displacement results by time step</li>
+<li>Time history modal results to MOD file</li>
+<li>Regional seismic load generators (Response spectrum and static g)</li>
+<li>ASCE 2002 and 2010 Wind load codes</li>
+<li>Snow Loading</li>
+<li>Duplicate operating Cases</li>
+<li>Define and view load case description</li>
+<li>Activate Damper support for SAM cases for KHK-2 code</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>New Table of contents for all output reports</li>
+<li>Update model consistency report to group similar warnings/errors</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Libraries</strong></li>
+<ul>
+<li>BHEL Spring Catalog</li>
+<li>PSS Spring Manufacturer (Germany / UK Vendor)</li>
+<li>WookWang Spring Catalog</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 4 Maintenance Release version 9.5.1.5 (9/20/2013)</H2>
+<li><strong>Import/Export</strong></li>
+<ul>
+<li>Batch processing Option for Thermal Transient Analysis</li>
+<li>Batch processing Option for generating input *.mdb file</li>
+<li>Batch processing Option to export model as NTL</li>
+<li>Batch processing Option to hide the program screen</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Graphics</strong></li>
+<ul>
+<li>Display north arrow on graphical plot</li>
+</ul>
+</ul>
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>Bundle AutoPIPE Nozzle with AutoPIPE program</li>
+<li>Rename "Plus" edition to "Advanced" edition</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Increase number of time history steps to 10,000</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 4 Maintenance Release version 9.5.1.2 (5/22/2013)</H2>
+<li><strong>Graphics</strong></li>
+<ul>
+<li>Provide option to hide the program screen during batch processing</li>
+<li>Increase number of time history steps to 10K</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 4 version 9.5.0.21 (11/12/2012)</H2>
+<li><strong>Graphics</strong></li>
+<ul>
+<li>View/Show color options using 256 colors</li>
+<li>More color plots for pipe properties</li>
+<li>View/Show all segments with different colors on the model</li>
+<li>Update displacement and modal plots when result dialog shown</li>
+<li>Add an option to show/hide connected segments</li>
+<li>Show Reference Point tag on Plot</li>
+<li>Option to plot modal frequency as function of mode number </li>
+<li>Highlight/View the origin point</li>
+</ul>
+</ul>
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>Option to hide the 'cross-hairs' cursor </li>
+<li>Input grid: Optimize performance of segment grid </li>
+<li>Replace View/Show menu with a View/Show dialog </li>
+<li>Migrate to a modern installer (WIX) for program and bootstrapper for pre-reqs </li>
+<li>APIPView: Add features (save settings dialog, drag and drop open and others) </li>
+<li>Online Help: Add the TTA Film Coefficient Calculation </li>
+<li>Resizing and Maximizing for Stress ISO STS Editor Dialog</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Support attachment ID to Support Grid / dialog </li>
+<li>Input grid for RIGID options element </li>
+<li>Option to show/hide pressure, temperature columns on Pres&Temp input grid </li>
+<li>Allow entering polar/cylindrical coordinates using radius, angle and elevation </li>
+<li>Limit buoyancy to selected segments </li>
+<li>Time History dialog updates </li>
+<li>Pipe Identifier Tag </li>
+<li>Convert dialogs for Response/Force Spectrum dialogs to grid input</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Export model data, graphics, results and deflected plot to DGN</li>
+<li>CAD export JSM/DGN option to automatically convert to Z Up vertical axis</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Import/Export</strong></li>
+<ul>
+<li>Flange Analysis: Update the FLAA card in ntl to write all flange analysis data </li>
+<li>New NTL card RVER to change ntl version </li>
+<li>Intelligent mapping of Caesar RIGID 'flanges'</li>
+<li>Retain PXF/PCF flange length </li>
+<li>CII import to show the new name for Node number > 9999 in the message file </li>
+<li>PCF Translator: Add support to import Line Number and Line Class </li>
+<li>New import menu option "AutoDesk Plant 3D (*.pcf)". </li>
+<li>PCF Translator: Add support to import Flex Joint Component </li>
+<li>PCF Translator: Add support to import Cross component from PCF File.</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Enable Max Thermal range to work across analysis sets for JSME 2008</li>
+<li>FRP piping code ISO 14692 for petroleum and gas industries </li>
+<li>Add JSME /JEAC PPC 2008 code</li>
+<li>Option to "Use min(f,fcr) for hoop" for EN13480 code</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Post Processing</strong></li>
+<ul>
+<li>Soil Overburden and Seismic Wave Stress for buried piping</li>
+<li>Increase number of combinations to 1000 each for code and non-code</li>
+<li>Resizing and Maximizing for Combinations Dialog</li>
+<li>Resizing and Maximizing for Stress Summary Dialog</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>Add Rigid support / anchor stiffness settings to analysis summary report </li>
+<li>Summary report for rotating equipment</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Displacement time history analysis </li>
+<li>Piecewise exact integration option to time history </li>
+<li>Displacement, acceleration and velocity input to harmonic loading for Equipment and Acoustic vibration loadings </li>
+<li>Fluid density factor to each static analysis set </li>
+<li>Fluid density for SAM and Modal Analysis </li>
+<li>Add button to convert period to frequency or vice versa in spectrum files</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Flange Analysis </strong></li>
+<ul>
+<li>Add NPS, rating, and notation to flange report</li>
+<li>Selected flange highlighted on plot </li>
+<li>Double-click first column of row to open the "Flange" dialog </li>
+<li>"Restore sort order" option to put the flanges back in order </li>
+<li>Default "Material Library" based on "Analysis Method" selected </li>
+<li>"Hide Incomplete Flanges" option to Hide missing data Flngs</li>
+<li>Option "Highlight Incomplete Flanges" in the options menu </li>
+<li>Ability to user-define Pmax for ANSI Check </li>
+<li>"Consider Bolt Spacing Correction" option to Analysis TAB </li>
+<li>Update the FLAA card in ntl to write all data </li>
+<li>Improve the loading time of the "Select Material" dialog</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Libraries</strong></li>
+<ul>
+<li>Add B16.5 data to flange analysis mat. and dim. database for ANSI Check use</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 3 Maintenance Release version 9.4.1.5 (2/1/2012)</H2>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Add NPS and Flange Rating to every tab on Flange Analysis</li>
+</ul>
+</ul>
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>Add a new Flag /n to perform automated flange analysis</li>
+<li>Increase the number of characters in the string group of AutoPIPE.TST</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Updates</strong></li>
+<ul>
+<li>Tutorial pdf is not updated for SelectSeries3</li>
+<li>Wrong hyperlink is provided for Technotes FAQs</li>
+<li>Export Stress Isometric: Flange rating is not exported on Isometric drawing</li>
+<li>Online Help: Add MITI and JSME 2005 SAM analysis reference information</li>
+<li>Program does not open models with lower alphabet Kanji characters in model name</li>
+<li>MITI, JSME - model revision number updated even no changes are made to model</li>
+<li>Program does not Enable Hardware acceleration even if option is checked</li>
+<li>Result grid does not open for Russian SNIP code</li>
+<li>Distributed load cannot be deleted if last point is bend.</li>
+<li>Reassign the keyboard shortcuts for the connected segments dialog</li>
+<li>Program may crash on entering tag/material for flange/anchor</li>
+<li>Program runs in undefined license mode if default edition is invalid</li>
+<li>OnlineHelp:Search broken in reference information and modeling approach sections</li>
+<li>Flange analysis: Remove the password security from the material library asme2010Rotating Equip: ratio error when Manufacture Allowable Factor >1</li>
+<li>Flange Analysis: Unable to select certain materials from asme2010.mdb library</li>
+<li>Labels are missing for point, stress and allowable in result summary.</li>
+<li>Pipelink: Wrong unit conversion of weight value in metric units</li>
+<li>Fcr & Rmt values not updated in grid for Eurocode when temp changed for a range</li>
+<li>Center of Gravity option is not available for ASME NC/ND code</li>
+<li>Export JSM should use EC Framework dependencies from a release version</li>
+<li>Warning message about D/t ratio list pipes and message number only</li>
+<li>Incorrect virtual anchor lengths calculated for units other than English</li>
+<li>Cannot add harmonic load case to a model with no harmonic load case</li>
+<li>Scale factors 1.0E6 and larger cannot be entered in time history location file</li>
+<li>Add option to perform flange analysis to ASME VIII Division 1 or 2</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 3 version 9.4.0.19 (11/1/2011)</H2>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Retain inclusion of Cut short in analysis dialog </li>
+<li>Add option to perform flange analysis to ASME VIII Division 1 or 2 </li>
+<li>Add Thermal Bowing by Segment </li>
+<li>Provide option to create multiple analysis set for all piping codes </li>
+<li>Create multiple analysis sets  based on hot modulus for Euro Code by default</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Add weight of insulation cladding to pipe</li>
+<li>Implement an automatic soil property generator, per Appx B </li>
+<li>Ability to perform simple design checks on the model </li>
+<li>Add feature to automatically insert flanges with a flanged valve </li>
+<li>Apply Fatigue Range Reduction Factor by material </li>
+<li>Add option to graphically show Pipe Insulation </li>
+<li>Input Grids for Static & Member Earthquake factors </li>
+<li>Increase max number of flange/valve pres. ratings picked by program to 20 </li>
+<li>Option to include a factor of the flange weight for bolt/nut weight </li>
+<li>Add an option to select connected segments </li>
+<li>Option to display flanged flexible joint</li>
+<li>Option to automatically insert flanges with a flanged flexible joint</li>
+<li>Find a node based on entering coordinates</li>
+<li>Add Valve Tag</li>
+<li>Update distributed load data on insert/delete point(s) across distributed load.</li>
+<li>Correct corrupted distributed loads in older models</li>
+<li>Add a tag field to flange</li>
+<li>Add a line class to pipe properties </li>
+<li>Add Apply button in Soil Properties dialog</li>
+<li>Default input grid to Press & Temp grid and reduce the horizontal slider</li>
+<li>Allow reference point to be defined in any equipment dialog</li>
+<li>View > Show thermal anchor displacement with imposed displacements</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Graphics</strong></li>
+<ul>
+<li>Improve performance of window selection operation</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Import / Export</strong></li>
+<ul>
+<li>PXF Export should retain original supports class and properties as imported</li>
+<li>Import GUID from NTL for piping, supports, beams etc.</li>
+<li>Add a dialog to link AutoPIPE components fields with pcf attributes</li>
+<li>Export reference point loads to AP Nozzle</li>
+<li>NTL: Add support for import/export of Time history data to NTL format</li>
+<li>Import CAESAR v.5.3 neutral files</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Input Grids</strong></li>
+<ul>
+<li>Add input grid for distributed loads </li>
+<li>Add input grid for Reference point </li>
+<li>Inadequate no# of significant digits for design strain on input grid </li>
+<li>Input Grid: add Xtra data Hydrodynamic Data tab</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Export JSM data, graphics and deflect plot</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Libraries</strong></li>
+<ul>
+<li>Add new valve type library; butterfly and ball valve </li>
+<li>Update Pipe Supports Spring Hanger (Comet) to match the updated catalog</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Add an option to apply corrosion allowance to the Hoop stress only </li>
+<li>Add Russian SNiP 2.05.06-85 Oil & gas code </li>
+<li>Add back ASME B31.3 - 2004 into AutoPIPE V8i </li>
+<li>Add B31.8 : 2010 code </li>
+<li>Add B31.1 2010 edition </li>
+<li>Enable circum. weld w factor for B31.3-2008 and B31.1-2009 codes</li>
+<li>Add B31.3 : 2010 code </li>
+<li>Add EN13480 : 2010 piping code update</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Post Processing</strong></li>
+<ul>
+<li>Add manufacturer multiplier for NEMA SM23 and API 617 </li>
+<li>Preserve user descriptions for non-code combinations </li>
+<li>Add option to hide non printed combinations on combinations dialog </li>
+<li>Add a new option in result menu to show lift-off supports </li>
+<li>Add option to import Combination CMB file information between models</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>Add center of gravity (COG) calculations for Structure & Piping </li>
+<li>Allow print preview to work for LOG file to view non-linear iterations </li>
+<li>Add Flow Rate, Pressure Rise and Sound Speed to Fluid Transient report</li>
+</ul>
+</ul>
+<ul>
+<li><strong>StressISO</strong></li>
+<ul>
+<li>Externalize StressISO data table titles and column titles to .tst file </li>
+<li>Stress ISO: Create Bore equivalence file for nominal units mapping </li>
+<li>Update to latest ISOGEN (Ver 10.2.0 - build 18)</li>
+</ul>
+</ul>
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>Retain window/toolbar/file size/location settings in next program session </li>
+<li>Reset window size and location for input grid, results grid & APIPE viewer</li>
+<li>Archive associated files with the AutoPIPE input file  </li>
+<li>RSS Feed: Show only recent news by default </li>
+<li>Show thumbnail preview in open dialog and explorer </li>
+<li>Increase number of string groups limit from 500 to 800 in AutoPIPE.tst </li>
+<li>Save as version 9.3 DAT files from 9.4 </li>
+<li>Program version and documentation updates </li>
+<li>Update program title to SELECTseries 3 </li>
+<li>StressISO: Add an option to show/hide bend information.  </li>
+<li>Move MFC resources into a separate DLL</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 2 Maintenance Release version 9.3.2.5 (2/28/2011)</H2>
+<li><strong>Update</strong></li>
+<ul>
+<li>Stress ISO: Metric DXF borders corrupt the file during DXF export</li>
+<li>Reinforced tee B2r < 1.575 and C2r < 2.1 are incorrect for NC/ND 2003 and later</li>
+<li>Tee header SIF is incorrectly used for branch in JSME 2005 code</li>
+<li>ASME NB, NC and ND combined stress may be non-conservative for skewed pipe</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 2 Maintenance Release version 9.3.1.7 (1/21/2011)</H2>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Use thermal bowing instantaneous alpha for ASME NB, NC & ND codes</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Graphics</strong></li>
+<ul>
+<li>Toolbar buttons to hide selected/unselected beams and show all beams</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Update TTA routine to define up to 50 PIPEs </li>
+<li>Increase Time history load cases to 50 </li>
+<li>Add Load > Convert to Response Spectrum command </li>
+<li>Increase the limit on the size of generated C411 spectrum to 20000</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Add ASME NB, NC and ND 2007 code</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>Add additional pipe insulation and lining input parameters to the input listing</li>
+<li>Print the B31.1 E/W factors from the pipe properties dialog in the input listing</li>
+<li>The Fatigue report should show Code with year, and segment name with node</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Libraries</strong></li>
+<ul>
+<li>Add 11 new materials to B313 material libraries</li>
+</ul>
+</ul>
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>Update any references for "WinNOZL" to "AutoPIPE Nozzle" in program and help</li>
+<li>Update EULA to revision 2010-09-15 in Installer and Program Folder</li>
+</ul>
+</ul>
+<ul>
+<li><strong>StressISO</strong></li>
+<ul>
+<li>Stress ISO: Add option to relocate North arrow & "DRG No" </li>
+<li>Provide option to plot bend type, radius and thickness on the StressISO </li>
+<li>Plot the cold spring (Cut-Short) on the Stress ISO</li>
+<li>Add option to customize the STS file before ISOGEN </li>
+<li>Stress ISO: Increase the number of breakpoints</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Import / Export</strong></li>
+<ul>
+<li>PXF import: Import Line Stop, Guide, Constant supports even if dir. vector is 0</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Provide an option to remove imported structural model data from AutoPIPE model </li>
+<li>Provide an option to save exported PipeLink file with a different name</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Miscellaneous</strong></li>
+<ul>
+<li>Use B2b=0.75*ib for reinforced tee in Japanese JSME 2005 code </li>
+<li>Include AutoPIPE Quick Reference Guide with program </li>
+<li>Update DIN_EN_10216-5:2008 Euro material 1.4571 at 1.0% Proof Stress</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 2 version 9.3.0.8 (10/19/2010)</H2>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Add option "Show Hanger Report"</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Graphics</strong></li>
+<ul>
+<li>Show node points on beams in the plot</li>
+<li>Improve graphics loading performance for model with large number of beams</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Import/Export</strong></li>
+<ul>
+<li>Export input grid data to MDB file</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Implement PipeLink to improve STAAD Integration</li>
+<li>Save as version 9.2 DAT files from 9.3</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Libraries</strong></li>
+<ul>
+<li>Include Czech hanger libraries Gradior and LPS</li>
+<li>Add JSME 2008 material library </li>
+<li>Update Section Libraries and use Torsion Inertia value from library when >=0.1 </li>
+<li>Add Russian piping component library </li>
+<li>Add A671-CC70-22 to ASME2004 material library </li>
+<li>Add SA515 60, SA515 65, SA182F22 cl.1 and SA387 22 cl.1 to ASME2004 library </li>
+<li>Update material 1.4901 to 2007 values in Euromat library </li>
+<li>Add ASME II 2009 addenda material library</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Add ability to split frame members into multiple elements </li>
+<li>Add 3D and 5D options to the Bend radius field </li>
+<li>Ability to change the default bend radius </li>
+<li>Option for stand double angle & double channel is to be provided in profile dlg </li>
+<li>Add user defined fatigue curves </li>
+<li>Add fluid type GAS to fluid transient fluids </li>
+<li>Add ASME III 2009 User Fatigue Curves</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Add B31.1 2009 Addenda edition </li>
+<li>Update ASME B31.3 to 2008 edition </li>
+<li>Add CSA-Z662 piping code 2007 edition (including Offshore)</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Post Processing</strong></li>
+<ul>
+<li>Stress Summary: Show warning if any combination missing in Level C/D Rev. Dyn.</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>Reduce reports width to allow for page margins </li>
+<li>Output Report: Indicate in report that results are outdated with model </li>
+<li>Print original ADLPipe Thermal Transient Analysis results file in SI units</li>
+</ul>
+</ul>
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>Localize input grid messages to external resource files </li>
+<li>Reorganize open/save and import/export options under file menu </li>
+<li>Online Help: Hoop or Long pressure does not work on nested combination </li>
+<li>Change the word 'frame' to 'beam' to make it consistent </li>
+<li>Add 4 new File > Import PCF menu options </li>
+<li>Add translator selection dialog to installer </li>
+<li>Installer: Install dot net framework 2.0 SP2 with program </li>
+<li>Move AutoPIPE program shortcuts to Bentley Engineering program folder</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Security</strong></li>
+<ul>
+<li>Restrict Nuclear Piping codes to Nuclear Edition only</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 1 Maintenance Release version 9.2.3.2 (7/16/2010)</H2>
+No new features are implemented in this release.
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 1 Maintenance Release version 9.2.2.9 (6/15/2010)</H2>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Add nominal size to all input grids (where applicable)</li>
+<li>Extrapolate thermal expansion</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Post Processing</strong></li>
+<ul>
+<li>Add a Tag field to the support tab and anchor tab of the results grid</li>
+<li>Hydrotest check for ASME NB/NC/ND codes</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Favor global directions when determining mode shapes for cantilever models</li>
+<li>Consider effect of attached valves on bend flexibility</li>
+<li>Add an option to ignore flange effect on bend flexibility</li>
+<li>Set default to include pressure extension for KHK</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Add indices for 'User' joint type and 'Other' tee for ASME Nuclear codes</li>
+<li>Set no. of thermal ranges to 5 by default for ASME B31.3 Appendix P</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Import/Export</strong></li>
+<ul>
+<li>PXFImport should default flange type to Weldneck for Blinds and Orifice Plates</li>
+</ul>
+</ul>
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>File > Open Recent models list need to be increased to 20 entries</li>
+</ul>
+</ul>
+<ul>
+<li><strong>StressISO</strong></li>
+<ul>
+<li>StressISO: Two non collinear valves should be exported as an Angled Valve (AV)</li>
+<li>Add an option on Stress ISO dialog to enable/disable drawing of pipe flow arrows</li>
+<li>Increase Reference Items list to 50 items for Stress ISO</li>
+<li>Change Stress ISO viewer selection to a dynamically filled dropdown list</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 1 Maintenance Release version 9.2.1.7 (3/10/2010)</H2>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Multiple response spectrum analysis</li>
+<li>New Troubleshooting tool for fatal error unstable systems</li>
+<li>Increase response spectrum load cases to 50</li>
+<li>Improve interactive code stress performance for one Analysis set</li>
+<li>Add alpha and beta factor for mass and stiffness proportional damping</li>
+<li>Add Hot modulus and Pressure Stiffening cases for SAM analysis</li>
+<li>New productive Dynamic Analysis dialog with grids</li>
+<li>Add an option to select Total or Relative accel for uniform response spectrum</li>
+<li>Analysis Set: Description of duplicate record to be blank</li>
+<li>Provide a warning when non-linear tolerance settings are above a certain value</li>
+<li>Report non-fatal errors at the end of Analyze all command</li>
+<li>Ask user to analyze model after saving changes in static analysis sets dialog</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Graphics</strong></li>
+<ul>
+<li>Show X, Y, Z direction on Displacement and Mode Shape plots</li>
+<li>User hydrodynamic factors are not shown graphically</li>
+<li>Tee arrow position and size to be a factor of pipe diameter</li>
+<li>Allow user to hide tee arrows from the model</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Import/Export</strong></li>
+<ul>
+<li>Increase maximum number of line numbers from 2500 to 20000 in linelist.txt</li>
+<li>CAESAR Import to read units from .cii file instead of c2u file</li>
+<li>Integrated ADLPipe, SmartPlant and Strait PDS Translators</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Save as version 9.1 DAT files from 9.2</li>
+<li>Windows 7 32 & 64 bit compatibility</li>
+<li>ProjectWise Integration</li>
+<li>Comprehensive Network file Caching</li>
+<li>Integration with new Structural Dashboard</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Libraries</strong></li>
+<ul>
+<li>Extend Stainless Steel 304 thermal expansion to -425F</li>
+<li>Updated Japanese AUTOJISM material library to JIS B 8265</li>
+<li>Add additional cryogenic materials to B31.3 material library</li>
+<li>Add A106GrB material to AUTODINM material library</li>
+<li>Block editing of Material libraries and remove password protection</li>
+<li>Add A182F304L and A403WP304L materials to AUTOB313 library</li>
+<li>Add B88-C12200 copper pipe material to b311-05 and b311-07 material libraries</li>
+<li>Update B311-07 material lib. to include Inconel 625 materials</li>
+<li>Update the material library source to accept lower case letters</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Add column to Segment grid to apply wind</li>
+<li>Add Restraint Type column to Imposed Displacement input grid</li>
+<li>Input grids column headers to be copied with data to Excel</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Add nuclear high energy & leakage crack criteria</li>
+<li>Add ASME B31.8-2007 piping code</li>
+<li>Allow pressure stiffening effect for ASME Class 2 and 3</li>
+<li>Add 1989 NB, NC, ND code year</li>
+<li>Add B31.1 1986 edition</li>
+<li>Add ASME NB, NC, and ND 2001, with 2003 addenda, edition</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Post-Processing</strong></li>
+<ul>
+<li>Add mode shape and frequency result grids</li>
+<li>Result Grids: Add sort option for internal column C ("Point Order") </li>
+<li>Hide the Full verification combinations for ASME NB, NC, ND </li>
+<li>Update code stress legend to show stresses instead of ratio to max stress </li>
+<li>Enable printing of branch tee stress when rigid option is enabled on branch pipe</li>
+<li>Print Local support displacements</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>Print Frequency cut-off and spectrum reports</li>
+<li>New APIPVIEW Viewer with page and printing controls</li>
+<li>Improve apipview load speed or show progress bar when launched first time</li>
+</ul>
+</ul>
+<ul>
+<li><strong>General</strong></li>
+<ul>
+<li>RSS feed to sort news items chronologically</li>
+<li>RSS Feed Client to launch by default first time AutoPIPE is loaded</li>
+<li>Add new menu "Online Resources" including BE Community link</li>
+<li>Update Applicability of Indices table in online help for ASME NB</li>
+<li>Option to display the Welcome screen on Startup</li>
+<li>RSS: The about window of RSS client says 1.0</li>
+<li>Making the distinction between force and weight units</li>
+<li>Follow product name decoration guidelines for AutoPIPE Select Series 1</li>
+<li>Report non-fatal errors at the end of Analyze all command</li>
+<li>RSS Client does not work on clients using a proxy server for internet access</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Security</strong></li>
+<ul>
+<li>Add Academic Licensing</li>
+</ul>
+</ul>
+<ul>
+<li><strong>StressISO</strong></li>
+<ul>
+<li>Use the complete Drawing Frame for plotting if Data Tables are not selected</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE V8i SELECTseries 1 version 9.1.1.2 (11/10/2008)</H2>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Add an option to set rigid anchor/support stiffness values</li>
+<li>Decouple pressure stiffening in modal analysis from one in static analysis</li>
+<li>Add absolute sum method for modal summation of  missing mass modes</li>
+<li>Perform multiple analyses using Analysis sets with different hot moduli</li>
+<li>Add thermal transient analysis (TTA) for ASME Class 1</li>
+<li>Allow Ec/Eh ratio for expansion stresses to include all piping codes</li>
+<li>Add 'Analyze All' option to run user selected analyses</li>
+<li>Delete Analysis results</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Communication</strong></li>
+<ul>
+<li>Add RSS news feed screen</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Graphical Interface</strong></li>
+<ul>
+<li>Consolidate code and non-code combinations into one Grid interface</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Import /Export</strong></li>
+<ul>
+<li>Standalone Translator to import PCF files e.g. SmartPlant (not included with AutoPIPE)</li>
+<li>Update Caesar translator to read v5.1 format</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Save as version 9.0 DAT files from version 9.1</li>
+<li>Add Vista Compatibility ('Works with Vista')</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Libraries</strong></li>
+<ul>
+<li>Update Yamashita hanger data in EQUIP.LIB file with Lisega hanger data</li>
+<li>Add Chinese GD material and pipe libraries</li>
+<li>Add API5L materials to ASME B31.1 material library</li>
+<li>Add low alloy material 1.4901 to European material library</li>
+<li>Add B366, B619, B622, & B464  materials to ASME B31.3 material library</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Ability to combine segments and reverse segment direction</li>
+<li>Ability to split a segment into 2 segment</li>
+<li>Allow inserting and editing line numbers</li>
+<li>Add an option to renumber segments</li>
+<li>Add reference node note to Rotating equipment dialog</li>
+<li>Add 'Fillet welded' and 'Double-welded slip-on' joint end types</li>
+<li>Add actuator with COG weight to Valve</li>
+<li>Increase number of thermal and User load cases</li>
+<li>Add "Pulled" option to bend type</li>
+<li>Add Bolt weight to Flange dialog</li>
+<li>Generate multiple Xtra data</li>
+<li>Enter spring figure and size on the spring hanger support dialog </li>
+<li>Connectivity Checker for unconnected co-incident nodes</li>
+<li>Hide operating cases on the Pressure /Temperature input grid</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Support for multiple code years </li>
+<li>Issue a warning for high D/T ratio for certain codes</li>
+<li>Add ASME III Class 1 Nuclear piping code</li>
+<li>Add JSME S NC1-PPC 2005 piping code (Japanese Nuclear Class 2)</li>
+<li>Update ASME B31.4-2002 piping code to 2006 edition</li>
+<li>Update ASME B31.3 piping code to 2006 edition</li>
+<li>Update ASME B31.1 to 2007 edition</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Post Processing</strong></li>
+<ul>
+<li>Option to display continuous string dimensioning including supports</li>
+<li>Add batch processing switch to export the results MDB file</li>
+<li>1992 + 93 Addenda NB NC ND</li>
+<li>Improvements to StressISO edition 1.0 (Show line number, JSIF and Tee data, save to DGN)</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>Allow more than 80 columns for printed reports</li>
+<li>Print the occasional k-factor in the output report</li>
+<li>Add support Tag to spring hanger report</li>
+<li>Add interpolation method and damping ratio to output report</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Security</strong></li>
+<ul>
+<li>Add nuclear license for ASME III Class 1 piping code</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE XM Service Release 1 version 9.0.0.8 (6/5/2007)</H2>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Add option to activate dampers in the wind cases</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Save as version 8.6 & 6.3 DAT files from version 9.0</li>
+<li>Export AutoPIPE model and support loads to STAAD</li>
+<li>Write Caesar cii neutral file</li>
+<li>StressISO: Add decimal control to Anchor & Support loads and stresses</li>
+<li>Save as version 8.9 DAT files from version 9.0</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Add option to input numeric point names only</li>
+<li>Option to paste using actual coordinates relative to origin</li>
+<li>Automatically update point names defined in rotating equipment data</li>
+<li>Automatically update point names defined in steam relief load data </li>
+<li>Automatically update point names defined in fluid transient load data </li>
+<li>Automatically update 'connected to' point name defined in support data</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>Add minimum 2 page description option to model input listing</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Update ASME B31.1 2005 addenda code</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Libraries</strong></li>
+<ul>
+<li>Add Haynes 556 material to ASME B31.3 library</li>
+<li>Add Al-6XN material to ASME B31.3 material library</li>
+<li>Add ductile iron A395 and A571 to ASME B31.3 material library</li>
+<li>Update Euromat library properties down to 0 degC</li>
+<li>Add China Petrochemical Spring Manufacturer</li>
+<li>Extend A790 S31803 to -20F in ASME B31.3 library</li>
+<li>Add A269 Stainless material grades TP304, TP304L, TP316, TP316L to B31.3 library</li>
+<li>Add A335-P92 to ASME B31.1 material library</li>
+<li>Add B423 & B705 NO8825 materials grades to ASME B31.3 library</li>
+<li>Add copper and socket weld schedules CT2 and SKT to component library</li>
+<li>Add B88-C12200 copper pipe material to ASME B31.3 library</li>
+<li>Add 6061, 5083 & 5154 aluminum materials to B31.3 library</li>
+<li>Add STAAD.pro structural section libraries</li>
+<li>Add Chinese GB material library</li>
+<li>Add B619 UNS N06022 Hastelloy C22 material to ASME B31.3 library</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Post Processing</strong></li>
+<ul>
+<li>'E827-3. Buffer Size Exceeded' for interactive code scan on large model</li>
+<li>Add user pref flag for use of automatic sustained load margin check</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE XM version 8.9.0.14 (9/20/2006)</H2>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Add thermal bowing effect on piping</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Graphics</strong></li>
+<ul>
+<li>Click color legend to change colors for View/show options or code stress</li>
+<li>Allow user scaling of supports & anchors  in 3D solid and wireframe view modes</li>
+<li>Add ability to see different graphical representations of springs and V-stops</li>
+<li>View/Show /Tee Type</li>
+<li>Save screen shot as JPEG file</li>
+<li>Allow user to select and save default Iso view direction</li>
+<li>Allow Supports on vertical pipes to be visible in solid mode</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Add a Note/Tag field to the component dialogs e.g. Support and anchor CAD tags</li>
+<li>Add ability to export PCF files</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Display offset distance between any two points</li>
+<li>Allow ability to specify & report element end results at a 'Reference point'</li>
+<li>Provide input for end type connections for every piping component</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Update B31.3 code to 2004 edition</li>
+<li>Combinations</li>
+<li>Provide an option to not generate default combinations</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Post Processing</strong></li>
+<ul>
+<li>Add option to use SIF, 0.75*SIF or 1.0 for sustained & occasional stresses</li>
+<li>Generate a Stress Isometric</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>Provide "Approved by" fields in the General model options dialog</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Security</strong></li>
+<ul>
+<li>Update to Bentley XM licensing</li>
+<li>Add-on license for StressISO</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE 2004 Service Release version 8.6.0.12 (12/23/2005)</H2>
+<li><strong>Analysis</strong></li>
+<ul>
+<li>Produce a more accurate force spectrum response when using same SPC spectrum</li>
+<li>Added an option to include N411 damping for response spectrum</li>
+<li>Added ability to envelope several response spectra</li>
+<li>Added CQC and Signed Doublesum modal combinations to response spectrum analysis</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Caesar</strong></li>
+<ul>
+<li>Ability to import CAESAR2 models with BS7159 piping code</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Combinations</strong></li>
+<ul>
+<li>Added 'Maximum Stress' combination method to User code Combination dialog</li>
+<li>Added 'Apply changes' option in User code and Non-code Combination dialogs</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Graphics</strong></li>
+<ul>
+<li>Added an option to toggle beam names on the screen</li>
+<li>Enable zoom and pan using mouse wheel</li>
+<li>Improve the behavior of switching and saving between viewports</li>
+<li>Allow user to switch between normal and large size cursor</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Input Grids</strong></li>
+<ul>
+<li>Supports/Xtra data/anchors at  frame points are now shown in the Input report & Grids</li>
+<li>Enable editing of Input Grid pipe properties for EN13480 and BS7159 piping codes</li>
+<li>Dynamically show the automatic calculated Tee SIF's in the Tee Input Grid</li>
+<li>Add option to "Apply offset to all following points" on some input grids to slide components along the pipe</li>
+<li>Provide ANSI flange fields in the Flange Input Grid</li>
+<li>Added Beam input grid</li>
+<li>Added Soil ID input grid</li>
+<li>Added Soil input grid</li>
+<li>Added an option to not show zero's in the Input Grids</li>
+<li>Right click option to hide/unhide columns in the Input Grids</li>
+<li>Added 'Fit to Page' print option on right click menu in the Input Grids</li>
+<li>Added option to not show rows with thermal anchor movements with all zero's</li>
+<li>Added option to show column headings A, B, C etc. as a topmost row in the Input Grids</li>
+<li>Save and restore size and position of Input Grids window on startup</li>
+<li>Show data in the Input Grids for visible segments only</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Interoperability</strong></li>
+<ul>
+<li>Save the model as version 6.3 DAT file</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Libraries</strong></li>
+<ul>
+<li>Added WAVISTRONG GFK FRP manufacturer to the AUTOFRP library</li>
+<li>Added Chinese NorthWest  and HuaDong Spring Manufacturers</li>
+<li>Added Indian Sarathi Spring Manufacturer</li>
+<li>Added Spanish PiHasa Spring Manufacturer</li>
+<li>Enable BS7159 piping code to read custom FRP libraries</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Added menu option to delete unused soil identifiers</li>
+<li>Enable the vertical axis to be changed for an existing model</li>
+<li>Added option to set a default  upward gap for V-stops and guides</li>
+<li>Added option to set default support gap setting i.e. weightless or As-Built</li>
+<li>Added option to override the BS7159 pressure multiplier</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Piping Codes</strong></li>
+<ul>
+<li>Allow user-defined B1 & B2 factors for ASME NC & ND piping codes</li>
+<li>Update ASME B31.8a-2000 piping code to B31.8-2003 edition</li>
+<li>Added ASME NC & ND 1992 piping code</li>
+<li>Update B31.1 piping code to 2004 edition</li>
+<li>Added ASME B31.1 piping code 1992 edition</li>
+<li>Update ASME III NC & ND :2001 piping code to 2004 edition</li>
+<li>Apply limit check of 1.5xSy for occasional allowable stress for ASME NC, ND</li>
+<li>Added stress category for single non-repeated anchor movements for ASME NC,ND </li>
+<li>Added branch connection tee type to ASME NC & ND piping codes</li>
+<li>Added branch & run moments summation method per NB-3683-1(d) for ASME NC & ND piping codes</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Print/Plot</strong></li>
+<ul>
+<li>Added print 'Graphics' toolbar button</li>
+<li>Save a screen capture of the result plot to BMP or PNG graphic format with new toolbar button</li>
+<li>Printed graphics title to include filename, company name, model version and project information</li>
+<li>Added "Print Title" option to the View /settings dialog</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Reports</strong></li>
+<ul>
+<li>Provide clear pass/fail indication in the rotating equipment reports</li>
+<li>Added frame points to acceleration reports</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE 2004 version 8.5.0.11 (7/26/2004)</H2>
+<li><strong>Enhancements</strong></li>
+<ul>
+<li>New graphical interface with OpenGL with Rendering  and Quad Viewport</li>
+<li>New Toolbar/Toolbox buttons</li>
+<li>Added Input grid for checking and editing model data in a spreadsheet</li>
+<li>Added Result grid for viewing, filtering and sorting results interactively</li>
+<li>Increase number of cases per load type and during analysis including 20 thermal and 20 User cases, 10 cases each for wind, seismic and dynamic loads for the Plus version (standard version limit = 5 for both static and dynamic).</li>
+<li>Increased number of load combinations to 250 code and 250 non-code combinations</li>
+<li>Automatic update of default combinations</li>
+<li>Set default non-code combinations based on load sequence</li>
+<li>Added Max Range combination for thermal loads</li>
+<li>Added an option to display/print thermal ranges</li>
+<li>Enable European code EN13480 to run in AutoPIPE Standard</li>
+<li>Added ASME B31.8-2000 Chapter VIII - Offshore Gas Transmission piping code</li>
+<li>Added ASME B31.4-2002Chapter IX - Offshore Liquid Piping Systems piping code</li>
+<li>Added CSA Z662 section 11 - "Offshore Steel Pipelines" piping code</li>
+<li>Added signed maximum combination for restraint loads</li>
+<li>Improved selection of support and flange components</li>
+<li>Add an to option to join disconnected piping in the AutoPLANT PXF file</li>
+<li>Allow import of several PXF files combined into one</li>
+<li>Improved AutoPLANT PXF to AutoPIPE integration to include pipe naming schemes, insulation, material grade, corrosion and support friction & gaps.</li>
+<li>Improved PXF import of Flanges</li>
+<li>Flange connection to default to Flange type</li>
+<li>Added support friction acting during gravity load case</li>
+<li>Added API5L, duplex stainless, A671 and A672 materials to  B31.3 library</li>
+<li>Update ASME B31.4-1998 piping code to 2002 edition</li>
+<li>Added option to generate default non-code combination with negative occasional load cases</li>
+<li>Added options for setting initial state defaults in the non-linear analysis</li>
+<li>Added option to modify thermal expansion in the Pressure & Temperature dialog</li>
+<li>Added option to override hot modulus in the Pressure & Temperature dialog</li>
+<li>Convert Help files to HTML format</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE version 6.3.5 (4/11/2003)</H2>
+<li><strong>Enhancements</strong></li>
+<ul>
+<li>European piping code standard EN 13480-2002</li>
+<li>ASME Code Update - ASME B31.3-2002 edition</li>
+<li>ASME Code Update - ASME B31.8a-2000 addenda</li>
+<li>ASME Code Update - ASME BPV-III-1-NC-2001 edition</li>
+<li>ASME Code Update - ASME BPV-III-1-ND-2001 edition</li>
+<li>Update CSA-Z662 piping code (Oil and Gas pipeline systems) to 1999 edition</li>
+<li>Edit length field when modifying run, bend or tee point</li>
+<li>Increase number of spring hanger ranges from 4 to 5</li>
+<li>Added variable spring supports from British manufacturer QPS</li>
+<li>Added HYDRA variable spring supports from German manufacture Witzenmann</li>
+<li>Added Bergen-Power variable catalog 2V spring supports</li>
+<li>Added Grinnell hanger ranges triple & quadruple and sizes 00 & 000</li>
+<li>Added hanger data from Mitsubishi, NHK, Sanwa Tekki & Yamashita</li>
+<li>Updated Lisega hanger data to Standard Supports 2010 Catalog (10/2001)</li>
+<li>Option to specify relative offset of equipment suction or discharge nozzle</li>
+<li>Option to delete rotating equipment data</li>
+<li>Option to delete wave loading data</li>
+<li>Added new sub-reports to model input list report</li>
+<li>Added flange and valve DIN pressure ratings for 6, 64, 100, 160, 250, 320  & 400</li>
+<li>Added ANSI B16.5a-1998, Group 1.15 to the ANSI flange material library</li>
+<li>Updated hardware security to software security (RSSL/PSCM)</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+<H2>AutoPIPE version 6.2.9 (4/15/2002)</H2>
+<li><strong>General</strong></li>
+<ul>
+<li>Allow Windows long file name convention for model names</li>
+<li>Option to open AutoPIPE model from a list of the most recent used models (up to 10)</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Modeling</strong></li>
+<ul>
+<li>Added a 10-line general description for the model</li>
+<li>Option to replace temperature or pressure value across entire model</li>
+<li>I-node in the Beam dialog defaults to the current point in the model</li>
+<li>Added Pseudo rigid pipe with thermal expansion</li>
+<li>Display only unused Pipe Ids in selection list when deleting Pipe Ids</li>
+<li>Option to Pan/Zoom/Rotate in current graphic mode instead of wire-frame</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Model Verification</strong></li>
+<ul>
+<li>Improved organization of information in model list report</li>
+<li>Option to view color-coded model based on pipe identifiers, temperatures, or pressures</li>
+<li>Use same color for a given temperature or pressure across all operating load cases</li>
+<li>Added selection list and logical OR & AND when viewing or selecting User pipe properties</li>
+<li>Display distance from current point to previous point in F-3 text dialog</li>
+<li>Allow users to specify number of digits after decimal for modulus values</li>
+<li>Report both date and time of printing in report headers</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Codes and Standards</strong></li>
+<ul>
+<li>Updated ASME B31.1a-1998 piping code to 2001 edition</li>
+<li>Updated ASME B31.3-1999 piping code to 2001 Addendum (b)</li>
+<li>Updated ASCE 7-95 design wind loads to ASCE 7-98 code</li>
+<li>Updated UBC 1994 design wind loads to UBC 1997 code</li>
+<li>Added ground elevation definition relative to model for wind loadings</li>
+<li>Added automatic force coefficient Cf as height dependent for ASCE wind loads</li>
+<li>Print wind pressure vs. height in the Analysis Summary for ASCE & UBC codes</li>
+<li>Added AU-Type 317 materials to the pipe material library</li>
+</ul>
+</ul>
+<ul>
+<li><strong>Analysis & Results</strong></li>
+<ul>
+<li>Allow entry for rise time and load pattern for fluid transient loads</li>
+<li>Use of dynamic memory in time history analysis for large models</li>
+<li>Report percent of included mass and missing mass for dynamic analyses</li>
+<li>Print ratio of equivalent pressure to allowable pressure in flange report</li>
+</ul>
+</ul>
+<ul>
+<p><hr><p>
+
+
+<font size="-2">
+&copy; 2022 <a href="../general/copyright.htm">Bentley Systems, Incorporated</a>. <a href="AutoPIPE Legal Notices.pdf" target="_Online">Legal Notice</a><br>
+</font>
+
+</body>
+</html>
+

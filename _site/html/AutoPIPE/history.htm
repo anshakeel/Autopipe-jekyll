@@ -1,0 +1,1708 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <TITLE>History</TITLE>
+
+<link rel="stylesheet" type="text/css" href="../general/theme.css">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF">
+
+<H1>Error History</H1>
+<HR>
+<H2>AutoPIPE v12.8.3</H2>
+No major errors (critical or high) fixed in AutoPIPE v12.8.3.
+
+<H2>AutoPIPE QA&R v12.8.2</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE QA&R v12.8.2.
+<ul>
+<li><strong>Defect 867582: General Piping code user defined allowable is shown as 0 on "Code Compliance Combination Allowable Stresses" sub-report</strong></p>
+The Analysis Summary (sub-report: Code Compliance Combination Allowable Stresses) for General Piping code reports lists the user-defined allowable as zero instead of non-zero values. This issue is valid for all Allowable columns in this report if the Allowable is set to User-defined instead of Automatic under the Code Combinations tab of the Load Combinations dialog.
+</p></li>
+
+<li><strong>Defect 956742: Code Compliance may not display the positive face of a node although the results for the positive face may be higher</strong></p>
+AutoPIPE splits nodes into minus (-) and plus (+) faces when there is a possibility that the results on the two faces may differ, for example nodes having supports, forces & moments, change in pressure or temperature, or change in pipe properties etc. To filter display of results that are very close in magnitude, AutoPIPE limits the display of any two-faced node to only the minus face when the difference in the result values (stress, allowable, moments etc.) between the two faces is less than 1 unit.
+<p>
+In models where default English units file is used for output, program will only display both faces when the difference in the stress or allowable values is more than 1.0 psi. However, when default SI units file is used for output, program will only display both faces when the difference in stress and allowable values between the two faces is more than 1 MPa. In cases where the stress result on the positive face is higher than on the negative face, the higher stress value may not be reported. This is true for Code Compliance report, interactive stress results, and result grids.
+</p></li>
+
+<li><strong>Defect 949244: ASME B31.3- B31J always considers "Use SIF of 2.0" checked for reducer</strong></p>
+The program does not calculate reducer SIF using B31J equations and clauses and always considers "Use SIF of 2.0" option.
+</p></li>
+
+<li><strong>Defect 959774: Program crashes on editing any node after editing tee point</strong></p>
+
+<li><strong>Defect 965112: Adding mass points per span changes B31J static analysis results</strong></p>
+When performing static analysis on a B31J-enabled model, the value set in the Mass Points per Span field (Tools > Edit Model Options) may affect the stiffness of the model. The number of mass points should have no effect on the static analysis results and are normally required for dynamic analysis.
+</p></li>
+
+
+</ul>
+
+<H2>AutoPIPE v12.8.1</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v12.8.1.
+<ul>
+<li><strong>Defect 891921: Modifying Pressure/Temperature data of one point, modifies Pressure/Temperature data of other point(s)</strong></p>
+When pressure temperature data is modified for one point, the program randomly modifies the data for other point(s) as well. The issue is that multiple points share the same record of pressure temperature data; therefore, modifying data for one point results in the modification of all points that share that record. 
+</p></li>
+
+
+</ul>
+
+
+<H2>AutoPIPE v12.8.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v12.8.
+<ul>
+<li><strong>Defect 643934: Seismic ASCE 2010: Ss value is not fetched correctly through DB</strong></p>
+For ASCE 2010 seismic code, the program is incorrectly fetching the values of Mapped Spectral Response (Ss) from the database file USMapSsS1.mdb against the provided latitude/longitude values. 
+</p></li>
+
+<li><strong>Defect 732630: Max Ratio for flange with ANSI check is displayed incorrectly in the Flange Summary report</strong></p>
+The Flange Summary report when produced using Quick Reports output (Result > Quick Reports > Output Report) displays the stress ratio for flanges with ANSI check enabled as zero. This only occurs when the second flange at a node has ANSI check enabled. If both the flanges on a node, or the first flange on the node has ANSI check enabled, the result summary is displayed correctly. Moreover, this issue cannot be reproduced when the Flange method is set to other than ANSI check. 
+</p></li>
+
+<li><strong>Defect 748539: Copy/Paste: Pasting piping points with soil applied modifies existing model data</strong></p>
+Using copy/paste operation for a selection set having piping points with soil applied may result in unintended changes in the model where the selection set is pasted. This issue extends to the Insert Model option. The copy paste operation may be performed in the same model or in another model. The unintended changes in the model input data may lead to unintended results, which may be unconservative. 
+</p></li>
+
+<li><strong>Defect 761529: B31.3 and B31.12 IP: Override SIF checkbox for SIFs in the 'Joint Type and User SIFs' dialog does not use 0.75i condition</strong></p>
+The in-plane and out-of-plane SIFs defined in the 'Joint Type and User SIFs' dialog with the 'Override SIF' checkbox checked are not multiplied by 0.75 as required by the ASME B31.3 and B31.12 codes. This may lead to higher stresses being reported for sustained and/or occasional load combinations. This issue does not affect models with 'Use B31J' checkbox checked in General Model Options. 
+</p></li>
+
+<li><strong>Defect 781999: Time history Location dialog does not accept beam nodes</strong></p>
+Time history location dialog was not accepting beam points. Fixed now so that the dialog accepts beam points too. 
+</p></li>
+
+<li><strong>Defect 794182: Flange Check: Auto Flange/Bolt Dimensions box incorrectly resets gasket material and configuration</strong></p>
+A user interface inconsistency may lead to gasket material and gasket configuration of a flange to be reset when the Flange Check dialog is closed and reopened. Also, checking the Auto Flange/Bolt/Gasket dimensions box. 
+</p></li>
+
+<li><strong>Defect 801331: Soil ID input grid: PGV value cannot be modified, instead of PGV the PGA value is updated</strong></p>
+This issue is only in input grid. When "Peak Ground Velocity" value is updated from "Soil ID" grid, program updates "Peak Ground Acceleration" value instead of "Peak Ground Velocity". The value of "Peak Ground Velocity" remains the same. 
+</p></li>
+
+<li><strong>Defect 804005: Incorrect W factor by changing pipe material and piping code edition</strong></p>
+A bug in the input grid and when switching model code to B31.3 was preferring critical temperature equation over the weld factor table when automatically calculating the longitudinal weld factor in Pipe Properties. 
+</p></li>
+
+<li><strong>Defect 812329: Some flanges are not being reported in the Flange Analysis Summary report</strong></p>
+An error in AutoPIPE's Flange Analysis Summary output report (SQO) omits certain flanges. This is caused by flanges that were introduced on a node after one or more non-flange extra data components are added to that node. 
+</p></li>
+
+<li><strong>Defect 817745: ASME B31 codes: Bends are using SIF < 1 when Pressure Correction and 'Override all other In-plane and Out-plane SIFs at this point' checkbox is checked for user SIF</strong></p>
+The "Pressure Correction for User SIF" checkbox in result model options is used to apply the pressure correction factor as defined by ASME B31 codes to user-defined stress intensification factors. This option is disabled by default. Pressure Correction for User SIF is only available for ASME B31 codes for all available editions. User-defined stress intensification factors are inserted in the model using "Insert > Xtra Data > Joint Type & User SIF".
+If user-defined stress intensification factors are inserted on a bend with "Override all other In-plane and Out-plane SIFs at this point" checked and "Pressure Correction for User SIF" result model option checked, depending on the pressure value and dimension of the bend, pressure correction factor can significantly decrease the stress intensification factor (i) for the bend to less than 1.0 (SIF values should not be less than 1) which may lead to unconservative bend stress values.. 
+</p></li>
+
+<li><strong>Defect 869451: Flange Check: Effective Diameter of Bolts maybe incorrectly used based on Auto Flange/Bolt Dimensions box state</strong></p>
+Effective Diameter of Bolts maybe incorrectly used based on Auto Flange/Bolt Dimensions box state in flange check. This bug is valid for all piping codes with definition of new flanges. All analysis methods for flange in program maybe impacted except ANSI check (as Effective bolt diameter not used).
+</p></li>
+
+<li><strong>Defect 873664: B313: 0.75i condition is not applied on bend points when 'Use B31J' and 'Set Occasional SIF=0.75i' result model option is checked</strong></p>
+This issue is limited to bend points in B31.3 piping code models. The Result Model Options 'Set Occasional SIF = 0.75i' is not applied on bend points when the 'Use B31J' option is checked. The full SIF value is used instead of reducing the SIF by 0.75. 
+</p></li>
+
+
+</ul>
+
+
+<H2>AutoPIPE v12.7.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v12.7.
+<ul>
+<li><strong>Defect 673380: Incorrect Weld Strength reduction factor for CSEF materials for B31.1 2014 and later editions</strong></p>
+The program now uses the correct value for weld strength reduction factor as given in table 102.4.7 of ASME B31.1. Additionally, to assist in the screening of the models created in previous program versions for any potential impact by this defect, the program automatically examines the model database after opening the model and generates a report (model name + "_D673380.TXT"), listing the pipe IDs potentially impacted by this defect. The program displays a confirmation message. . 
+</p></li>
+
+<li><strong>Defect 675378: Allowable for sustained and occasional categories may be set to zero when pipe material has temperature range limited to a temperature less than operating</strong></p>
+EN13480 design stress, ff, is split into two temperature ranges - operational and creep; however, when a sustained or occasional combination temperature is operating in the creep range, AutoPIPE still takes the design stress in the operational range, which is zero. Instead, it should be taking the allowable from the creep range if the operational design allowable is zero. 
+</p></li>
+
+<li><strong>Defect 708745: CTC: Troubles of Stress Report with Soil Points for General Piping Code</strong></p>
+The first report line of a soil point was not always printing in the General Pipe Code Compliance report due to an error in the XML templates. A fix was introduced that now prints the first line of the soil point, as well as the SIF in/out data. 
+</p></li>
+
+<li><strong>Defect 739795: Rotating Equipment: Override Nozzle Coordinates checkbox may fetch incorrect equipment nozzle offset values</strong></p>
+Offset values may be incorrectly calculated based on the given reference point. While creating an equipment (Turbine/Compressor/Pump), when a reference point is entered, offset values are calculated automatically and correctly the first time. But when the equipment is opened again for modifying, changing the reference point calculates incorrect offset values. When modifying equipment, in order to correctly calculate the offset values based on reference point, you need to change/re-enter the suction/discharge/extraction points and then change the reference point.  
+</p></li>
+
+<li><strong>Defect 748523: Sorted stress report and color plots may not display the +ve face of a bend midpoint which may give incorrect maximum stress</strong></p>
+An issue in the AutoPIPE post-processor has been discovered that prevents the stress data from printing the +ve face of bend midpoints when the stress reports are sorted from maximum stress to minimum stress. Additionally, only the -ve face of the bend midpoints are displayed in the interactive code compliance color plot. If the maximum stress in the model is on a +ve face of a bend midpoint, the sorted result summary and interactive color plot will not display them, leading to a consistently unconservative stress summary. This error only affects sorted stress reports and color plots, i.e. unsorted reports still print the correct +ve midpoint face data as well as the correct maximum stresses. A fix was added to reinstate the +ve face for sorted stresses and interactive color plots. 
+</p></li>
+
+<li><strong>Defect 748540: ASME B31.3 2016 B31J Flexibility modification, Flex = 0.1 - 1.0, crashes the program</strong></p>
+An issue existed when fetching the Halo-delimited line for Rigid. The character length for the importing variable was too short, cutting off the trailing delimiter. Thus, the program could not find the terminator and began to read in invalid memory causing the associated crash. The solution was to expand the memory allocated for character read-in. Additionally, there was a behavior discrepancy for automatically setting the field to "Free" when the input value is greater than 1e5, similar to how the form sets the field to "Rigid" when the input value is less than or equal to 1.0. This behavior discrepancy has been resolved under this bug.. 
+</p></li>
+
+
+</ul>
+
+
+<H2>AutoPIPE v12.6.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v12.6.
+<ul>
+<li><strong>Defect 1119608:JSME 2008: Occasional stress is not included at Tee point when the "MAX OCC" option is selected</strong></p>
+AutoPIPE may incorrectly calculate JSME 2008 tee stresses for default code combination "SLO(B2)" and any combinations dependent upon it, when MAX OCC option is selected on Seismic Level dialog. Actual stresses at the tee point may be higher than the reported stresses. For example, default Pri+Occ code combinations beginning with "SLO+" use the affected combination and therefore have incorrect stresses as well. 
+</p></li>
+
+<li><strong>Defect 1124391:ANSI Check: Gasket Inside Diameter and Effective Width values may not be correct</strong></p>
+ANSI Check: Gasket Inside Diameter and Effective Width values may not be correct and out of sync from the correct values as per the library. If you change the gasket type to something else and then reset back to original value, you will note that the correct values are loaded
+</p></li>
+
+<li><strong>Defect 1126710:Results for models with connected anchors and intermediate soil and/or mass points may be incorrect</strong></p>
+Analysis results for models with connecting anchors* connecting points that have intermediate soil or mass points next to these points may be incorrect. This issue impacts the stiffness matrix generation, hence the analysis results including displacements, forces and moments, frequencies and mode shapes may be impacted for the model. The incorrect results may lead to calculating stresses and support forces that are lower than the actual values, leading to unconservative results.
+</p></li>
+
+<li><strong>Defect 1123496:ASME B31.8: User defined rest-func and rest-exp combinations incorrectly use a default kFac of 1.0</strong></p>
+For a user-defined REST-FUNC and REST-EXP combinations, AutoPIPE does not use the correct 0.9 reduction factor on Sy, when determining the combination allowable. Instead, it uses a default 1.0, introducing a higher allowable than the code recommends.
+</p></li>
+
+</ul>
+
+
+<H2>AutoPIPE v12.5.0</H2>
+There are no major errors fixed in Release of AutoPIPE v12.5.
+
+<H2>AutoPIPE v12.4.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v12.4.
+<ul>
+<li><strong>Defect 1101733:Expansion and modulus of elasticity values for standard material "AU-TYPE 309" are incorrectly retrieved for "B311-86" and "B311-92" material libraries at temperatures higher than 900 deg F</strong></p>
+Expansion and modulus of elasticity values for standard material "AU-TYPE 309" are incorrectly retrieved for "B311-86" and "B311-92" material libraries at temperature values higher than 900 deg F. Code dependent material "A312-TP309" references the standard material "AU-TYPE 309" for expansion and modulus of elasticity data, and hence is also impacted. Using incorrect expansion and/or modulus of elasticity values may result in incorrect forces and moment, leading to unconservative stress results. 
+</p></li>
+
+<li><strong>Defect 1096446:ASME B31J: SIF values for Unreinforced Fabricated tee with sloped configuration may not be calculated correctly</strong></p>
+ASME B31J: SIF values for Unreinforced Fabricated tee with sloped configuration may not be calculated correctly
+</p></li>
+
+<li><strong>Defect 1093263:Properties for SA671-C70-22 code dependent material may not be retrieved correctly when using ASME2004, ASME2007, or ASME2009 material library</strong></p>
+Material properties for SA671-C70-22 code dependent material may not be retrieved correctly when ASME2004, ASME2007, or ASME2009 material library is selected. The impacted material properties are the allowable, yield, and design stress intensity values at all of the temperatures listed (-20 degF to 700 degF). The program may return values greater than the actual values for these allowable material properties, leading to unconservative results.
+</p></li>
+
+<li><strong>Defect 1087906:ASME NC/ND: Allowable case for Sh, Sy in Eq. 9 is incorrectly used for 1980+1980S add. and earlier editions</strong></p>
+ASME Class 2 and Class 3 editions 1980S and earlier recommend the evaluation of occasional allowable at design temperature. However, AutoPIPE's stress summary is incorrectly using the hot allowable of the temperature for the associated equation 10 entries regardless of what is selected in the "Allowable case for Sh, Sy in Eqn. 9" dropdown. This may lead to higher, unconservative equation 9 allowable values.
+</p></li>
+
+<li><strong>Defect 1033576:Density and Poisson's ratio may not be updated correctly when switching material library</strong></p>
+When material library for a model is changed to a custom library or library for another code/edition, program retains the density and Poisson's ratio values from the previously selected material library for materials with same names in both libraries. This may cause the program to incorrectly calculate forces and moments based on the previous material library density and Poisson's ratio, leading to unconservative stress results. Shear modulus is calculated using Poisson's ratio, which may also be affected due to incorrect Poisson's ratio. All other material properties are updated automatically when material library is switched.
+</p></li>
+
+<li><strong>Defect 1101096:Pressure extension forces and moments not considered for B31.3 and B31.1 2018 sustained combinations at 0 pressure</strong></p>
+Pressure extension forces and moments not considered for B31.3 and B31.1 2018 sustained combinations at 0 pressure
+</p></li>
+
+<li><strong>Defect 1090084:DNV 2012&2017: Design factors selections made on DNV Results options are not retained upon opening same model</strong></p>
+Design factors selections made on DNV Results options are not retained when the model is closed and re-opened. Actually program is not detecting changes made on Design factors tab of DNVR options dialog while closing the model.
+</p></li>
+
+<li><strong>Defect 1089792:Support optimizer: Result Model option: Occasional load in hours field is resetting to 0 (NTL Roundtrip)</strong></p>
+Support optimizer: Result Model option: Occasional load in hours field is resetting to 0 for the scenarios generated and executed by the support optimizer.
+</p></li>
+
+<li><strong>Defect 1089789:Support Optimizer: Weld reduction factor is resetting in scenarios (NTL Roundtrip)</strong></p>
+Support Optimizer: Weld reduction factor is changed for the scenarios generated and executed by the support optimizer.
+</p></li>
+
+<li><strong>Defect 1085139:Support Optimizer: Pipe Data inputs may be different in scenarios</strong></p>
+Support Optimizer: Pipe Data inputs may be different in scenarios generated and executed by the support optimizer.
+</p></li>
+
+<li><strong>Defect 1083192:Support Optimizer: Models with Non Standard pipe sizes may not give correct results (NTL roundtrip)</strong></p>
+Support Optimizer: Models with Non Standard pipe sizes may not give correct results due to a differences in pipe properties between the original model and the scenarios generated and executed by the support optimizer.
+</p></li>
+<li><strong>Defect 1083320:ASME B313 Material Library: Incorrect allowable stress, yield strength, or thermal expansion data for some materials </strong></p>
+ASME B31.3 material libraries (B313-04 through B313-16) contain some incorrect material properties data. Material properties such as allowable stress, thermal expansion, or yield strength may be inconsistent with the piping standard. The code dependent materials affected are B241-6061-T6, B241-6061-T6W, B247-6061-T6, and B584-C92200. Other than these, the standard material copper (Cu) and any code dependent materials using copper as standard material are also impacted by this defect. 
+</p></li>
+<li><strong>Defect 1061807:Time History Profile (*.THP) file with time and/or load values having more than ten characters may generate incorrect Time History results  </strong></p>
+Time history load cases use Time History Profile (*.THP) files to read time/load data pairs during time history analysis. Even though time/load pair is comma separated in the time history profile file, program only reads the first ten characters (including blanks) for the time values of each time/load pair in the Time History Profile file. The trailing characters in excess of ten characters for time values are not read during analysis, which may result in incorrect time history results.
+</p></li>
+<li><strong>Defect 1062015:ASME NC/ND: B2 stress index and allowable calculations for a reducer may use incorrect pipe properties and pressure temperature data </strong></p>
+For the negative face at the far end of a reducer, allowable and B2 stress index calculations may incorrectly use Pipe Properties and Pressure/Temperature data from the following pipe. These properties include cold allowable (SA), hot allowable (Sh) and material code. Using these incorrect values may results in higher eq. 10a allowable, higher eq. 11 allowable and lower B2 stress index which is unconservative. This issue will be limited to the cases where the reducer and following point have different pressure, temperature and/or different pipe material properties.
+</p></li>
+<li><strong>Defect 1081565:ISO 14692: Multiplication factor is not evaluated correctly for tees</strong></p>
+ISO 14692, part 3, section D.2.3.4 states that the stress multiplication factor for tees shall be 1.4/(lambda)^0.25, however AutoPIPE evaluates as 1.4/(lambda)^0.5, leading to excessively high values in stress. Additionally, D.2.3.4 recommends the multiplication factor NOT exceed 3.0, though there are no checks in AutoPIPE for this condition.
+<br/>The program help is also incorrectly referencing D.2.2.4 for tee multiplication factors, though it should be D.2.3.4.
+</p></li>
+<li><strong>Defect 109893:Tracker#:3893 - Program hangs after copy/paste of a tee</strong></p>
+If 2 or more segments of the tee is included in a copy operation with the tee point as the base point and then pasted to an existing point in the model, a subsequent copy operation that includes the pasted tee causes the program to hang.
+</p></li>
+<li><strong>Defect 1089476:Y factor should not be considered in calculations of Hoop stress and ASD category for DNV 2012 and later editions</strong></p>
+Y factor should not be considered in calculation of Hoop stress for ASD calculations and that the Hoop Stress should be calculated exactly as per the DNV code requirements for ASD (Use mean diameter for Hoop stress calculations)
+</p></li>
+
+<li><strong>Defect 1102025:Material Library: Incorrect data may be retrieved from the library for certain materials</strong></li>
+
+The number of data rows listed for certain materials (standard or code dependent) in certain libraries for retrieving data are entered incorrectly. Due to this incorrect number of rows, library data for the libraries mentioned below may be retrieved incorrectly:
+</p>
+<table>
+<tr><th>LIBRARY</th><th>PIPING CODE</th><th>MATERIAL</th><th>PROPERTIES</th></tr>
+<tr><td>ASME1992</td><td>ASME NB/ND/ND</td><td>SA182-F12</td><td>Allowable,Yield, Design Sm</td></tr>
+<tr><td>AUTO1967</td><td>ASME B31.1</td><td>A335-P1</td><td>Allowable</td></tr>
+<tr><td>AUTODINM</td><td>TBK 5-6</td><td>AU</td><td>Expansion, Modulus</td></tr>
+<tr><td>AUTONGSS</td><td>SPC-2</td><td>AU</td><td>Expansion, Modulus</td></tr>
+<tr><td>AUTONGSS</td><td>SPC-2</td><td>SS2352-23</td><td>Allowable</td></tr>
+<tr><td>EUROMAT</td><td>EN 13480</td><td>1.0452</td><td>RP0,2</td></tr>
+<tr><td>EUROMAT</td><td>EN 13480</td><td>1.4958+RA</td><td>RP0,2 and RP1,0</td></tr>
+<tr><td>EURO2002</td><td>EN 13480</td><td>1.0452</td><td>RP0,2</td></tr>
+<tr><td>EURO2002</td><td>EN 13480</td><td>1.4958+RA</td><td>RP0,2 and RP1,0</td></tr>
+<tr><td>EURO2009</td><td>EN 13480</td><td>1.0452</td><td>  RP0,2 </td></tr>
+<tr><td>EURO2009</td><td>EN 13480</td><td>1.4958+RA</td><td>  RP0,2 and RP1,0 </td></tr>
+<tr><td>EURO2012</td><td>EN 13480</td><td> 1.0452 </td><td>  RP0,2 </td></tr>
+<tr><td>EURO2012</td><td>EN 13480</td><td>1.4958+RA</td><td> RP0,2 and RP1,0 </td></tr>
+<tr><td>EURO2012</td><td>EN 13480</td><td>A312-TP316H</td><td> Srt1, Srt2, Srt3, Srt4 (Creep Data)</td></tr>
+<tr><td>EURO2017</td><td>EN 13480</td><td> 1.0452</td><td>   RP0,2 </td></tr>
+<tr><td>EURO2017</td><td>EN 13480</td><td>1.4958+RA</td><td> RP0,2 and RP1,0</td></tr>
+<tr><td>EURO2017</td><td>EN 13480</td><td>A312-TP316H</td><td> Srt1, Srt2, Srt3, Srt4 (Creep Data)</td></tr>
+</table>
+</p>
+Note that the allowable values returned incorrectly by the program for ASME1992 and AUTO1967 are lower than the correct allowable values, and hence the impact is conservative.
+</p></li>
+</ul>
+
+
+<H2>AutoPIPE v12.3.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v12.3.
+<ul>
+<li><strong>1053801	ASCE 7: Topographical factor Kzt may be calculated incorrectly leading to incorrect wind pressure</strong></p>
+ASCE 7-02 (Note 2, Figure 6-4) and ASCE 7-10 (Note 2, Figure 26.8-1) requires limiting the height over distance upwind of crest (H/Lh) value to 0.5 for evaluating K1 multiplier. ASCE 7 also requires substituting 2H for Lh for evaluating K2 and K3 multipliers when H/Lh exceeds 0.5. AutoPIPE wind analysis does not incorporate the two conditions above. This results in incorrect pressure value calculations for wind load cases</p></li>
+
+<li><strong>1060716	ASME B313 Material Library: A790-S31803 is using incorrect values of thermal expansion at 300F, 800F, 950F and 1300F</strong></p>
+Thermal expansion values for spec material A790-S31803 are incorrectly recorded in program libraries at 300F, 800F, 950F and 1300F. </p></li>
+
+<li><strong>1060749	ASME B31.3: AL-6XN-B688 allowable values are not correct</strong></p>
+AL-6XN-B688 material is using incorrect but conservative allowable values @300F and @400F when wall thickness is less than 3/16 in. Program is using allowable values of 23.92ksi and 22.88ksi instead of 24ksi and 23.68ksi @300F and @400F respectively. This issue exists in all ASME B31.3 material libraries from B313-04.LIB to B313-16.LIB.</p></li>
+
+<li><strong>1072137	ASCE-7-10: Exposure category B is incorrectly limiting z value to 30ft for calculating velocity pressure exposure coefficient Kz</strong></p>
+ASCE-7-02 (Table 6-3, Note 2) exposure category B requires limiting z value to 30ft for evaluating velocity pressure coefficient Kz, but this condition is removed from ASCE-7-10 (Table 29.3-1, Note 1). However, AutoPIPE applies this limit for ASCE-7-10 incorrectly. Which results in conservative pressure results for z value up to 30ft.</p></li>
+
+<li><strong>1082206	Export SQLite throws an out of memory exception with Larger models</strong></p>
+Exporting very large models to SQLite DB throws an out of memory exception.</p></li>
+</ul>
+
+
+
+<H2>AutoPIPE v12.2.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v12.2.
+
+<ul>
+
+<li><strong>1010996	Insert new valve dialog may load incorrect length, surface area factor and weight from previously inserted valve</strong>
+<p/>When inserting a new valve, program loads the insert valve dialog with the data from previously inserted valve. The displayed length, weight and surface area factor may not be correct for the new valve if the pipe nominal size is different from the previously inserted valve. If the user clicks ‘OK’ on the insert valve dialog without making any changes, the incorrect length, weight and/or surface area factor will be saved in the model. This use of incorrect value of weight and/or surface area factor in the analysis and stress calculations may lead to un-conservative results. 
+<p/>This issue is limited to Standard valves only and is not applicable to Non-Standard Valves i.e. valves with 'NS' selected as Standard.<p/>
+</li>
+
+<li><strong>1018288	ASME Nuclear: Stress indices for bend mid points may be calculated incorrectly</strong>
+<p/>When evaluating pre-verification and full verification stresses, bend mid points inherit the stress indices of the associated far point. For split mid points, reporting both a -ve and a +ve face, the +ve face of the mid-point will inherit the stress indices of the +ve face of the far point, which is considered a run or straight pipe in AutoPIPE. Additionally, regardless if the mid-point is two-faced or single-faced, if a User Joint and SIF is applied to the far point to override the default stress indices, the mid-point will also inherit this joint data. Incorrect SIF calculations on the bend mid-point +ve face will decrease the stress results in the pre-verification and full-verification reports, which is unconservative. Additionally, due to AutoPIPE’s behavior of applying stress indices to soil points, all soil points following a mid-point +ve face and preceding the far point -ve face (i.e. soil points between the mid-point and far-point) will have the same incorrect stress indices, taken from the +ve face of the mid-point.<p/>
+</li>
+
+<li><strong>1035676	ASME NB: Equation 11 Temperature distribution terms for tee points always use the second tee header leg material properties which may not be conservative for Tees with varying material across the legs</strong>
+<p/>When evaluating ASME NB equation 11 for tee points, AutoPIPE calculates both the linear temperature distribution and non-linear temperature distribution terms using Modulus of Elasticity, Thermal Expansion, and Poisson’s ratio from the second header leg always. These terms are calculated in AutoPIPE under the assumption that the material properties for all tee legs are the same. However, AutoPIPE is also capable of supporting different materials for each tee leg, independent of the other tee legs. Using the pipe material properties from the second header leg only when determining wall gradient stresses can result in a lower stress value, which can lead to unconservative results.<p/>
+</li>
+
+<li><strong>1048471	ASME B31J: Skewed tees do not always calculate stiffness values correctly</strong>
+<p/>ASME B31J provides details on calculation of tee flexibility factors. These flexibility factors are provided in the tee local coordinates (in-plane, out-plane, and torsional) and relationships to calculate tee branch and header stiffness values using these flexibility factors in tee local coordinates are provided. AutoPIPE requires transformation of these stiffnesses into the element (header or branch legs) local coordinate system to compliment the element stiffness matrix. A defect exists in AutoPIPE during the transformation of the B31J stiffnesses from the tee local to element local coordinates. This defective transformation produces incorrect stiffnesses of tees that are skewed off at least one global axis. This stiffness error is carried through to displacement, forces & moments, and stress results.<p/>
+</li>
+
+<li><strong>868334	ASME NB: Pressure term calculations use maximum D/t from header and branch instead of header only</strong>
+<p/>For ASME NB code, equation 9 pressure term calculations for a tee point uses the maximum D/t from the Header and Branch pipes. ASME NB requires using D/t ratio of the header pipe for the pressure term calculations. Using higher D/t ratio from header and branch is conservative in nature and may results in reporting higher stress value than the actual stress value required by ASME NB.<p/>
+</li>
+
+<li><strong>984561	Axial pressure force may not be used when calculating longitudinal pressure force for Hydrotest load combination</strong>
+<p/>Axial pressure force may not be included in longitudinal pressure stress calculations for Hydrotest code combination. Although the pressure case is included in the Hydrotest combination, however, the axial pressure force value is not accounted for when calculating the longitudinal pressure stress value.<p/>
+</li>
+
+<li><strong>1054789	Flange Check: Capability to assign flange corrosion for flange design is not available</strong>
+<p/>As required by ASME VIII Division 1, Mandatory Appendix 2, section 2-1(b), all calculations shall be made on dimensions in the corroded condition. AutoPIPE's flange check analysis does not support consideration of corrosion allowable on flanges. <p/>
+</li>
+
+</ul>
+
+
+<H2>AutoPIPE v12.1.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v12.1.
+
+<ul>
+
+<li><strong>984316	Flange Check: Flange inserted on a segment junction/continuation point may use zero values for external forces and moments for the selected Load Combination</strong></li>
+<p>Flanges that are inserted on a segment junction/continuation* point may incorrectly use zero values for external forces and moments for the Load Combination selected in the Flange Check module. This results in stress values that does not include the effect of external forces and moments, leading to unconservative results.</p>
+</li>
+
+<li><strong>858440	Incorrect update of point name and information in interactive results</strong></li>
+<p>Interactive results dialog may not update to represent the correct results while navigating through interactive results e.g. result > code stress results. The avoidance is to use the batch report or result grid to review the results.</p>
+</li>
+
+<li><strong>997353	ASME B31.1 Material library: Some of the materials are not using correct values for allowable stress, thermal expansion, Modulus or ultimate strength</strong></li>
+<p>
+Some pipe materials are using incorrect values of allowable stress, thermal expansion , ultimate strength and/or modulus of elasticity. Using these pipe materials may result in incorrect calculated stress. The calculated stress values may be conservative than the actual stress values.
+The impacted materials are listed below </br>
+Allowable Stress :</br>
+- A106-A is not using correct values @800 for ASME B31.1 2016 to B31.1 2012</br>
+- A376-TP347 is not using correct values @800 for ASME B31.1 1986</br>
+</br>
+Young Modulus :</br>
+- ST, AU, AU-TYPE 317 & AU-TYPE 348 are not using correct values @ -100, 200, 400, 500, 1100, 1300 for ASME B31.1 2016 to B31.1 2012</br>
+- MO is not using correct values @ 200, 300, 600, 700, 900, 1000 for ASME B31.1 2016 to B31.1 2012</br>
+- CN is not using correct values @ -100 for ASME B31.1 2016 to B31.1 2012</br>
+</br>
+Thermal Expansion :</br>
+- CU is not using correct value @550 for ASME B31.1 2009 to B31.1 2005</br>
+- ST & AU-TYPE 310 are not using correct values @ All temperatures for ASME B31.1 1986</br>
+</br>
+Ultimate strength:</br>
+- A335-P92 & C12200-B88 are not using correct values for ASME B31.1 2016 to B31.1 2007</br>
+- A335-P92_N+T  is not using correct values for ASME B31.1 2016 to B31.1 2007</br>
+</br>
+Removed data:</br>
+- AU-TYPE 304, AU-TYPE 309, AU-TYPE 310, AU-TYPE 316, AU-TYPE 321, AU-TYPE 347 data removed @1500 for ASME B31.1 2016 to B31.1 2012</br>
+- NI-CR-MO data removed above 800 for ASME B31.1 2010 to B31.1 2004</br>
+</br>
+</p>
+</li>
+
+<li><strong>1001197	ISO 14692: Soil points on components other than bends use joint properties of previous point and Joints allowable stress equations</strong></li>
+<p>For ISO 14692 piping code, virtual soil points on components other than bends use the joint properties defined for the previous physical point. Also, virtual soil points use allowable stress equations defined for joints instead of allowable equations defined for straight run.</p>
+</li>
+
+</ul>
+
+<H2>AutoPIPE v12.0.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v12.0.
+
+<ul>
+<li><strong>955880	ASME Nuclear Material Library: Thermal expansion and/or Modulus of elasticity values for some pipe materials may not be correct</strong></li>
+<p>
+Some pipe materials are using incorrect values of thermal expansion and/or modulus of elasticity. Using these pipe materials may result in incorrect calculated stress. The calculated stress values may be lower than the actual stress values leading to un-conservative results.
+<p/>
+Pipe Material	ASME Composition    Thermal Expansion   Modulus of Elasticity <br/>
+SA666-XM11	21Cr-6Ni-9Mn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Correct*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Incorrect <br/>
+SA691-0.5CR	1/2Cr-1/2Mo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Correct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Incorrect <br/>
+SA691-1CR	1Cr-1/2Mo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Correct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Incorrect <br/>
+SA691-1.25CR	1.1/4Cr-1/2Mo-Si&nbsp;&nbsp;Correct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Incorrect <br/>
+SA691-5CR	5Cr-1/2Mo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Incorrect&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Incorrect <br/>
+ <br/>
+*Thermal expansion values are taken from Group 15Cr&17Cr of table TE-1 of ASME BPVC II-D
+</p>
+<li><strong>960482	ASME Material Library: SA182-F22 values are incorrectly updated for ASME2000 and later material libraries</strong></li>
+<p>SA182-F22 was deleted for ASME BPVC II-D 1998 and later editions. However, AutoPIPE's ASME2000 and later material libraries continued to provide SA182-F22. 
+Also, allowable stress, yield strength and design stress intensity values of SA182-F22 in AutoPIPE's ASME2000 and later material libraries were different 
+from those provided in ASME BPVC II-D 1992 edition. Using the allowable values from AutoPIPE's ASME2000 material library for SA182-F22 may result in higher 
+calculated allowable stress value as compared to allowable stress values provided by AutoPIPE's ASME1992 material library.</p>
+
+<li><strong>135823	Tracker#:8771 - Soil points along the bend use pipe SIF instead of bend SIF</strong></li>
+<p>Soil points along the bend uses pipe SIF values while it should use bend SIF values. For ASME codes this happens in all cases except 
+when a frame is inserted at near point of the bend. For non-ASME code this happens only when a frame is inserted at near point of the bend.</p>
+<li><strong>936789	ASME Libraries: Some pipe materials are not referring to correct standard material</strong></li>
+<p>For ASME 2010 and later, "Young modulus" for following specification materials is picked from a wrong standard material: Specifications SA243-WPB, SA243-WPC, SA350-LF2, SA36, SA420-WPL6, SA515-70, SA516-60, SA516-70, SA53-A, SA541-1A, SA672-B60, SA672-B65, SA672-B70.
+The difference between the values is less than 2% with the maximum difference being only 1.47%. 
+</p>
+<li><strong>939787	B31.4 and B31.8 material libraries are not updated in latest editions as per updates in source libraries</strong></li>
+<p>B31.4 "2016" and B31.8 "2012 or later" material libraries are not up to date  with the applicable code edition changes. </p>
+<li><strong>958453	ASME Material Library : Thermal expansion, Modulus of elasticity and Design stress intensity values for some pipe materials may not be correct</strong></li>
+<p>Thermal expansion, Modulus of elasticity and Design stress intensity values for some pipe materials may not be correct
+
+<p>For ASME 1992 & 1986:
+1. Modulus values of Group-B & Group-C are incorrect
+2. Thermal Expansion values for AU-Type316 are incorrect</p>
+
+<p>For ASME 2004 to 2015
+1. SA430-FP316N design stress intensity values are incorrect.</p>
+
+<p>For ASME 2013 & 2015
+1. SA508-3-1 using incorrect values of thermal expansion and modulus</p>
+
+
+</p>
+</ul>
+
+<H2>AutoPIPE v11.4.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v11.4.0.
+
+<ul>
+<li><strong>865266	Bend flange correction factor is not applied when flange is located beyond segment change</strong></li>
+
+<p>Bend flange correction factor is not applied when flange is located beyond segment change. Program logic to locate 
+a rigid component (flange or valve) upstream or downstream of a bend at a distance L/D is disrupted if there is a segment change within that distance.</p>
+
+<li><strong>874191	ASME NB: Response and SAM case are not summed up using Modal/Timestep Tee moment Summation</strong></li>
+
+<p>Response spectra and SAM cases are not considering modal/timestep tee moment summation for tee points in models with more than one analysis set.  In such cases, tee local moments and stresses may not be calculated correctly, leading to unconservative results.</p>
+
+<li><strong>896029	B31.1 Material Library: Thermal expansion data (Table B-1) was not updated in B311-12, B311-14 & B311-16</strong></li>
+
+<p>Thermal expansion data (Table B-1) for B31.1 materials is outdated in following material libraries: B311-12, B311-14 & B311-16</p>
+
+<li><strong>905085	HDPE Pipe cross section library has wrong values</strong></li>
+
+<p>HDPE Pipe cross section library has wrong values for following cases.
+For Nominal 20": Wall thickness for dimension ratio 9 is missing; Wall thickness for Dimension Ratio 8.3 is using wrong value 2.222 which belongs to Dimension Ratio 9
+For Nominal 30": The dimension ratio 9.3 is incorrectly written as 9.0</p>
+
+
+<li><strong>889026	Flange Analysis: Program is incorrectly calculating gasket seating bolt load (Code required) for flanges subjected to external pressure</strong></li>
+
+<p>Program was using incorrect formula of Am2 in gasket seating bolt load (code required) calculation for flanges subjected to external pressure.
+
+Gasket seating bolt load (Code required) for flanges subjected to external pressure = W= (Am2+Ab)*Sa/2
+Where:
+Am2 = Wm2/Sa (Div 1 section 2-3)
+Program was incorrectly calculating Am2 = Wm2/Sb
+Sa = allowable bolt stress at atmospheric temperature
+Sb = allowable bolt stress at design temperature
+
+This issue affects ASME section VIII Div1, Div2 and Appendix XI</p>
+
+<li><strong>890784	Flange Analysis: When internal pressure is set to zero, stresses due to external loads are not calculated</strong></li>
+
+<p>Program was incorrectly reporting zero flange stresses for both operating and gasket seating conditions if internal pressure was set zero. Program was not calculating stresses due to external loads. This issue affects ASME section VIII Div1, Div2 and Appendix XI</p>
+
+<li><strong>908627	Flange Analysis: When internal pressure is less than zero, ASME section VIII Div 2 is not calculating stresses</strong></li>
+
+<p>ASME section VIII Div 2 states : If the pressure is negative, the absolute value of the pressure should be used for calculations of stresses. When internal pressure is less than zero for ASME section VIII Div 2, program is not calculating stresses</p>
+</ul>
+
+<H2>AutoPIPE v11.3.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v11.3.0.
+
+<ul>
+
+<li><strong>798781 ASME NC/ND: Equation 11 allowable calculation is incorrectly impacted by selected equation 9 allowable case</strong></li>
+<p>For determining Sh value, AutoPIPE incorrectly uses the allowable value at the temperature corresponding to the selection made for "Allowable case for Sh, Sy in Eqn. 9" on the stress summary dialog. Program should instead use allowable value at the maximum temperature from across all equation 11 combinations.</p>
+
+<li><strong>805881:Wind and Hydrotest loads are not applied on the segment if snow load checkbox is unchecked</strong></li>
+<p>The wind load and hydrotest load are not applied on a segment if 'Apply Snow' load option is unchecked in segment properties.</p>
+</ul>
+
+<H2>AutoPIPE v11.2.0</H2>
+No major errors (critical or high) fixed in Release of AutoPIPE v11.2.0.
+
+
+<H2>AutoPIPE v11.1.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v11.1.0.
+
+<ul>
+
+<li><strong>354776 ASME NB: Tee moments may use incorrect sign and may lead to incorrect stress results when combining signed and unsigned combinations</strong></li>
+<p>ASME NB: Tee moments may use incorrect sign and may lead to incorrect stress results when combining signed and unsigned combinations </p>
+
+<li><strong>656782 ASME NB: Changing fatigue curve for a pipe identifier may modify fatigue curves for other pipe identifier(s)</strong></li>
+<p>ASME NB: Changing fatigue curve for a pipe identifier may modify fatigue curves for other pipe identifier(s). Due to this incorrect modification, the reported Usage factor values may be lower than expected values, leading to unconservative results </p>
+
+<li><strong>673865 ASME NB: Stress, allowable and SIF calculations for a reducer may use incorrect Pipe properties and Pressure/Temperature data</strong></li>
+<p>ASME NB: Stress, allowable and SIF calculations for a reducer may use incorrect Pipe properties and Pressure/Temperature data. Using these incorrect values may results in lower eq. 11 stresses, higher ratchet allowable, higher eq. 10 allowable, and lower B2 stress index </p>
+
+<li><strong>702082 ASME NC/ND: Stress Summary calculations incorrectly uses branch pressure and geometry for pressure term calculations</strong></li>
+<p>ASME NC/ND: Stress Summary calculations incorrectly uses branch pressure and geometry for pressure term calculations of "P + WGT + Rev. Dyn" stresses at a tee point. </p>
+
+<li><strong>702173 ASME Nuclear: Incorrect density, composition, and modulus values for standard pipe materials NI and GROUP-1-B</strong></li>
+<p>ASME Nuclear: Incorrect density, composition, and modulus values for standard pipe materials NI and GROUP-1-B</p>
+
+<li><strong>747811: Multiple Supports Response Spectrum analysis does not produce results when SAM displacement is applied to anchors connected to beam members</strong></li>
+<p> Multiple Supports Response Spectrum analysis does not produce results when SAM displacement is applied to anchors connected to beam members</p>
+
+
+<li><strong>737822:On duplicating a wind load, changing the wind direction of one case also updates the direction of duplicated case</strong></li>
+<p>On duplicating a wind load, changing the wind direction of one case also updates the direction of duplicated case.</p>
+
+<li><strong>748263:Hydrotest: For beams thermal anchor movements are multiplied with temperature factor and incorrectly added to thermal anchor movements for displacements</strong></li>
+<p>Hydrotest for beams is multiplying thermal anchor movements with temperature factor and incorrectly adding them to thermal anchor movements for displacement calculations</p>
+
+</ul>
+
+<H2>AutoPIPE v11.0.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v11.0.0.
+
+<ul>
+
+<li><strong>637020 Buoyancy is not applied to copied segments</strong></li>
+<p>Buoyancy load is not applied to segments that are copied from the same model or inserted from another model </p>
+
+<li><strong>620771	ASME NB: Thermal ratchet allowable may be calculated incorrectly when the ratio of pressure stress over yield strength is greater than or equal to 1</strong></li>
+<p>Thermal ratchet allowable value may be calculated incorrectly when the ratio of pressure stress over yield strength is greater than or equal to 1.0.</p>
+
+<li><strong>537789	ASME NB: Stress summary containing equation 10 transient with a user defined non-reversing SAM category combination may give incorrect results</strong></li>
+<p>A stress summary containing a single equation 10 transient with a user defined non-reversing* SAM category code combination may give incorrect stress and allowable results. Note that for this issue to occur, the equation 10 transient defined in the stress summary must have only one other thermal or zero moment combination included, in addition to the user defined SAM category combination.</p>
+
+<li><strong>619540	ASME NB: Incorrect stress results may be reported for negative face of a reducer node that is directly connected to a tee branch </strong></li>
+<p>Stress indices and stress results for negative face of a reducer near node that is directly connected to a tee branch may be reported incorrectly. The stress results for the negative face of near end of such reducers in both pre-verification and stress summary reports may be impacted. Reports may display "NaN", short for Not a Number, in the generated output. </p>
+
+<li><strong>579963	ASME Nuclear: Stress indices values may be reported incorrectly when a tee is inserted at the branch of another tee</strong></li>
+<p>If a tee is inserted at the branch of another tee, then the tee properties*used for stress indices and stress results for both tees may be reported incorrectly. Modifying properties for one of the tees will modify properties of the other tee. Due to this incorrect modification, the reported stress and allowable values may be lower or higher than the actual values, leading to unconservative results.</p>
+
+<li><strong>522111	Ground motion time history case with multiple .tih files reporting incorrect values</strong></li>
+<p>For all models created after AutoPIPE 5.0, unexpectedly large results (displacement, forces, moments, stresses) for time history load cases occur if any of the following are true:
+1. There exists at least one time history ground motion using more than one time history profile; or
+2. There exists at least one time history using a time history location file with more than one time history profile</p>
+
+<li><strong>625322	ASME NB: Program applies incorrect minimum value limit for fillet welded branch connection stress indices</strong></li>
+<p>ASME NB: Program applies incorrect minimum value limit for fillet welded branch connection stress indices</p>
+
+</ul>
+
+
+<H2>AutoPIPE v10.1.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v10.1.0.
+
+<ul>
+<li><strong>331101 ASME NC/ND: C2r and C2b stress Indices may be incorrectly calculated for fillet welded and partial penetration welded branch connections </strong></li>
+<p>AutoPIPE is evaluating C2r = B2r/0.5 and C2b = B2b/0.75 where it should be calculating C2r and C2b based on ASME NB-3683.8(c)</p>
+
+<li><strong>334683:Non-linear analysis is incorrectly flagging supports as lifting off </strong></li>
+<p>ASME B31.3 (2014): Supports are incorrectly flagged as lifting-off and are removed for analysis sets for which "Remove Lift-off Supports" option is enabled</p>
+
+<li><strong>339236 Allowable values at points using material specifications with more than one thickness range may be calculated incorrectly </strong></li>
+<p>Stress allowable values for points having a pipe ID which uses a material specification that has more than one thickness range may be calculated incorrectly. The piping standard may provide multiple values for minimum yield strength or ultimate strength based on the thickness of selected pipe, however AutoPIPE only uses a single value for the minimum yield and ultimate strength values.</p>
+
+<li><strong>343639 ASME NC & ND: B2r and C2r stress indices may be calculated incorrectly for fillet welded and partial penetration welded branch connections </strong></li>
+<p>Stress indices B2r and C2r for fillet welded and partial penetration welded branch connections may be calculated incorrectly for ASME NC and ND piping codes. Program does not correctly follow the rules provided by ASME NC FIG. NC-3673.2(b)-1 for B2r calculations, and ASME NB-3683.8 (c) and (e) for C2r calculations.</p>
+
+<li><strong>344919 Base material for SA508-1A material specification is incorrectly set as Low Alloy Steel instead of carbon steel </strong></li>
+<p>The SA508-1A ASME-designated piping steel is of carbon steel (GROUP-1-LC) composition according to ASME. However, AutoPIPE stores this as a low alloy steel (GROUP-1-A), which is inconsistent with ASME.</p>
+
+<li><strong>346312 Snip & ChinaGB: Allowable values at points using material specifications with more than one thickness range may be calculated incorrectly </strong></li>
+<p>Stress allowable values for points having a pipe ID which uses a material specification that has more than one thickness range may be calculated incorrectly. The piping standard may provide multiple values for minimum yield strength or ultimate strength based on the thickness of selected pipe, however AutoPIPE only uses a single value for the minimum yield and ultimate strength values.</p>
+
+<li><strong>353032 ASME NB: Global moment values are used for time history load case for non-tee points when "Modal/timestep tee summ" option is enabled </strong></li>
+<p>For ASME NB piping code, global moment values are used instead of local moment values for time history load case for all non-tee points when the result model option "Modal/timestep tee summ" is enabled.</p>
+
+<li><strong>354225 ASME NB - Tee Moment Summation: Nested user-combinations having different summation for the nested combinations are not being combined correctly </strong></li>
+<p>The results for nested user combinations (user defined combinations inside another user defined combination) that have different summation method defined for the combinations defined inside the main combination are incorrect. This issue only applies when the "Modal/timestep tee summ" option is enabled.</p>
+
+<li><strong>372995 ASME NB Thermal Transient Analysis: Gross discontinuity stress calculation does not consider the last time-step result for the last defined pipe </strong></li>
+<p>Gross discontinuity stress calculation for ASME NB thermal transient analysis does not consider the results for the last time-step for the last defined pipe. This defect is limited to ASME NB thermal transient analysis.</p>
+
+<li><strong>407206 ASME NB: Global moment values are used for time history load case for non-tee points when "Modal/timestep tee summ" option is enabled. </strong></li>
+<p>For ASME NB piping code global moment values are used for time history load case for non-tee points when "Modal/timestep tee summ" option is enabled.</p>
+
+<li><strong>407514 Program uses material properties set for valve to calculate pipe allowable values for far end of a valve. </strong></li>
+<p>Program uses material properties set for valve to calculate pipe allowable values for far end of a valve.</p>
+
+<li><strong>409868 Class 1: Tee summation rotation incorrect for tee nodes with name 'A19'</strong></li>
+<p>Class 1: Tee summation rotation is incorrect for tee nodes with name 'A19'</p>
+
+</ul>
+
+
+<H2>AutoPIPE v10.0.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v10.0.0.
+
+<ul>
+
+<li><strong>161427 B31.1: SIF is not correctly calculated for welding tees with a special consideration of crotch radius and thickness</strong></li>
+<p>SIF for welding tees with particular set of input values is calculated incorrectly.</p>
+
+
+<li><strong>265109 JSME Class 2-PPC: B1 stress index is incorrectly reported as 1.0 for a reducer with cone angle value of 30.0 </strong></li>
+<p>B1 stress index is reported incorrectly for a reducer with cone angle of 30.0.</p>
+
+<li><strong>266578 ASME NB: Reducer placed directly after valve may not use reducer geometry data for stress indices calculations </strong></li>
+<p>Reducers stress indices are incorrectly calculated if following a valve</p>
+
+<li><strong>322624 ASME NB: Allowable value for a transient with zero moment case and a non-thermal case is calculated incorrectly </strong></li>
+<p>Allowable value for a transient with zero moment case and a non thermal case is incorrectly calculated</p>
+
+<li><strong>224470 JSME Class 2-PPC: Maximum applicable B1 and B2 indices value at a point may not be used </strong></li>
+<p>Maximum applicable B1 and B2 indices may not be used in certain situations</p>
+
+<li><strong>242019 JSME Class 2-PPC: B1 stress index is incorrectly reported as 0.5 for a reducer with cone angle value of 60.0 </strong></li>
+<p>B1 index is incorrectly reported for reducer with cone angle of 60.0</p>
+
+<li><strong>263384 Stress indices of bend are incorrectly applied to reducer </strong></li>
+<p>Bend stress indices incorrectly applied to reducer</p>
+
+<li><strong>323304 ASME NC/ND: SIF value lower than 2.0 may be calculated when "Use SIF of 2.0" is checked </strong></li>
+<p>SIF value lower than 2.0 may be calculated when "Use SIF of 2.0" is checked</p>
+
+
+<li><strong>224452 JSME Class 2-PPC: B1 and B2 indices reported at valve far point are incorrect for valves that are not butt welded</strong></li>
+<p>Far end of a valve always uses B1 and B2 indices from butt welding joint end type. This applies to JSME S NC1 Class 2-PPC Piping code (2005 and 2008 edition)</p>
+
+<li><strong>208437 Incorrect modulus values for ISOGRPM library</strong></li>
+<p>For ISOGRPM, all WAVISTRONG modulus values are reported incorrectly.</p>
+
+<li><strong>213249 Incorrect stress value may be stored for SLO(B2) combination for JSME Piping code</strong></li>
+<p>Incorrect stress value may be reported for SLO(B2) combination for JSME piping code for tee points.</p>
+
+<li><strong>241311 ISO14692: Pressure correction factor for bend flexibility factor is applied incorrectly</strong></li>
+<p>Pressure correction factor for bend flexibility factor is applied incorrectly for ISO 14692 code. If the calculated pressure correction factor is greater than 1.0, this will result in an increase in the bend flexibility factor.</p>
+
+<li><strong>258618 ASME NC/ND: B2r/C2r calculations incorrectly use reinforced branch mean radius for evaluating branch thickness tb</strong></li>
+<p>ASME NC/ND 2003 and later editions: Incorrect condition is being applied to evaluate branch thickness to be used for stress indices calculations for branch connections (configuration A and B). B2r/C2r calculations incorrectly use reinforced branch mean radius for evaluating branch thickness tb:
+<br/><br/>
+tb = Tb if L1>= 0.5(2*r'm*Tb)^1/2<br/>
+tb = T'b if L1< 0.5(2*r'm*Tb)^1/2<br/>
+<br/>
+r'm in the above condition is incorrectly taken as reinforced branch mean radius.</p>
+
+
+<li><strong>259941 ISO 14692: Incorrect factor is being used for calculating bend flexibility factor for hand-lay smooth bends</strong></li>
+<p>ISO 14692 uses a factor of 0.7 in the equation for calculation of flexibility factor for smooth bends. However, a note is provided which states that for hand-lay bends, the factor 0.7 should be replaced by 1.0. AutoPIPE incorrectly uses a factor of 0.7 instead of 1.0 for hand-lay smooth bends. This results in a lower flexibility factor calculated and reported by AutoPIPE for smooth hand-lay bends (Bend type = Smooth, Biaxial Type = Filament-wound and hand-lay OR 100% hand-lay).</p>
+
+</ul>
+
+
+<H2>AutoPIPE v9.6.2</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v9.6.2.
+ 
+ <ul>
+<li><strong>161427 B31.1: SIF is not correctly calculated for welding tees with a special consideration of crotch radius and thickness</strong></li>
+<p>SIF for welding tees with particular set of input values is calculated incorrectly.</p>
+
+<li><strong>179635 ASME NC/ND: Elbows with any flange type reports B1 factor for socket welding flange</strong></li>
+<p>The B1 stress index reported for bends is higher than 0.5 on applying flanges on one or both ends (near/far).</p>
+<li><strong>177864 For ASME NC/ND, Reducers at Cone Angle 30 deg Reporting Wrong B1 Index</li></strong>
+<p>In NC/ND models the reducers with a cone angle of exactly 30 degrees will use a B1 index of 1.0, where the correct B1 value at this cone angle should be 0.5. This produces a conservative value for a specific reducer angle.</p>
+<li><strong>181952 Tees with different material across tee legs may report inconsistent allowable values</strong></li>
+<p>ASME NB / JSME: Tee components with different materials across tee legs may report inconsistent allowable stress values.</p>
+</ul>
+
+<H2>AutoPIPE v9.6.1</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v9.6.1. 
+
+<ul>
+<li><strong>89211 Equivalent temperature rise dt is calculated incorrectly for HDPE pipes</strong></li>
+<p>The equivalent temperature rise dt (used for effects of seismic wave passage along pipeline) is calculated incorrectly for HDPE standard pipes.</p>
+
+<li><strong>91835 DNV 2012 ASD check does not take in to account maximum longitudinal stress</strong></li>
+<p>DNV 2012 ASD check does not take in to account the maximum longitudinal stress when calculating the longitudinal stress and equivalent stress.</p>
+
+<li><strong>103060 Distributed loads are applied incorrectly to a range of piping points that are not in a connected straight line or when distributed load data is corrupted through convert point operation</strong></li>
+<p>Varying distributed load applied to a range of piping points that are not in a connected straight line is evaluated incorrectly. Varying distributed load applied to a single bend element with bend midpoint defined is also evaluated incorrectly.</p>
+<p>Also, distributed load data may be corrupted for both uniform and varying distributed loads when any operation under "Modify > Convert Point to >" menu was performed on a point with distributed load. Such data corruption may trigger incorrect evaluation of distributed loads.</p>
+
+<li><strong>115083 Maximum expansion case (EXP) at moment level for model with multiple analysis sets may give incorrect stress results</strong></li>
+<p>Code combinations with maximum thermal expansion case (EXP) included at moment level may result in incorrect stress results for model with more than one analysis set.</p>
+
+
+<li><strong>123586 Stress indices for class 1 reducer with welded transitions applied are different for +ve and -ve faces</strong></li>
+<p>Stress indices (C1, K1, C2 and K2) for near end of class 1 reducer with transition weld are incorrectly calculated. </p>
+
+
+</ul>
+
+<H2>AutoPIPE v9.6.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v9.6.0. 
+
+<ul><li><strong>11112 Incorrect analysis results with imposed disp. or anchor movement on soil points</strong></li>
+<p>Linear Static Analysis Results for points with soil spring supports which are influenced by an imposed support displacement or thermal anchor movement applied to a load case may be incorrect. This is applicable when such a load case is at 7th or later index on an analysis set. The affected results include displacement values, forces & moments, support & restraint reactions, and soil forces & deformations.</p>
+
+<li><strong>11153 Different hot modulus value not used for analysis for points on the same pipe ID</strong></li>
+<p>If the hot modulus value for a particular thermal case changes between points laying on the same pipe ID, the hot modulus value for the first point may be used for all subsequent points. This is only true when such a temperature case is selected as hot modulus case for an analysis set. The analysis results such as displacement, forces & moments, and reactions etc. for load cases in such an analysis set may be incorrect.</p>
+<p>Using hot modulus for analysis is mandatory for ASME NB code. For ASME B31.3 code, hot modulus usage is mandated if change in elastic modulus significantly affect the stress distribution. For JSME code, using hot modulus is mandatory for seismic analysis. For B31.1, ASME NC, and ASME ND codes, using hot modulus for analysis is not mandatory by the code.</p>
+
+<li><strong>11167 Temperature dependent data not updated on modifying temperature for points range</strong></li>
+<p>When updating temperature value for a range of points through the Pressure & Temperature dialog, temperature dependent material property fields with Auto checkbox enabled may not be updated. This behavior is repeatable only if temperature values vary over the selected range and when the new temperature value entered is same as the existing temperature value displayed on the Pressure & Temperature dialog. This may cause un-conservative analysis and/or stress results.</p>
+	
+<li><strong>11103 Absolute axial stress not used for calculating expansion stress for B31.3 (2012)</strong></li>
+<p>Calculation of displacement stress range SE (Eq. 17) for B31.3 (2012 Edition) requires using absolute value of axial stress range. Program is incorrectly using a signed value of axial stress range resulting in incorrect displacement stress range for cases where the axial stress range is negative.</p>
+
+<li><strong>11111 Maximum expansion (EXP) added at moment level not associating thermal case</strong></li>
+<p>When the maximum expansion case (EXP) is added at the moment level to a combination, the forces & moments from the thermal case with maximum temperature may not be correctly associated with that combination.</p>
+
+<li><strong>11094 Ce factor and exposure category is not retained in UBC wind profile dialog</strong></li>
+<p>Ce factor and exposure category entered in wind profile dialog for UBC code are reset when ok button is pressed. On providing any number in Ce factor field, the exposure category field is greyed-out and an error message is prompted stating "Invalid exposure category. Enter B, C or D.", whereas exposure category field is greyed out.</p>
+	
+<li><strong>11107 Thermal bowing: "Instantaneous expansion coeff. for NS materials" is not used</strong></li>
+<p>For thermal bowing calculations program does not use the value of "Instantaneous expansion coeff. for NS materials" specified on thermal bowing dialog. A zero value of instantaneous alpha is used for the calcualtions instead.</p>
+</ul>
+
+<H2>AutoPIPE v9.5.1</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v9.5.1. 
+
+<ul>
+<li><strong>10645 Creep for 1.49XX material in EURO2009 using incorrect data from German version</strong></li>
+<p>
+The creep data for the 1.49XX material, included in the EURO2009 material library, is using the data provided in the German version of the EN 10216-5:2004 standard.  The creep data in the German version of the EN 10216-5:2004 standard is incorrect for the 1.49XX material from temperatures between 600 to 800 degrees Celsius.
+</p>
+
+<li><strong>10723 SAM axial stress of plus face of a point uses axial force of minus face</strong></li>
+<p>
+When evaluating  the allowable code stress for certain load combinations, an incorrect value of K factor can be used by the program. The K factor value used by the program can be greater than the code prescribed value, consequently leading to un-conservative  allowable stress calculation.
+</p>
+
+<li><strong>10722 Bend near point does not use SIF value for Adams Method ASME NC/ND</strong></li>
+<p>
+Bend near points do not use correct SIF values and instead use the value of the point before the near point.
+</p>
+
+<li><strong>10751 Program not reporting max stress from -ve and +ve faces of soil and kink points</strong></li>
+<p>
+If the axial forces are different between the minus (-) or upstream side of the point and plus (+) or downstream side of the point, only the stress results from the plus (+) side of the point are reported.  Consequently, if the minus (-) side axial force is greater than the plus (+) side axial force the calculated stresses may be un-conservative.
+</p>
+
+<li><strong>10782 B31.3-2010 Occasional allowable may be unconservative for T&gt;Tcr or Tcr=0 </strong></li>
+<p>
+ASME B31.3-2010 alternate occasional allowable may be calculated incorrectly in any of the following cases:
+<ul>
+<li>If the Pipe Properties dialog for an existing Pipe ID is opened and closed by pressing "OK", with or without making any modifications, other than changing the pipe material. This can cause the program to incorrectly use the equation prescribed for calculating allowable for operating temperature greater than creep temperature of the corresponding material (T>Tcr) when the operating temperature is actually less than or equal to the creep temperature (T&le;Tcr).</li>
+<li>If the creep temperature (Tcr) of a pipe material is zero "0" in the material library, and yield strength value at the operating temperature used for calculating the alternate occasional allowable is non-zero.</li>
+</ul>
+</p>
+
+<li><strong>10784 Sustained allowable for B31.1 & B31.3 may be incorrect when Circ. W fac. applied </strong></li>
+<p>
+Sustained allowable stress for ASME B31.1 (2007 + 2009 addenda and 2010) and ASME B31.3 (2008 and 2010) may be incorrectly calculated when Circ. weld “W” factor is applied in a model. The circumferential weld factor was introduced in B31.1:2009 and B31.3:2008 to prevent longitudinal weld failures when pipelines are operating at temperatures starting at 50F below the creep range.
+</p>
+
+<li><strong>10788 FlangeAnalysis: Bolt Spacing Correction Factor may calculate incorrectly</strong></li>
+<p>
+The Bolt Spacing Correction may not be correctly calculated in some models.
+</p>
+
+<li><strong>10877 Sustained Allowable may be incorrect for NS & Materials for B31.3/B31.1 code</strong></li>
+<p>
+The sustained allowable stress value may not be correctly calculated for B31.3 2008 or later and B31.1 2009 or later for Non-Standard (NS) and standard materials like CS (carbon steel).
+</p>
+
+<li><strong>11020 Incorrect SAM displacements for JSME 2008 with more than 2 support groups</strong></li>
+<p>
+The SAM displacements are incorrect for JSME 2008 when more than 2 support groups are defined.  For example, the displacements would be correct if any number of SAM load cases are associated with the 1st and 2nd support groups, but if any SAM load cases are associated with support group 3, or later, the SAM displacements are no longer correct.  Any SAM load cases associated with support group 3, or later, will not be considered when calculating the SAM displacements.
+</p>
+
+<li><strong>11022 Incorrect mapping of support groups when changing JSME edition from 2008 to 2005</strong></li>
+<p>
+For a JSME 2008 model, if the code year is changed to 2005, the direction (X/Z) for Imposed displacement is not set correctly and may be blanked out.
+</p>
+</ul>
+
+<H2>AutoPIPE v9.5.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v9.5.0. 
+
+<ul>
+
+<li><strong>10050 Minimum allowable is not used for tee stresses in JSME</strong></li>
+<p>
+For categories that have NB Tee moment summation, the minumum allowable should be used from run and branch since tee stress is the same. The run allowable is being incorrectly applied to the  branch.
+</p>
+
+<li><strong>10203 American materials in EN13480 library may have incorrect creep data</strong></li>
+<p>
+The creep rupture data using EN13480  for the ASME materials listed below are based on BS806 standard and have an incorrectly applied factor of 1.3 to creep rupture data. This causes the creep allowable to be larger and this would not be conservative.
+<ul>
+<li>API5L-B</li>
+<li>A106-B</li>
+<li>A335-P11</li>
+<li>A335-P12</li>
+<li>A335-P22A</li>
+<li>A335-P22NT</li>
+<li>A312-TP304H</li>
+<li>A312-TP316H</li>
+<li>A312-TP321H</li>
+<li>A312-TP347H</li>
+</ul>
+</p>
+
+<li><strong>10145 BTP 1987 Rupture limit for equation 9 is using min. hot Sy instead of design Sy</strong></li>
+<p>
+When using service level as “Rupture-1987”, the ASME NB Equation 9 allowable is calculated using the last load set pair processed during fatigue calculations based on SY (yield stress) from the thermal operating cases defined in equation 10. This can cause the allowable to change from one point to the next if the fatigue report changes. The minimum yield from the last load set pair is being used to calculate the allowable stress. For Zero Moment cases defined in equation 10, the design yield (SYD) is used. Using the SY from the last load set pair will be unconservative if the operating temperature is lower than the design temperature and this last load set pair is ranging between operating cases e.g. T1 to T2.
+</p>
+
+<li><strong>10166 Two flanges added to a component may incorrectly share the same flange data</strong></li>
+<p>
+When inserting a valve or a flexible joint and selecting the option to add flanges to both ends, the flange analysis data would be shared incorrectly by the two flanges. For example, changing the analysis method from ASME Section VIII Div.1 to Div.2 on one flange will incorrectly update the other flange upon exiting and restarting the flange analysis.
+</p>
+
+<li><strong>10237 Ke is less than 1 when service level Rupture is selected and 2.4 Sm &lt; Sn &lt; 3 Sm</strong></li>
+<p>
+When using service level as “Rupture-1981” or “Rupture-1987”, the ASME NB Equation 14 is incorrectly calculated using a Ke value of less than 1.0. This occurs when equation 10 stress is greater than 2.4 Sm but less than 3 Sm.
+</p>
+
+<li><strong>10593 The allowable (K) factor does not reset after changing the stress category</strong></li>
+<p>
+When evaluating  the allowable code stress for certain load combinations, an incorrect value of K factor can be used by the program. The K factor value used by the program can be greater than the code prescribed value, consequently leading to un-conservative  allowable stress calculation.
+</p>
+</ul>
+
+<H2>AutoPIPE v9.4.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v9.4.0. 
+
+<ul>
+<li><strong>9441 Hoop stress in user combination is shown as zero if load case has Pressure 1</strong></li>
+<p>
+For user defined non-code combinations, the hoop pressure may not be calculated correctly if the actual analyzed pressure case like P1{1} is not used.
+</p>
+
+<li><strong>9483 Zero stresses in the stress summary when number of loadsets exceeds 150</strong></li>
+<p>
+When the number of loadsets in the stress summary is 150 or more, stress summary results will show zero stress and fatigue report stops at first iteration. The number of loadset is the number of all combinations in a single stress summary including zero moment cases.
+</p>
+
+<li><strong>9487 User B1 and C3 stress indices limits are incorrect</strong></li>
+<p>
+B1 can be zero for bend points and C3 can be 0.6 for flush welds (2004 code). AutoPIPE limits in the user SIF dialog are  B1 >=0.5 and C3 >= 1.0.
+</p>
+
+<li><strong>9488 Thermal bowing alpha for last pipe is used for all pipes for ASME NB, NC and ND</strong></li>
+<p>
+When using ASME NB, NC or ND the instantaneous expansion alpha is read from ASME material library. AutoPIPE is reporting and using bow alpha for last material read from the library.
+</p>
+
+<li><strong>9631 Pressure stiffening not applied to code stress for offshore codes and B31.8</strong></li>
+<p>
+The bend data listing will show different SIF from that used in the code stress calculations when pressure stiffening is enabled. This applies to offshore codes and to ASME B31.8 regular code. The bend data listing shows the correct SIF, but the code stress uses the SIF corresponding to no pressure stiffening leading to conservative results.
+</p>
+
+<li><strong>9664 Sustained stress allowable ignores creep if one T &lt; Tcrp is included in analysis</strong></li>
+<p>
+If one thermal case with T &lt; Tcrp or fcr=0 is included in an analysis set, the creep allowable fcr is not used for sustained stress allowable. This happens even if other thermals cases in the same analysis set  have T > Tcrp.
+</p>
+
+<li><strong>9673 AutoPIPE crashes while opening a model.</strong></li>
+<p>
+A third party software can conflict with the program. If a third party program has a file name conflicting with that of ProjectWise and has an entry in the 'PATH' environmental variable, the program may receive a wrong file (*.dll) which may cause the application to crash. The probability of such occurrence is low.
+</p>
+
+<li><strong>9675 User allowable stress is not used for Rest categories for B31.8</strong></li>
+<p>
+For B31.8 the user allowable stress is not applied to Restrained categories. It is only applied for Hoop, Expansion and Sustained categories.
+</p>
+
+<li><strong>9768 Pressure stiffening is not applied correctly when analysis sets are not analyzed</strong></li>
+<p>
+When some static analysis sets are not analyzed, load combinations corresponding to last analysis sets may not get pressure stiffening effect calculated.
+</p>
+
+<li><strong>9790 Rotation support is ignored when inserted from menu after a Non-linear support</strong></li>
+<p>
+When a rotation support is inserted from the menu (Insert/Support) after a Non-linear support is inserted. The stiffness of the support is incorrectly used as zero instead of RIGID.
+</p>
+
+<li><strong>9823 User defined units may lead to incorrect compressor or turbine equipment reports</strong></li>
+<p>
+If the user manually modifies the SI or ENGLISH unit files and changes the unit factors for force, moment or dimension, that could cause equipment checks for API 617 (Compressor)  and NEMA (Turbine)  to be incorrect. API 610 reports are not affected.
+</p>
+
+<li><strong>9926 User Allowable tab is blank for 100 or more pressure/Temp cases</strong></li>
+<p>
+If a model with code ASME NB/NC/ND contains 100 or more Press/Temp cases and the static load sets have default multiple analysis set with OCC. Then after analysis if Combination dialog is opened and User Allowable tab is focused, it will be noticed that the tab is blank and no user allowable values have been mentioned.
+</p>
+
+<li><strong>9957 Pipelink: Changing background color on a pipelink imported model causes crash</strong></li>
+<p>
+If a model containing anchors attached to beams is imported in AutoPIPE, changing the background color causes the model to crash.
+</p>
+
+<li><strong>9971 Adding dynamic sets may remove other cases for older MITI and JSME models</strong></li>
+<p>
+When adding dynamic analysis sets into an older MITI or JSME code model, these added sets may not all show after closing the model. Similar thing could happen when changing piping code to MITI or JSME from other codes.
+</p>
+
+</ul>
+
+<H2>AutoPIPE v9.3.2</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v9.3.2. 
+
+<ul>
+
+<li><strong>9329 Reinforced tee B2r &lt 1.575 and C2r &lt 2.1 are incorrect for NC/ND 2003 and later</strong></li>
+<p>
+Stress indices B2r and C2r are calculated incorrectly for reinforced fabricated tee if C2r value is less than 2.1.
+</p>
+
+<li><strong>9338 Tee header SIF is incorrectly used for branch in Japanese JSME 2005 code</strong></li>
+<p>
+During stress calculations for the Japanese JSME 2005 code, the tee header SIF is incorrectly used for the branch side of the tee.
+</p>
+
+<li><strong>9357 ASME NB, NC and ND combined stress may be non-conservative for skewed pipe</strong></li>
+<p>
+Code stress may be non-conservative for some code combinations when the pipes, bends or reducers are NOT oriented along a major axis.
+</p>
+
+</ul>
+
+<H2>AutoPIPE v9.3.1</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v9.3.1. 
+
+<ul>
+
+<li><strong>9091 Abutting bend stress indices are too conservative for pipe thickness &lt 3/16</strong></li>
+<p>
+Back to back bends or bends that are separated by a straight pipe less than one diameter long may have higher stress indices than required by ASME NB code. The additional multipliers for as-welded girth but weld with thickness < 3/16''  for NB 1980S and later.
+</p>
+
+<li><strong>9099 Cannot run time history if a previously used THL file is not in model folder</strong></li>
+<p>
+When a time history location file does not exist, it shows in red color in the time history grid. If the file is replaced by None, the program continues to check for the file and gives an error message preventing analysis.
+</p>
+
+<li><strong>9111 Flange report pressure rating class = *****</strong></li>
+<p>
+After performing a flange ANSI check with version 09.03.00.08. The output report displays **** for the flange rating class, with the following warning after each load-case: "Exceeds allowable of highest class flange".
+</p>
+
+<li><strong>9113 Exported DXF file is corrupted </strong></li>
+<p>
+An exported 3D DXF file is corrupted and will not open in AutoCAD. The new v9.3 compiler has caused additional tab characters to be written at the beginning of the DXF file.
+</p>
+
+<li><strong>9160 B2 is used instead of B2' for girth BW with thickness change for Rev Dyn Summary</strong></li>
+<p>
+For a girth butt weld at a change in pipe thickness the stress index B2 is being used instead of B2’.  The B2’ index should be 1.33 whereas the B2 index is 1.0. This is applicable only for ASME NB/NC/ND 2001 or 2004 piping code (i.e. sections NB-3656 or NC/ND 3655 respectively) with a defined stress summary using service level C and reversing dynamic option turned on.
+</p>
+
+<li><strong>9164 NC/ND 2004 tee stress for reverse dynamic stress summary is conservative</strong></li>
+<p>
+The tee reversing dynamic stress "P+WGT+Rev.Dyn" is incorrectly using the first tee run moment when combining the tee run moments. This happens for level C or Level D stress summary for the condition with reversing dynamic flag is selected in  ASME NC or ND 2003 addenda, or 2004. This results in more conservative stress.
+</p>
+
+<li><strong>9171 SAM as Reverse dynamic gives zero SAM stresses in NB rev.dyn summary</strong></li>
+<p>
+If the default SAM code combination is defined as Reversing Dynamic (Section NB-3656) using the ASME NB 1994 or later piping code, then both SAM bending and SAM axial stresses will be zero in the reversing dynamic stresses summaries using service Level C or D.
+</p>
+
+<li><strong>9203 Pulled bend flexibility factor is conservatively set to 1.0</strong></li>
+<p>
+For ASME NB, NC and ND codes, the pulled bend flexibility factor is conservatively set to 1.0. The SIF and stress indices are computed correctly.
+</p>
+
+<li><strong>9205 Maximum DT1 and DT2 stress is not used for tee in pre-verification report</strong></li>
+<p>
+For ASME NB pre-verification report, the tee DT1 and DT2 stress for one of the ends of the tee is being used. The program should use maxmimum absolute value (keeping sign of maximum value).
+</p>
+
+<li><strong>9302 Stress ISO: Metric DXF borders corrupt the file during DXF export</strong></li>
+<p>
+Adding any metric DXF border during DXF export can corrupt the exported drawing.
+</p>
+
+</ul>
+
+<H2>AutoPIPE v9.3.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v9.3.0. 
+
+<ul>
+
+<li><strong>8433 Moment summation at the tee for ASME NB ignores moment sign for second leg</strong></li>
+<p>
+When computing the tee run moments per ASME NB moment summation requirement, the sign of the final moment is ignored if the controlling side is the second leg of the tee.
+</p>
+
+<li><strong>8472 Allowable Stress and Design Intensity is incorrect for few materials in ASME1986</strong></li>
+<p>
+Several standard and code materials in the ASME 1986 library have incorrect data. The standard materials specify the mechanical properties like expansion rates and modulus. Code materials specify the allowable stress, yield stress and design stress intensity values at different temperatures. Code materials use one of the standard materials for expansion and modulus information.
+</p>
+
+<li><strong>8486 Reinforced tee B2b & B2r  stress indices are set equal for NC/ND 2003-2004 code</strong></li>
+<p>
+The reinforced fabricated tee stress indices B2b, B2r are reported equal in the stress indices report. The incorrect indices affect the stress summary report for equations 8, 9, rupture and leakage but not the pre-verification report. Since B2b’ and B2r’ are the same as B2b and B2r, and C2r depends on B2r , these are also affected.
+</p>
+
+<li><strong>8516 Problem with tee run moment summation for unsigned SAM cases</strong></li>
+<p>
+When a tee header consists of two different segments that are oriented in opposite directions as shown below, then the resultant SAM run moment is zero. The stress in this case will only include the branch moment portion.
+<ul>
+<li>&lt;-- Tee Header--> </li>
+<li>-->  Tee Header &lt;--</li>
+</ul>
+</p>
+
+<li><strong>8517 Moment summation incorrectly applied to reverse dynamic loads for NC 1972-1980</strong></li>
+<p>
+AutoPIPE is incorrectly using moment summation for tee headers, with reversing dynamic loads, for NC 1972 - 1980 (including the 1980 Summer Addenda), and ND 1972 - 1983 (including the 1983 Winter Addenda).
+</p>
+
+<li><strong>8589 B2' = 1.5 is always used for Socket welds for NC/ND 2001 and later</strong></li>
+<p>
+The B2’ index is always reported as equal to 1.5 when the 2001, 2003 addenda, or 2004 editions are selected for the ASME NC/ND code.  The B2’ stress index was introduced in the 2001 edition of ASME Nuclear piping codes, including ASME NC/ND, Class 2/3 piping.  B2’ is used in the equation for calculating stress due to weight and inertial loading due to reversing dynamic loads in combination with the Level D coincident pressure.  According to section NC-3655(b)(3), B2’ should always be set equal to B2 (B2 = 1.5*tn/Cx (where tn = pipe thickness, Cx = weld size)) when a socket weld is present.  However, when a socket weld is inserted, and the ASME NC/ND 2001, 2003 addenda, or 2004 edition is selected, B2’ is always reported as equal to 1.5.
+</p>
+
+<li><strong>8590 C2 should not be set to 1.0 when t &lt; 0.237 in. for NC/ND 2001 and later editions</strong></li>
+<p>
+For an as-welded girth butt weld, the C2 index is always reported as 1.0 and used in the ASME NC/ND 2001 or later stress calculations.  The C2 stress index is used when reversing dynamic is selected for Service Levels C or D.  According to section NB-3683.4(b), C2 should be set equal to 1.0, unless the pipe wall thickness, tn, is less than 0.237 in.  If the pipe wall thickness, tn, is less than 0.237 in. then C2 = 1.0 + 0.094/tn.
+</p>
+
+<li><strong>8595 ASME NB 1989 socket weld indices for Cx&le;0.75tn are always used for later years</strong></li>
+<p>
+The stress indices for a socket weld are incorrectly using the ASME NB 1989 edition Table NB-3681(a)-1 values when the 1989 addenda or later code year is selected, and the weld size is less than or equal to 0.75*(pipe wall thickness).  The ASME NB 1989 addenda expanded section NB-3683.4(c) to include definitions for the B1, B2, C1, and C2 indices.  However, when using the 1989 addenda or later editions, if the weld size, Cx, is less than or equal to 0.75*(pipe wall thickness) the values for B1, B2, C1, and C2 listed in Table NB-3681(a)-1 of the 1989 edition are shown in the output report rather than the values that are calculated using the definitions added in the 1989 addenda.
+</p>
+
+<li><strong>8603 ASME NB Thermal Ratchet shows Delta-T1 range from last load set pair</strong></li>
+<p>
+For ASME NB 1980 or later the program calculates and reports the thermal ratchet ratio in the stress summary for non-reversing stress summary levels. This ratio should be the maximum range of Delta-T1 for all load set pairs. Instead the program is incorrectly reporting the thermal ratchet ratio for the last load set pair only. If the last load set pair does not have Delta-T1, as in the case of reverse dynamic loads, then the thermal ratchet value and ratio will be incorrectly shown as zero.
+</p>
+
+<li><strong>8637 Negative force/disp/gross disc. or cut short may cause incorrect stresses</strong></li>
+<p>
+The presence of negative input data at a point for the types listed below may cause some code combinations listed under equation 10 in the stress summary to be ignored.
+<ul>
+<li>Negative imposed force or moment</li>
+<li>Negative imposed displacement or rotation</li>
+<li>Negative gross discontinuity stress</li>
+<li>Negative cut short</li>
+<li>First point of a flexible joint if one or more stiffness's are RIGID</li>
+</ul>
+</p>
+
+<li><strong>8652 Tee data switched when rigid options are inserted on a branch</strong></li>
+<p>
+Inserting rigid options on a tee branch that is  orientated towards the tee point, and either ends at the tee point or turns and continues along the header, will cause the program to incorrectly use the branch diameter, thickness, and moments for calculating the header stresses for all editions of ASME NB, NC, and ND.  The orientation can be checked by selecting a point on the branch and using the left and right arrow keys to move along the segment.  If the cursor moves along the tee branch towards the tee point when using the right arrow key, and rigid options are inserted on the branch, this model is affected.  The branch diameter and thickness are incorrectly being used for calculating the header section moduli and stress indices, while the header diameter and thickness are incorrectly being used for calculating the branch section moduli and stress indices.  The incorrectly calculated section moduli and stress indices are used to calculate the header stresses in the stress summary.  This has the potential to provide unconservative results.
+</p>
+
+<li><strong>8731 ASME NB Equation 9 Allowable may change based on last load set pair</strong></li>
+<p>
+The ASME NB Equation 9 allowable is calculated using the last load set pair processed during fatigue calculations based on SY (yield stress) from the thermal operating cases defined in equation 10. This can cause the allowable to change from one point to the next if the fatigue report changes. The minimum yield from the last load set pair is being used to calculate the allowable stress. For Zero Moment cases defined in equation 10, the design yield (SYD) is used.  Using the SY from the last load set pair will be unconservative if the operating temperature is lower than the design temperature and this last load set pair is ranging between operating cases e.g. T1 to T2.
+</p>
+
+<li><strong>8737 Transition weld SIF uses thickness at plus side of the joint</strong></li>
+<p>
+The tapered transition weld SIF uses the pipe thickness downstream of the transition (or on the plus side of the point along the segment). If the upstream pipe thickness is smaller, the SIF value will be un-conservative.
+</p>
+
+<li><strong>8759 Some pipe properties for plus point is used for minus point for ASME NB, NC&ND</strong></li>
+<p>
+AutoPIPE uses some pipe properties from plus side of the point when evaluating stresses or allowable at minus side or upstream of the point.
+</p>
+
+<li><strong>8787 SAM Axial stress results are zero for ASME ND code 94 or later</strong></li>
+<p>
+For ASME ND, when a stress summary, using service level C or D, has the Reversing Dynamic option checked, the SAM Axial stress results are incorrectly reported as zero for all points.
+</p>
+
+<li><strong>8788 Incorrect MSRS analysis results when flexible joint or nozzle elements used</strong></li>
+<p>
+The results for a multiple support response spectrum (MSRS) analysis are incorrect when a flexible joint or nozzle is included in the model.
+</p>
+
+<li><strong>8793 ASME B31.3 App P option causes different results in multiple load sets</strong></li>
+<p>
+The stress results may be incorrect for code cases that involves pressure such as GRTP1{2} using ASME B31.3 Appendix P. This happens only for code cases using forces and moments from analysis set #2 and higher such as GRTP1{2}. The program is over estimating the longitudinal pressure stress component by adding pressure from analysis set #1. This would lead to non-conservative results.
+</p>
+
+<li><strong>8991 Changing pipe material in the input grid does not update thermal expansion alpha</strong></li>
+<p>
+Changing the pipe material in the input grid does not update or change the thermal expansion alpha at ambient temperature in the pipe properties for ASME NB piping code.
+</p>
+
+<li><strong>9014 ASME NB/NC/ND OTHER tee stress indices maybe incorrect</strong></li>
+<p>
+User defined ASME NB/NC/ND Stress indices for Tee type set to OTHER will be reported incorrectly and used incorrectly in the stress calculations if either one of the following occurs:
+<ol>
+<li>Valve or reducer far point is directly before the tee  point on the header side.</li>
+<li>Valve or reducer  is modeled on a segment before the Tee branch segment is defined. Select the far point of the valve or reducer and the tee branch point and the results are shown for highlighted section.</li>
+</ol>
+</p>
+
+<li><strong>9025 Eqn.8 & 9 stress summary may be incorrect at plus side of tee for NC/ND 2004</strong></li>
+<p>
+The computed stress in the stress summary for Equation 8 and 9 at the plus side of the tee run may be using the results from the minus side of the tee run for ASME NC/ND 2004.
+</p>
+
+<li><strong>9023 ASME NB 1980+1982 Addenda is mislabled as ASME 1980</strong></li>
+<p>
+The piping code ASME NB-1980+1982 addenda is mislabled as ASME 1980 (without addenda).
+</p>
+
+<li><strong>9034 Branch Type Tee SIFs and stress indices for JSME code are using NC 2004 values</strong></li>
+<p>
+The JSME 2005 piping code has specific equations for stress indices that are different from NC 2004 equations.  AutoPIPE is using the ASME NC 2004 stress indices for JSME 2005 piping code.  This could lead to unconservative results in some cases. In particular the B2b index in the JSME code is twice that of the ASME NC 2004 value.
+</p>
+
+<li><strong>9040 Problem with entering OTHER tee for JSME code</strong></li>
+<p>
+Other tee branch SIF and B2b and B2r cannot be entered. Also B2b' and B2r' are enabled when they should not be.
+</p>
+
+<li><strong>9044 Abutting elbow C2 index is using NB 1992 girth weld C2 formula for earlier years</strong></li>
+<p>
+For abutting elbows with a girth butt weld, the C2 of the abutting elbow is calculated by multiplying the C2 of a regular elbow and that of a girth butt weld as per NB 3683.2(a).
+</p>
+</ul>
+
+<H2>AutoPIPE v9.2.2</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v9.2.2. 
+
+<ul>
+
+<li><strong>8612 Hanger Selection: HGR file is not created in Analyze / All</strong></li>
+<p>
+Hanger selection is not performed from Analyze All dialog if 'Automatic' checkbox is checked even when undesigned hangers are present.
+</p>
+
+<li><strong>8615 C2 for ASME NC/ND 1994 and later ignores longitudinal weld</strong></li>
+<p>
+C2 factor for NC/ND refers to NB code for estimation. The NB code requires that the C2 stress indices for pipes with long. welds be multiplied with stress indices for circumferncial welds. AutoPIPE ASME NC did not implement this multiplication of factors as the NB code did.
+</p>
+
+<li><strong>8621 Ratchet stress is incorrect for SI units</strong></li>
+<p>
+The ratchet stress reported in the stress summary report and interactive stresses for ASME NB is shown assuming stress units instead of Delta-Temperature units. This affects only SI and Metric units since no conversion factors are applied for English units. The stress ratio is shown correctly since the conversion factor gets cancelled out.
+</p>
+
+<li><strong>8699 Pressure stiffening correction is not applied to SIF factor</strong></li>
+<p>
+When some analysis sets are using pressure stiffening case, the correction which will reduce the SIF, is not applied in certain cases. Bend data listing shows correct SIF values but code compliance may show values without stiffening and will use these in the stress calculations.
+</p>
+
+</ul>
+
+<H2>AutoPIPE v9.2.1</H2>
+The following outline identifies all major errors in  Release of AutoPIPE v9.2.1. 
+
+<ul>
+
+<li><strong>8434 File write error may crash the program on saving or analyzing a model</strong></li>
+<p>
+A file write error "File write error, check disk space" may appear on saving or analyzing a model even though there is adequate available disk space. This error does not reproduce frequently and causes a program crash.
+</p>
+
+<li><strong>8436 Program incorrectly shows code check failing when equation 10 fails for ASME NB</strong></li>
+<p>
+AutoPIPE could show the system fails ASME NB when equation 10 fails. The code requires equations 12 and 13 be checked if equation 10 fails and hence equation 10 failure may not always cause the system to fail the code check. This happens in the results summary and also in the interactive code check for stress summaries.
+</p>
+
+<li><strong>8485 Code year NC/ND 1980 Summer is mislabeled as 1982a. Also ND 1983W is mislabeled</strong></li>
+<p>
+Code year 1980+1982 addenda is mislabled. The actual code years are NB 1980, NC/ND 1980 + 1980 Summer addenda. Also ND1983W is using NC1983W calculations when it should  use NC1980+1980 Summer calculations.
+</p>
+
+<li><strong>8498 Stress level code combinations like (SUS) are ignored for ASME NB/NC/ND</strong></li>
+<p>
+The code combinations (SUS), (EXP) and (OCC) are incorrectly listed when defining components of a user defined code combination for ASME NB/NC & ND codes. This is limited to AutoPIPE versions 9.1 and 9.2. If present, these components will have no effect on the results.
+</p>
+
+<li><strong>8521 Girth Butt weld SIF maybe > 1.0 for t &lt; 0.237'' and ASME NC/ND 2001 and later</strong></li>
+<p>
+In the NC/ND 2000 addenda, the girth butt weld SIF is set to 1.0 for all thicknesses. Previously the SIF for thickness less than 0.237'' was given by the equation: SIF = 0.9 ( 1 + 0.094/tn) &le; 1.9
+</p>
+
+<li><strong>8527 Equation 11a should not be used for years before 1994 in pre-verification report</strong></li>
+<p>
+Equation 11a which was introduced in 1994 is being used for SAM cases in the pre-verification report. The correct equation to use for SAM is equation 10. Actually equation 10 can also be used for years after 1994 since SAM is not a stress range. Using equation 10 after 1994 is equivalent to using equation 11a since SAM is not a range and equation 10 has 1/2 the allowable of equation 11a.
+</p>
+
+</ul>
+
+<H2>AutoPIPE v9.2.0</H2>
+The following outline identifies all major errors in  Release of AutoPIPE v9.2.0. 
+
+<ul>
+
+<li><strong>7897 Comb based on last analysis set only are correct in General Stress report</strong></li>
+<p>
+Results reported in the General Stress report for non-code combinations that include results from multiple static analysis sets may not be correct. , Except for load cases from the first analysis set, the referenced load case in a combination always uses the results from the last analysis set for the General Stress report. The load case results from the first analysis set are ignored. Consequently, the stresses reported for the combinations based on load cases from the last analysis set only will be correct. The stresses calculated for combinations that include load cases from the first analysis set will be zero or underestimated.
+</p>
+
+<li><strong>7898 FY allowable force resets to 'none' for all reference point data</strong></li>
+<p>
+The FY allowable force resets to 'none' for all reference point data after moving the model cursor to another point.
+</p>
+
+<li><strong>7938 Two consecutive tees on the same segment may be disconnected after NTL import</strong></li>
+<p>
+Two back-to-back tees on the same segment may be disconnected after NTL import. The problem is caused by the global consistency check operation after importing the NTL file. The data for one of the two back-to-back tees is not created properly.
+</p>
+
+<li><strong>7944 Member static earthquake factor is not applied correctly at valve midpoint</strong></li>
+<p>
+Member static EQ factor does not get applied to complete valve (after the midpoint is generated) if EQ factor was defined on a valve using AutoPIPE 9.0 or earlier.
+</p>
+
+<li><strong>7964 Selecting load case in the Impose Disp. dialog always displays E49-40 for KHK</strong></li>
+<p>
+For models with KHK piping code, selecting any load case in the Imposed Displacement dialog always displays the error message 'E49-40: Only static load cases are valid as input'.
+</p>
+
+<li><strong>7967 Cannot enter a User B1 value of less than 0.5 for ASME NB</strong></li>
+<p>
+For ASME NB, User B1 values &lt; 0.5 cannot be entered in the Joint Type & User SIF dialog. According to NB-3683.7, for curved pipe or butt welding elbows, B1 = - 0.1 + 0.4h but not < 0 nor > 0.5. The same problem occurs in the 'Joint Type, SIF' tab of the input grid.
+</p>
+
+<li><strong>7978 Error with Xtra data > Joint names  & SIF values when imported model</strong></li>
+<p>
+When copying and pasting (or importing) piping from one model into another, "Xtra Data> Joint Type & User SIF" data in the pasted portion of the piping may have an error.
+</p>
+
+<li><strong>7983 TTA profiles with long transients may return incorrect Delta T1 & T2 values</strong></li>
+<p>
+For TTA profiles which have long transients when combined with small time steps, can cause an memory overflow in which case, all the Delta T1 and T2 results reported by the program will be incorrect. These will be shown incorrectly in the summary report (*.TSM) and the results reports (*.TSS and *.TDL) as well as on the Review TTA Results Dialogs. For one transient analyzed, it was found the results to be non-conservative i.e. much lower value of Maximum Delta T1 reported.
+However due to this memory overflow, the exact nature of the final results cannot be determined, therefore it is assumed the results may be conservative or non-conservative.
+</p>
+
+<li><strong>7987 Sustained stress adds up all P cases when multiple analysis sets are defined</strong></li>
+<p>
+When multiple analysis sets are defined, the results of the pressure cases across all analysis sets are improperly added together and combined with the results for each sustained load combination leading to incorrect and conservative results due to pressure cases.
+</p>
+
+<li><strong>8010 MITI-3: Cannot add load cases to combination in 3AS(P+S) category</strong></li>
+<p>
+For MITI-3 code, the program incorrectly blocks to input of load cases, e.g. E1, S1, etc., in User Code combinations for '6 3AS,I+II' stress category. The program will display the error message: "E93-52: Load cases are not allowed for Combined category".
+</p>
+
+<li><strong>8015 JSME: Cannot add load cases to combination in CS1(P+S) category</strong></li>
+<p>
+For JSME code, the program incorrectly blocks to input of load cases, e.g. E1, S1, etc., in User Code combinations for '6 CS1,I+II' stress category. The program will display the error message: "E93-52: Load cases are not allowed for Combined category".
+</p>
+ 
+<li><strong>8016 Pressure & allowable stresses can be incorrect for multiple analysis sets</strong></li>
+<p>
+When results from multiple analysis sets are used to evaluate code combinations, the stress results for combinations from the last analysis set only are correct. For all other combinations, the three stress results below may be incorrect:
+<ol>
+<li>Hoop pressure stress</li>
+<li>Longitudinal pressure stress</li>
+<li>Allowable stress</li>
+</ol>
+</p>
+
+<li><strong>8021 Branch stress calculated for reducing outlet branch crosses may be incorrect</strong></li>
+<p>
+The Branch stress calculated for reducing outlet branch crosses which uses effective branch section modulus (Ze) is suspected to be incorrect for all piping codes except the following : B31.4, B31.8, B31.4 offshore, B31.8 offshore, CSA-Z662, CSA-Z662 offshore and general piping code. On 1 or both of the branch sides of the cross, the branch stress may be incorrectly using the rigorous section modulus (Z) instead of Ze (Effective section modulus). A sensitivity study shows, if the thickness of the header is less than the order of 0.8 to < 1.0 of the branch thickness, for different branch sizes then the resulting branch stress may be incorrect and non-conservative.
+</p>
+
+<li><strong>8031 Interactive Long stress ratio may be incorrect for B31.8 and offshore codes</strong></li>
+<p>
+The longitudinal stress ratio may not be shown correctly for all offshore codes and B31.8 restrained stress category when viewing the interactive on-screen stress results. To repeat this defect, Select Result > code Stress, Stress Type = Long (Longitudinal stress). The program is incorrectly calculating the longitudinal stress ratio based on the minimum longitudinal stress instead of the maximum absolute longitudinal stress value. For example: On-screen results may show calculated Long stress = 48914, allowable long stress = 48000, Ratio = 0.79.
+</p>
+
+<li><strong>8051 B31.1-67 branch stress calculated for reducing outlet branch tees is incorrect</strong></li>
+<p>
+The ASME B31.1: 1967 branch stress calculated for reducing outlet branch tees uses the effective branch section modulus (Zb) for calculating the bending stress and the branch pipe section modulus (Z) for calculating the torsional stress.
+</p>
+
+<li><strong>8097 For ASME NC/ND 1986-1989 Girth Butt Weld SIF is set to 2.8 for t < 0.237 inches</strong></li>
+<p>
+For ASME NC and ND code years 1986-1989,  Girth Butt Weld  SIF is incorrectly set to 2.8 when pipe thickness is less than 0.237 inches.
+</p>
+
+<li><strong>8113 Incorrect local y and z axes for nearly vertical pipes</strong></li>
+<p>
+For certain nearly vertical pipes the local y and z forces and moments may be switched. This could affect calculation of tee in-plane and out-of-plane moments and the associated stresses if the in-plane and out-of-plane SIFs are different.
+</p>
+
+<li><strong>8115 Butt Weld offset or mismatch is incorrectly used as offset ratio delta/t in SIF</strong></li>
+<p>
+For ASME code years prior to 1992, the weld  offset or mismatch input value is assumed as a weld offset ratio delta/t in the SIF calculations. The weld offset is no longer required for codes year 1993 addenda and later years.
+</p>
+
+<li><strong>8116 Pipe side SIF at far point of reducer may not be correct</strong></li>
+<p>
+Pipe SIF and stress indices may be incorrect for the pipe at the far end of a reducer. It is to be noted that the SIF and stress indices are correct at both ends of the reducer element, only the pipe side is affected and that side usually have a lower stress.
+</p>
+
+<li><strong>8149 In ASME NC/ND 1981/1982 Unreinforced/Reinforced tee SIF can be less than 2.1</strong></li>
+<p>
+The unreinforced and reinforced tee SIF for ASME NC/ND 1981/1982 cannot be less than 2.1 as per note 10 of the Table of Stress Indices, Flexibility, and Stress Intensification Factors in the code. AutoPIPE SIF value can be lower than 2.1 when the pipe schedule is very thick and therefore non conservative tee stress results will be reported. For example for unreinforced tee, the SIF can get lower than 2.1 if pipe schedule is XXS or thicker for 3.5 inch to 6 inch nominal and schedule 160 or thicker for 3 inch nominal diameter or less.
+</p>
+
+<li><strong>8155 Stress at  pipe end of far reducer point  with a support has zero moment</strong></li>
+<p>
+If a support is placed at the far end of the reducer, the moment on pipe side (+ side) will be  zero in the code compliance report. The correct moment is shown in the forces and moments report. This results in a lower or zero stress.
+</p>
+
+<li><strong>8156 New KHK2 models show default combinations as those of KHK1 piping code</strong></li>
+<p>
+When building a new model using  KHK level 2  piping code, the default code and non-code combinations are the same as those for KHK level 1 piping code.
+</p>
+
+<li><strong>8159 DeltaT1 and DeltaT2 units are not converted correctly when switching to SI units</strong></li>
+<p>
+When switching units between English and SI and when entering data in SI, Delta-T1 and Delta-T2 are converted using regular temperature conversion with an offset. Converting Delta-T values should not use any offset. e.g. when converting DeltaT1=180 degF to SI, it gives (180-32)/1.8=82.22 degC, but correct value is 180/1.8 = 100 degC.
+</p>
+
+<li><strong>8165 New KHK2 models show zero results except for combinations with PW</strong></li>
+<p>
+When creating new KHK Service Level 2 models, the analysis results show zero values for all cases except those with PW.
+</p>
+
+<li><strong>8188 For vertical API610 pumps, stresses are NaN when AUTODIN is used</strong></li>
+<p>
+When vertical API 610 pumps are used, the equipment report could display NaN for stresses per equations F-6 to F-8. This occurs only when using a library other than AUTOPIPE.LIB, such as AUTODIN.LIB.
+</p>
+
+<li><strong>8207 ASME NB 1977 K2 and K3 stress indices are incorrect for some welded transitions</strong></li>
+<p>
+For ASME NB-1977 piping code, the following K2 and K3 stress indices are incorrectly calculated and used in the program.
+<ol>
+<li>For As Welded 4250 Transitions, stress indices K2=K3=1.1 and the correct values are K2=1.8 and K3=1.7 (unconservative)</li>
+<li>For Flush Welded 4250 and 1:3 transitions, K2=1.8 and K3=1.7 and the correct values are K2=K3=1.1 (conservative)</li>
+</ol>
+</p>
+
+<li><strong>8281 TTA Pipe and Insulation grid blocks valid pipe thickness input for SI Units</strong></li>
+<p>
+TTA Pipe and Insulation grid blocks input for valid pipe thickness for SI Units. The rule is that pipe thickness should not be greater than half of diameter but if you enter 60mm as Pipe OD, it does not allow you to enter 10mm as pipe thickness displaying following error message : "Pipe thickness cannot be greater than half of the Outer Diameter".
+</p>
+
+<li><strong>8300 For ASME NB-1975 add, K2 and K3 indices are incorrect  for Flush BW Transition</strong></li>
+<p>
+For ASME NB 1974+1975 addenda, K2 and K3 indices Flush BW Transition should be 1.1. AutoPIPE uses K2=1.8 and K3=1.7 which are the same values for As Welded BW Transition.
+</p>
+</ul>
+
+<H2>AutoPIPE v9.1.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v9.1.0. 
+
+<ul>
+
+<li><strong>7043 BS7159 pressure stress and multiplier may be incorrect</strong></li>
+<p>
+The BS7159 pressure stress will be conservatively higher and pressure multiplier (m) incorrect, when a thicker tee is modeled on the header side compared to straight run pipe. The program is incorrectly using the pipe properties from the downstream header run pipe instead the thicker tee diameter and thickness to calculate the pressure stress and pressure multiplier (m).
+</p>
+
+<li><strong>7055 Hoop and Shear Modului are not updated when ambient temperature changes</strong></li>
+<p>
+Hoop and shear moduli at ambient temperature are not updated after changing ambient temperature in the General Model Options dialog. This problem does not occur when AUTOFRP is specified for the material library.
+</p>
+
+<li><strong>7093 Allowable hoop stress for EN13480 is set to fh instead of design stress f</strong></li>
+<p>
+Allowable hoop stress for EN13480 is set to hot allowable fh instead of design stress f. The value of fh is more conservative since fh=min(f,fc,fcr). where  fc is the cold allowable and fcr is the creep limit stress.
+</p>
+
+<li><strong>7107 Update EN13480 elongation criteria for allowable stress for austenitic steel</strong></li>
+<p>
+The EN13480 allowable stress calculation for austenitic stainless steel is based on the longitudinal elongation 'A'. The limits of 'A' in section 5.2.2.1 were changed from prEN 13480-3:2002 (E) Issue 1 (2002-05) edition to EN 13480-3:2002 (E) Issue 1 (2002-05). The change means the design stress, f, is now based on A > 35% instead of A >= 35% for Eq. 5.2.2-1 and 35% >=  A >= 30% instead of 35% > A >= 30% for Eq. 5.2.2-2. Consequently, many stainless steel materials in the EUROMAT library were being calculated with a higher design stress resulting in higher allowable fh.
+</p>
+
+<li><strong>7201 Loading 8.6 model with fluid transient data into 9.0 hangs the program</strong></li>
+<p>
+When opening pre-9.0 models in version 9.0, the fluid transient check was performed before the database updates were applied. The unchanged point names in the fluid transient data caused the program to hang.
+</p>
+
+<li><strong>7271 Incorrect units used for Chinese GB material library</strong></li>
+<p>
+Incorrect units used for Chinese GB material library (chinagb.lib). This only impacts the MATL table which has temperature dependent data for density, thermal expansion and modulus. This will give incorrect displacements, force/moment and stress results.
+</p>
+
+<li><strong>7450 Stress indices for branch tees is not correct if branch pipe is reinforced</strong></li>
+<p>
+AutoPIPE always assumes the branch pipe to be un-reinforced when calculating ASME NC/ND branch tee SIFs and  indices. The reinforced thickness is calculated based on the y value entered. If the branch pipe is already reinforced, then the SIFs and stress indices may not be correct.
+</p>
+
+<li><strong>7469 Crotch thickness for B31.1 2005a code is not saved correctly for SI units</strong></li>
+<p>
+When entering data for crotch radius in SI units (mm) for B31.1-2005a piping code, the data is saved as inches.
+</p>
+
+<li><strong>7483 Program crashes when trying to delete segment origin pt in attached test model</strong></li>
+<p>
+The attached model is assigned with a Soil ID and it stored in support array and therefore when selecting a segment origin point with anchor A00 or I00 and executing Delete/Point command and accepting the Confirm message, crashes the application.
+</p>
+
+<li><strong>7634 Incorrect bend geometry after exporting support loads to STAAD</strong></li>
+<p>
+Incorrect bend coordinates may result after exporting support loads to STAAD. The problem is caused by applying a limit of 17 elements per SECTION in the ADI file created by AutoPIPE for import into STAAD. If the 1st or 17th element is a bend, then a SECTION instruction will be added before or after a bend in the ADI file causing the bend coordinates to be calculated incorrectly. The incorrect bend coordinates affects all the node coordinates downstream from the bend as well.
+</p>
+
+<li><strong>7841 Valve with midpoint is exported incorrectly as a valve and run pipe to STAAD</strong></li>
+<p>
+After exporting support loads to STAAD (Result>Export Support Loads to STAAD), the valves in the STAAD model are shown as a valve upto the original valve midpoint followed by a run pipe from the original valve midpoint to the original valve far point.
+</p>
+
+<li><strong>7842 Support dlg: Switch 'Constant' support (designed) to 'Spring' crashes program</strong></li>
+<p>
+In the Support dialog, if the 'Undesigned' field is unchecked for a 'Constant' support type, changing the 'Constant' support type to 'Spring' will cause the program to terminate abnormally. Note that this problem does not occur in the Support input grid.
+</p>
+
+<li><strong>7844 Incorrect JSME moment summation for rotated tees</strong></li>
+<p>
+When evaluating primary stresses for JSME branch connections and tees whose run legs are defined along a non-global direction, the run moment summation is calculated using the global instead of the orthogonal run moment components of the tee. Consequently, the resultant moment and stress on the run for the tee can be un-conservative or conservative for the primary stresses.
+</p>
+
+<li><strong>7845 Incorrect NC/ND reversing loads in Service Levels C & D for rotated tees</strong></li>
+<p>
+Header moments for ASME NC/ND 2001 and earlier codes in AutoPIPE v9.1.0 are summed along the global axes instead of tee local axes for reversing dynamic loads. This affects only tees where the header is not along a global axis direction. This may lead to conservative or unconservative results.
+</p>
+
+<li><strong>7846 Incorrect ASME NB moment summation for rotated tees</strong></li>
+<p>
+When evaluating Eqs. (9) through (13) for ASME NB branch connections and tees whose run legs are defined along a non-global direction, the run moment summation in accordance with ASME NB-3683.1(d) is calculated using the global instead of the orthogonal run moment components of the tee. Consequently, the resultant moment and stress on the run for the tee can be un-conservative or conservative for Eqs. (9) through (13) for all service levels.
+</p>
+
+<li><strong>7861 Incorrect ASME NC/ND moment summation for rotated tees for Eqs (8) and (9)</strong></li>
+<p>
+When evaluating Eqs. (8) and (9) for ASME NC/ND branch connections and tees whose run legs are defined along a non-global direction, the run moment summation in accordance with ASME NB-3683.1(d) is calculated using the global instead of the orthogonal run moment components of the tee. Consequently, the resultant moment and stress on the run for the tee can be un-conservative or conservative for Eqs. (8) and (9) for all service levels.
+</ul>
+
+
+<H2>AutoPIPE v9.0.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v9.0.0. 
+
+<ul>
+<li><strong>6511 Zero code stresses are shown for General Code with B31.8 SIF option</strong></li>
+<p>
+Code stresses are reported as zeroes when 'B31.8 Gas Trans. & Dist.' option is selected for the 'Piping code to calculate SIF for General piping' field in the General Model Options dialog.
+</p>
+
+<li><strong>6679 Materials in B31.3 library have the wrong allowable stresses</strong></li>
+<p>
+Materials A671-CC60, A672-B60, and A672-C60 in AUTOB313 material library have incorrect stress values. The allowable hot stress at 200 F has been provided as 18500 psi instead of 19500 psi. Therefore, the interpolated hot stress values between 100 F and 300 F will also be incorrect and conservative.
+</p>
+
+<li><strong>6829 Large thermal movement may result during hanger selection analysis</strong></li>
+<p>
+When running a hanger selection analysis, the program may select a constant support for an undesigned hanger based on a unrealistic large thermal movement that is incorrect. The large thermal movement is a random value inadvertently accessed outside the range of the calculated thermal displacement results. The scenario happens when the number of thermal/pressure cases is set to a value, e.g. 10, and the hanger selection analysis is run for all 10 cases. Then later, the number of thermal/pressure cases is set to a smaller value, e.g. 3. The program will try to retrieve values for the non-existent thermal load cases 4 through 10 at the undesigned support location during the hanger selection analysis. These values are random and are not thermal displacement results. One other condition for this scenario to occur is that the 'Display all static load cases' option in the Model Edit Options dialog (Tools/Model Options/Edit) must be unchecked (default).
+</p>
+
+<li><strong>6835 Changing to 'Spring' or 'Constant' in Support grid may affect Non-linear static</strong></li>
+<p>
+Changing a support with nonzero value for 'gap up' or 'gap forward' (depending on the support type) to a 'Spring' or 'Constant' support in the Support grid may cause the program to inadvertently apply the gap and friction data from the original support to the 'Spring' and 'Constant' supports during the Non-linear static analysis (gap/friction/soil option enabled) that may lead to incorrect analysis results. 'Spring' and 'Constant' supports are not expected to behave Non-linearly. If the spring or constant support is affected by this problem, the supported point will displace vertically further than expected after performing a Non-linear analysis. Modifying supports in the Support dialog is not affected.
+</p>
+
+</ul>
+
+<H2>AutoPIPE v8.9.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v8.9.0. 
+
+<ul>
+
+<li><strong>5821 Constant Force hanger stiffness is incorrectly set to rigid when undesigned</strong></li>
+<p>
+Constant Force (hanger) support stiffness is set to rigid when 'undesigned', causing large reactions at the support for dynamic analysis. This only happens when the Constant Force support is inserted using the menu or keyboard commands (i.e. 'I', then 'S' followed by OK or Enter).  In addition, the problem is limited to the case where the inserted support(s) are not the first Constant Force support defined in the model.  See published error #2376 for the case involving the first Constant Force support.
+</p>
+
+<li><strong>6053 Cut short may be incorrect when mass & soil points are present</strong></li>
+<p>
+The cut short results may not be correct when mass or soil points are added on either side of the cut short point. Specifically, when the distance between mass/soil points on the upstream pipe of the cut short point is different from the downstream pipe, the cut short load is not applied correctly. Instead of applying the cut short proportionally to each of the sub-divided mass-point/soil-point elements on the down stream side of the cut short point as is currently done, the entire cut short should have been applied only to the adjacent mass-point/soil-point element on the upstream side of the cut short point.
+</p>
+
+<li><strong>6219 Fluid transient forces may be incorrect downstream from a flow rate change</strong></li>
+<p>
+Using the fluid transient load generator (Load/Fluid Transient), the calculated fluid transient peak forces downstream from a point where the flow rate changes (e.g. at a tee) may be inconsistent with the defined flow rate. If there were no change in direction or pipe size at the point where the flow rate changes, the program will ignore the specified flow rate change for the downstream points and incorrectly use the flow rate from the previous point where the direction or pipe size changed.
+</p>
+
+<li><strong>6422 P&T dependent data may change if inserting before the 1st segment point</strong></li>
+<p>
+Inserting a run, tee or bend point before the first point in the segment that has a different a pipe identifier with a different material from the first point causes the following problems to occur for the temperature dependent data:
+<ul>
+<li>The temperature dependent data, e.g. expansion rate, hot modulus and allowable stresses for the newly inserted elements and for the current and all downstream segments will be inconsistent with the assigned material name and temperature.</li>
+<li>The temperatures and pressures for the current and all downstream segments will be incorrectly reset to the values of the first point in the segment. For example: A model has segments A to E and if a point is inserted before C00 (1st point on segment C) with pressure = 100psi and temperature = 400F, then segments A & B are unchanged. However, segments C, D, E, and the newly inserted elements will now have all pressures set to 100psi and temperatures set to 400F and the temperature dependent data will not be updated for the incorrectly assigned temperatures.</li>
+</ul>
+</p>
+
+</ul>
+
+<H2>AutoPIPE v8.6.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v8.6.0.
+<ul>
+
+<li><strong>5124 Program crashes if Ctrl+Z is pressed more than once in Input grids</strong></li>
+<p>
+If 'Show input grid tabs with no data' option in "Grids Settings" dialog is unchecked, then the program crashes when Ctrl+Z is pressed more than once in the input grids.
+</p>
+
+<li><strong>5235 Hoop stress for thick wall pipes is not calculated correctly for EN13480 code</strong></li>
+<p>
+For the EN13480 piping code, the hoop stress formula for thick pipes is applied incorrectly for outside to inside diameter ratios greater than 1.7.
+</p>
+
+<li><strong>5354 Shaft axis set to Inclined in Rotating Equipment dialog will hang the program</strong></li>
+<p>
+if an 'inclined' Shaft axis is selected for a 'user' type Rotating Equipment, once a valid set of cosines are entered (i.e. at least one of the three values is nonzero), the Pedestal axis field will be automatically updated to show 'inclined' and AutoPIPE will 'hang'.
+</p>
+
+<li><strong>5470 Tee in- & out-plane moments are reversed on +side when run & branch on same seg</strong></li>
+<p>
+When one leg of the header and the branch leg are modeled on the same segment for a tee, the in-plane and out-plane moments are reversed on the +side of the tee point. Consequently, the in-plane and out-plane SIF will not be applied to the corresponding moments and the calculated bending stress will be incorrect on the +side of the tee point. When both legs of the tee header are on the same segment, the in-plane and out-plane moments are correct, but the signs are reversed on the +side of the tee point. This condition does not affect the calculated bending stress. However, the problem of the reversed signs may affect the calculated location of the maximum stress around the circumference of the pipe by 180 degrees as reported in the General Piping Code Compliance sub-report. This defect affects all piping codes that require in-plane and out-plane moments for stress calculations, i.e. ASME B31.1-1967, B31.3, B31.4, B31.4-Offshore, B31.8, B31.8-Offshore, BS806, BS7159, DNV, SNCT, EN13480, CSA-Z662, CSA-Z662-Offshore, KHK, and General Piping codes.
+</p>
+
+</ul>
+
+<H2>AutoPIPE v8.5.1</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v8.5.1.
+<ul>
+
+<li><strong>4418 Tee connectivity data may be corrupted after modifying bend to run point</strong></li>
+<p>
+Tee connectivity data is not updated consistently after modifying a bend to run point in which the bend is the first component along one leg of a tee component. Consequently, the tee connectivity data may be corrupted during the database compaction process of the global consistency check and the program subsequently crashes with the runtime error "Microsoft Visual C++ Runtime Library".
+</p>
+
+<li><strong>4439 Frequent loss of Bentley AutoPIPE licenses while application is running</strong></li>
+<p>
+On some computers, the repeated loss of AutoPIPE licenses may occur while the application is running. In most cases, the license can be recovered using Tools/Setting/Edition command. In the case that the license cannot be recovered, the input data may be lost as well.
+</p>
+
+<li><strong>4440 Missing unit or library files may cause corruption of Xtra Data in the model</strong></li>
+<p>
+Opening a pre-8.5 model in which the unit or library files are missing may cause corruption of Xtra Data in the model (i.e. flanges, imposed displacements, etc.). The Xtra Data that gets corrupted is random. The problem is caused by processing Xtra Data in the General Model Options dialog before the model has been properly converted to the 8.5 database schema.
+</p>
+
+<li><strong>4475 The program may crash when selecting a cell in the Point Grid</strong></li>
+<p>
+The program may crash when selecting a cell in Point Grid. This problem is related to error #4418 (& also #4708) such that tee connectivity data is not updated consistently after modifying a bend to run point. The global consistency check is typically executed by the program before running an analysis. During the global consistency check, a compaction is performed on the database which can cause the input grids to not be in synchronization with the model.
+</p>
+
+<li><strong>4479 Member earthquake factors are not saved and applied to beams</strong></li>
+<p>
+Modifying a Member Static Earthquake factor defined across a frame member may incorrectly display the previously defined X, Y and Z factors in the dialog using version 8.50 however on accepting the dialog, an error message 'E54-91: No Member Static Earthquake Factors at the selected location(s)' in versions 8.50, 6.3, 6.2 and 6.1 is incorrectly displayed.
+</p>
+
+<li><strong>4481 The pressure calc. for thick wall pipes uses thin-wall theory for Poisson effect</strong></li>
+<p>
+The deformation calculations due to pressure load uses 'thick-wall' theory for the end cap portion but uses 'thin-wall' theory for the Poisson's effect portion.  To be consistent with the cap pressure, the Poisson's effect should also be based on thick-wall theory as well.
+</p>
+
+<li><strong>4495 Frames copied from model to model do not display in solid view after paste</strong></li>
+<p>
+Frames copied from one model to another different model will not be viewable in solid view mode when the copied model contained previously defined section ID’s which were not being used. The frames are viewable in single line view model. In wire-frame view mode the frames are not shown in wire frame but are incorrectly plotted the same as single line view mode.
+</p>
+
+<li><strong>4496 Frames copied from model to model may change section properties after paste</strong></li>
+<p>
+Frames copied from one model to another different model may change section properties after the paste operation when the copied model contained previously defined section ID’s which were not being used. This problem generally occurs if the complete model is copied.
+</p>
+
+<li><strong>4531 Selecting the "Max Range" code stress combination only will crash the program</strong></li>
+<p>
+Select the Result/Grids from the menu and click on the Code Stresses TAB.  If all combinations in the right window pane are unchecked except for "Max Range"  the error message "Syntax error (missing operator) in query expression ..." will be displayed.  Attempting to check another code stress combination in the list will crash the program.
+</p>
+
+<li><strong>4708 The program may crash after deleting points and running the analysis</strong></li>
+<p>
+Deleting points at the beginning of a model and converting a bend to a run then performing an analysis followed by clicking on any point(s) in the model once or twice will crash the program. This is similar but different behavior to defect #4475.
+</p>
+
+<li><strong>4714 Pres/Temp data at bend midpoint is not updated in Pres/Temp grid</strong></li>
+<p>
+When using the Pres/Temp/PipeID tab in the input grid to update the Pres/Temp data at a bend having a midpoint, the Pres/Temp data is not applied to the bend midpoint. Consequently, the bend midpoint will incorrectly have different Pres/Temp data from the rest of the bend.
+</p>
+
+<li><strong>4802 Program hangs when sizing relief valve vent lines</strong></li>
+<p>
+The program inadvertently hangs while sizing the steam relief vent lines during the generation of the Steam Relief report. If no vent sizing is required, the program will not hang.
+</p>
+</ul>
+
+<H2>AutoPIPE v8.5.0</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v8.5.0.
+<ul>
+
+<li><strong>3483 Tee stress results for General Stress report combinations may not be correct</strong></li>
+<p>
+The 'General Pipe Stress Report' sub-report will contain incorrect longitudinal, principal, and total stress results at tee points for any 'non-code' user combinations.  This problem only occurs when the user adds a combination to the set of existing ones causing the total number of defined combinations to exceed the number of analyzed load cases.
+</p>
+
+<li><strong>3495 Shear modulus is zero for new pipe sections after a Cancel in the PipeID dialog</strong></li>
+<p>
+Pressing the Cancel button in the Pipe Properties dialog when reviewing and/or modifying existing pipe IDs or inserting new ones could cause all new pipe sections inserted after the cancel command to have a zero shear modulus. This only happens when the new pipes use the same material as the previous pipe. This error does not happen when inserting new pipes using the 'Insert/Pipe Properties' command.
+</p>
+
+<li><strong>3541 The Automatic Cf factor calculation for the ASCE 7-98 wind load is incorrect</strong></li>
+<p>
+The height 'h' used in calculating the automatic 'Cf' factor in Table 6-10 of the ASCE 7-98 code was misinterpreted as an elevation instead of a length. As a result, the automatically calculated Cf factor is not correct.
+</p>
+
+<li><strong>3650 Model revision number is not updated for General Model Option changes</strong></li>
+<p>
+The model revision number will not be updated when only General Model Options dialog (Tools/Model Options/General) changes are made.  Also, any other subsequent model change that would normally cause the revision number to increment, will not produce an increment.  The impact is that any report (*.RPT, *.OUT) created in this situation will not show a revision increment.
+</p>
+
+<li><strong>3798 Modify pipe properties over range may corrupt the model</strong></li>
+<p>
+When modifying pipe properties over a range, tees are checked and updated as needed.  During the processing of tees, some of the data for the first point in the range may be inadvertently overwritten with data from the last defined tee in the model. Furthermore, the problem only occurs under the following conditions.
+</p>
+
+<li><strong>4037 General code uses reducing tee formula for codes that do not require it</strong></li>
+<p>
+General code uses reducing tee formula for codes that do not require such formula. These codes are B31.4, B31.8, Canadian Z662 and DNV.
+</p>
+
+<li><strong>4186 Flexible joint & nozzle stiffness is decreased with mass or soil points</strong></li>
+<p>
+The pressure load displacements for a flexible joint or nozzle may increase as many times as there are intermediate soil or mass points along the flexible joint or nozzle leading to incorrect, conservative results. To determine if a flexible joint or nozzle is affected, generate the model input listing and review the Component Data Listing for intermediate soil or mass points defined over the span of the flexible joint or nozzle.
+</p>
+</ul>
+
+<H2>AutoPIPE v6.30</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v6.30.
+<ul>
+
+<li><strong>2795 Program gives very large results for long duration time history load</strong></li>
+<p>
+Program may give very large time history analysis results when the specified analysis duration is too long.  The program is designed to use dynamic memory when the static memory size for the time history analysis is exceeded. However, because of a calculation error for the amount of memory needed for a very long analysis duration, the dynamic memory is never used even when the static memory is exceeded. In this case, the program inadvertently accesses memory outside the allocated area causing randomly large numbers to be injected into the calculation of the results.  To assess whether or not the time history analysis is affected by this error, print the Result Summary report and review the maximum displacements for the time history load cases.  When this error occurs, the displacements are typically on the order of 1000 inches (approx. 25,000 mm) or greater.
+</p>
+
+<li><strong>2803 ZPA or missing mass option may cause a memory error during dynamic analyses</strong></li>
+<p>
+Using the ZPA or missing mass static correction options may not allow the dynamic analysis to complete for large models.  This error is caused by inconsistent memory management problems between the ZPA/missing mass results and the dynamic results for large models. When this error occurs, the dynamic analysis cannot complete normally and the error messages are displayed.
+</p>
+
+<li><strong>3034 Incorrect number of TIH files causes large time history ZPA reactions</strong></li>
+<p>
+If the number of lines in the THL file (on line 2 of THL file) is greater than the actual number of lines specified, there is a possibility that large force reactions will be generated for ZPA loads.  This problem is caused by making changes to a THL file using a text editor. THL files generated using Load/Time history Location dialog will not have this problem. This error will always cause larger forces and hence is conservative. The ZPA load should never exceed the peak forces in the TIH files.
+</p>
+
+<li><strong>3053 Analysis results for deep water wave loads may be too large at the seabed</strong></li>
+<p>
+For deep water wave models (where D/L > 5.0), the wave attenuation is not correct for 'Stream' and 'Stokes' methods and the results will be larger than expected.  Incorrect large values from wave loading are caused by the handling of numeric limitations with large exponent values.  In the limit referenced above, 'D' is water level depth from surface to seabed, and 'L' is the wave length that is printed in the Analysis Summary sub-report.
+</p>
+
+<li><strong>3056 Current velocity and marine growth data may not always be initialized properly</strong></li>
+<p>
+'Current velocity' and 'marine growth' data defined for wave loads may not be initialized properly if a second model is loaded within one continuous AutoPIPE usage session. Consequently, the wave data from the current model may inadvertently include some of the 'current velocity' and 'marine growth' data from the previous model.
+</p>
+
+<li><strong>3079 Cannot close error message E38-25 if pipe size is not valid for valve type</strong></li>
+<p>
+Error message "E38-25: Nominal diameter not available. Must use nonstandard valve." is displayed in an infinite loop at the Valve dialog when the nominal pipe size is >= 22'', and any field except 'Type' field is selected.
+</p>
+
+<li><strong>3167 Problems in spectrum analyses may cause a crash while generating output report</strong></li>
+<p>
+The following error message is generated during batch output report and causes AutoPIPE to crash: "E962-1: File read error, please contact REBIS (or EDA)".
+</p>
+
+<li><strong>3171 Stream function messages do not clearly indicate the validity of results</strong></li>
+<p>
+The program does not give the user a clear indication of stream function convergence when some errors are generated during stream function wave analysis iterations.
+</p>
+
+</ul>
+
+<H2>AutoPIPE v6.20</H2>
+The following outline identifies all major errors fixed in Release of AutoPIPE v6.20.
+<ul>
+
+<li><strong>2275 Guide support results on a vertical line may be inconsistent with gap directions</strong></li>
+<p>
+For a guide support located on a vertical line, it is possible that the gap orientation labels on the Support dialog will not match the orientations defined in the Support Forces sub-report.  The difference can also be seen as a discrepancy with the orientation of the guide support icon as it is drawn on the model.  This situation will occur if one of the pipe elements connected to the guide is 'kinked' (i.e. not exactly vertical).
+</p>
+
+<li><strong>2302 Rigid support response to time history loads are not always accurate</strong></li>
+<p>
+For time history analysis, it has been recommended in the on-line help that the response at rigid supports may require the high frequency mode shapes to be analyzed (see defect #2008).  However, for large systems with high frequency loading, there are program memory limitations that may make it impractical to capture an adequate number of modes in the high frequency range.
+</p>
+
+<li><strong>2309 Missing time history loads after using Fluid Transient command</strong></li>
+<p>
+When using the Load/Fluid Transient command, the time history loads may be incorrectly omitted at bend points along the specified range in the Fluid Transient dialog. This error will only occur when the point range contains points with names that were assigned to points that were deleted previously in the model.
+</p>
+
+<li><strong>2337 Incorrect response spectrum accelerations reported using ZPA</strong></li>
+<p>
+When the  ZPA correction method is enabled for a response spectrum analysis, the acceleration values reported in the 'Accelerations' sub-report are unexpectedly high.  The ZPA correction method should not contribute to the relative accelerations in the Acceleration sub-report.
+</p>
+
+<li><strong>2339 Rigid support response to force spectrum loads are not always accurate</strong></li>
+<p>
+In cases where the force spectrum load is applied very near a support or directly at the support, the support reaction may be near zero or very much less than the actual reaction. The reason is because the mode shapes involving the movement between the applied load direction and the support point were not computed as specified by the number of modes or cut-off frequency. These missing mode shapes are usually very stiff and hence associated with mode shapes in the high frequency range.  Normally, the missing mass and/or ZPA correction methods are used to compute the missing support reactions.  However, the computed values for these two correction methods for the force spectrum analysis are themselves incorrect such that their contribution to the overall response is negligible.
+</p>
+
+<li><strong>2340 Zero support reactions in force spectrum analysis except for last load case</strong></li>
+<p>
+Support reactions from force spectrum analysis are incorrectly reported as zero for all load cases except the last force spectrum load case. This includes both rigid and flexible supports.
+</p>
+
+<li><strong>2362 Using static correction methods for some dynamic analyses produces no difference</strong></li>
+<p>
+The "Missing Mass" and "ZPA" static correction methods for force spectrum, time history and harmonic analyses do not produce any significant difference in results compared to results without any static correction methods.  The “Missing Mass” and “ZPA” static correction methods for response spectrum analysis are applied correctly.  Using static correction in a dynamic analysis produces results that are generally greater than the same analysis without static correction.  As a consequence of this error, dynamic results with static correction may be non-conservative.  The degree of impact depends on the number of significant modes that have been extracted.  The larger the number of significant modes that are extracted during the modal analysis, the less impact this error will have on the dynamic analysis results.
+</p>
+
+<li><strong>2686 Wide miter elbow has the wrong B2 value for NC and ND codes</strong></li>
+<p>
+For the NC and ND piping code options, the B2 factor for miter bends may not be calculated correctly.  The problem was caused by a referencing error in accessing the bend properties needed to calculate the B2 factor for miter bends.  The problem is somewhat random depending on whether of not the incorrect component being referenced has the same properties as the intended bend component.
+</p>
+
+<li><strong>2740 Incorrect effective branch wall thickness for B31.1 reduced outlet tees</strong></li>
+<p>
+The '0.75' factor is incorrectly omitted from the effective branch wall thickness calculation for a reduced outlet branch for sustained and occasional stresses according to Para. 104.8.4(C) of the ASME B31.1 piping code (starting with the ASME B31.1c-1997 addenda).  The stress results due to thermal expansion are computed correctly and are not affected by this error.
+</p>
+</ul>
+</p>
+<strong>NOTE:</strong> Please contact Bentley TSG for more details.
+</p>
+
+<p><hr><p>
+
+<font size="-2">
+&copy; 2022 <a href="../general/copyright.htm">Bentley Systems, Incorporated</a>. <a href="AutoPIPE Legal Notices.pdf" target="_Online">Legal Notice</a><br>
+</font>
+
+</body>
+</html>
